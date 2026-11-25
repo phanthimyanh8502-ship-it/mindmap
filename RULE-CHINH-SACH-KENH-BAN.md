@@ -1,6 +1,6 @@
 # RULE TOOL CHÍNH SÁCH & CÁC KÊNH BÁN HÀNG (STG) — MỤC LỤC
 
-> Nguồn: thông tin user cung cấp ngày 03/11/2026. Dùng kèm `RULE-XHD.md`.
+> Nguồn: thông tin QC cung cấp ngày 03/11/2026. Dùng kèm `RULE-XHD.md`.
 > Nội dung đã tách theo từng kênh vào thư mục [`nghiep-vu/01-DON-HANG/kenh-ban/`](nghiep-vu/01-DON-HANG/kenh-ban/): mỗi kênh 1 thư mục `<KÊNH>/` gồm `<KÊNH>.md` + `input/` riêng; Desktop + Mobile gom chung thư mục `SOP/`.
 
 ## Rule chung
