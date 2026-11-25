@@ -1082,8 +1082,7 @@ const DATA = {
 /* ---------- Số liệu nhanh ---------- */
 const STATS = [
   { v: '22', l: 'kênh bán · 11 đang tạo đơn', col: 2, go: 'channel' },
-  { v: '3', l: 'đầu ra chính: HĐ, khoản thu, phiếu', col: 3, go: 'order' },
-  { v: '3', l: 'tool triển khai', col: 5, go: 'deploy' }
+  { v: '3', l: 'đầu ra chính: HĐ, khoản thu, phiếu', col: 3, go: 'order' }
 ];
 
 /* ---------- Sơ đồ liên kết ---------- */
@@ -1109,7 +1108,7 @@ const FN = [
   { id: 'cancel',   x: 296,  y: 470, col: 9, t: 'Hủy đơn hàng',       s: 'Hủy PTC, khoản thu · Đã hủy', minor: 1 },
   { id: 'contract', x: 606,  y: 100, col: 3, t: 'Hợp đồng',           s: 'Khách hàng · dịch vụ · trạng thái' },
   { id: 'receipt',  x: 606,  y: 215, col: 4, t: 'Khoản thu',          s: 'Theo PTTT · TMĐT/VNTT: không' },
-  { id: 'deploy',   x: 606,  y: 330, col: 5, t: 'Giao & lắp đặt', s: 'Thi công · tại quầy · phiếu giao hàng NCC' },
+  { id: 'deploy',   x: 606,  y: 330, col: 5, t: 'Giao & lắp đặt', s: 'Thi công · tại quầy · NCC' },
   { id: 'minutes',  x: 606,  y: 445, col: 13, t: 'Biên bản điện tử',   s: 'Ký xong → kích hoạt FPT Play' },
   { id: 'invoice',  x: 916,  y: 215, col: 7, t: 'Xuất hóa đơn',       s: 'Billing · DV, TB độc lập' },
   { id: 'revenue',  x: 1196, y: 100, col: 14, t: 'Phân bổ doanh thu',  s: 'Từ ngày active · chưa active treo' },
@@ -1562,7 +1561,7 @@ const END3 = (c, quayTool) => [
   ['pp', c + 3, 6, 'Add tiền trả trước', 'Hóa đơn dịch vụ trả trước', 'INVOICE', 'gn', 'postproc']
 ];
 const SOP_BASE = (tool) => ({
-  desc: 'Mục đích: Luồng bán mới SOP sau khi có hợp đồng, rẽ theo PTTT.\nLuồng chính: Thanh toán khi triển khai: tạo đơn → khoản thu Chưa TT, BBĐT, phiếu thi công cùng lúc. Online: Tạo hợp đồng → khoản thu, BBĐT → khách thanh toán → mới gen phiếu.\nLưu ý: Đã thanh toán → hóa đơn dịch vụ; giao xong → hóa đơn thiết bị; có cọc thì gạch nợ.',
+  desc: 'Tổng quan: Kênh SOP (Web SOP, App SOP) của sale, đơn tạo trên SPF.\nMục đích: Bán mới cho khách sau khi có hợp đồng; đi nhánh theo PTTT.\nLuồng chính: Thanh toán khi triển khai: tạo đơn → khoản thu Chưa TT, BBĐT, phiếu thi công cùng lúc. Online: Tạo hợp đồng → khoản thu, BBĐT → khách thanh toán → mới gen phiếu.',
   notes: [[2, 0, 'Nhánh A · Thanh toán khi triển khai: tạo đơn trước, trả tiền khi triển khai', 'A'], [2, 4, 'Nhánh B · Online: tạo hợp đồng xong mới có khoản thu, BBĐT; khách thanh toán xong mới gen phiếu', 'B']],
   nodes: [
     ['st', 0, 3, 'Tạo đơn · ' + tool, 'Thêm KH → báo giá → hợp đồng', tool, 'st'],
@@ -1597,7 +1596,7 @@ const SOP_FLOW = (tool) => {
     ['kd', 5, 5, 'Báo giá Đã thanh toán', 'Có mã hợp đồng · đơn đi triển khai', 'SPF', 'B', 'contract']
   ];
   return {
-    desc: 'Mục đích: Bán mới trên ' + tool + ' qua báo giá.\nLuồng chính: Nhập báo giá, chọn PTTT → Tạo báo giá (có mã đơn, link gửi KH) → sale bấm Tạo hợp đồng hoặc KH tự thanh toán qua link → đi tiếp theo PTTT.\nLưu ý: Bấm Tạo hợp đồng mới có hợp đồng; KH thanh toán qua link chỉ áp cho mua mới.',
+    desc: 'Tổng quan: Bán mới trên ' + tool + ', sale tạo báo giá gửi khách.\nMục đích: Lên đơn, hợp đồng cho khách mới qua link báo giá.\nLuồng chính: Nhập báo giá, chọn PTTT → Tạo báo giá (có mã đơn, link gửi KH) → sale bấm Tạo hợp đồng hoặc KH tự thanh toán qua link → đi tiếp theo PTTT.',
     notes: f.notes.map(([c, r, x, k]) => [c + S, r, x, k]),
     nodes: [...pre, ...f.nodes.filter(n => n[0] !== 'st').map(n => {
       const m = [n[0], n[1] + S, ...n.slice(2)];
@@ -1632,7 +1631,7 @@ const SOP_ADD_FLOW = (tool) => {
     p1: ['Phiếu thi công', 'TIN/PNC, FTI · gen sau khi ký BBĐT và TT', 'SPF', 'dep', 'ptc']
   };
   return {
-    desc: 'Mục đích: Bán thêm trên ' + tool + ' cho hợp đồng đang hoạt động, không qua báo giá.\nLuồng chính: Chọn hợp đồng, dịch vụ → Tạo đơn hàng → Gen BBĐT/PLHD (có khoản thu, BBĐT) → Thanh toán khi triển khai: có phiếu thi công ngay · Online: ký BBĐT, thanh toán rồi mới gen phiếu.\nLưu ý: Phiếu quầy, Vendor vẫn chờ đơn thanh toán. Phần sau giống bán mới.',
+    desc: 'Tổng quan: Bán thêm trên ' + tool + ', không qua báo giá.\nMục đích: Thêm dịch vụ, thiết bị cho hợp đồng đang hoạt động.\nLuồng chính: Chọn hợp đồng, dịch vụ → Tạo đơn hàng → Gen BBĐT/PLHD (có khoản thu, BBĐT) → Thanh toán khi triển khai: có phiếu thi công ngay · Online: ký BBĐT, thanh toán rồi mới gen phiếu.',
     notes: [[2 + S, 0, 'Nhánh A · TT khi triển khai: Gen BBĐT/PLHD xong luôn có phiếu thi công', 'A'], [2 + S, 4, 'Nhánh B · Online: ký BBĐT → thanh toán → mới gen phiếu', 'B']],
     nodes: [
       ['st', 0, 3, 'Chọn HĐ bán thêm · ' + tool, '+ ở bán thêm → tìm HĐ → icon + → chọn dịch vụ', tool, 'st'],
@@ -1650,7 +1649,7 @@ const SOP_ADD_FLOW = (tool) => {
   };
 };
 const TMDT_FLOW = (san) => ({
-  desc: 'Mục đích: Đơn đặt và thanh toán trên sàn ' + san + '.\nLuồng chính: SPF tạo đơn (không có khoản thu) → Order Transaction, BBĐT, phiếu → hoàn tất phiếu → xuất hóa đơn → sàn quyết toán thì gạch nợ thật.\nLưu ý: Gạch nợ 2 lần: tạm khi đơn thanh toán cho sàn, thật khi sàn quyết toán.',
+  desc: 'Tổng quan: Đơn đặt và thanh toán trên sàn ' + san + ', SPF nhận đơn.\nMục đích: Bán dịch vụ, thiết bị FPT qua sàn TMĐT.\nLuồng chính: SPF tạo đơn (không có khoản thu) → Order Transaction, BBĐT, phiếu → hoàn tất phiếu → xuất hóa đơn → sàn quyết toán thì gạch nợ thật.',
   nodes: [
     ['st', 0, 2, 'Khách đặt trên sàn', 'Khách thanh toán cho sàn', san, 'st'],
     ['o', 1, 2, 'SPF tạo đơn hàng', 'Chưa thanh toán · không có khoản thu', 'SPF', 'o', 'order-info'],
@@ -1679,7 +1678,7 @@ const FLOWCHART = {
   'ch-desktop': SOP_FLOW('Web SOP'),
   'ch-mobile': SOP_FLOW('App SOP'),
   'ch-dkol': {
-    desc: 'Mục đích: Khách tự đăng ký trên App HiFPT hoặc web FPT.vn (bán mới giống nhau; FPT.vn có thêm F-citizen, Tri ân CAND, AM).\nLuồng chính: Thanh toán khi triển khai: tạo đơn → khoản thu Chưa TT, BBĐT, phiếu cùng lúc. Online: thanh toán → tạo đơn (Đã TT) → BBĐT, phiếu.\nLưu ý: Đã thanh toán → hóa đơn dịch vụ; giao xong → hóa đơn thiết bị.',
+    desc: 'Tổng quan: Kênh khách tự đăng ký: App HiFPT, web FPT.vn (FPT.vn có thêm F-citizen, Tri ân CAND, AM).\nMục đích: Khách tự bán mới, nâng cấp, mua thêm mà không cần sale.\nLuồng chính: Thanh toán khi triển khai: tạo đơn → khoản thu Chưa TT, BBĐT, phiếu cùng lúc. Online: thanh toán → tạo đơn (Đã TT) → BBĐT, phiếu.',
     notes: [[2, 0, 'Nhánh A · Thanh toán khi triển khai: tạo đơn trước, trả tiền khi triển khai', 'A'], [2, 4, 'Nhánh B · Online: trả tiền trước, rồi mới tạo đơn', 'B']],
     nodes: [
       ['st', 0, 3, 'Chọn gói & đăng ký', 'Đơn gồm DV + TB, chỉ DV hoặc chỉ TB', 'HiFPT · FPT.vn', 'st'],
@@ -1701,7 +1700,7 @@ const FLOWCHART = {
     ]
   },
   'ch-fpl': {
-    desc: 'Mục đích: Khách đăng ký và thanh toán FPT Play ngay trên web FPL.\nLuồng chính: Đăng ký → đơn, khoản thu Đã TT, nhập cọc → hóa đơn (delay 2 giờ) → gạch nợ theo cọc.\nLưu ý: Không có phiếu, BBĐT tự ký. Khách tự nhập thông tin hóa đơn trong 2 giờ, quá hạn thì dùng thông tin hợp đồng.',
+    desc: 'Tổng quan: Kênh web FPL, khách tự đăng ký.\nMục đích: Bán FPT Play, khách thanh toán ngay khi đăng ký.\nLuồng chính: Đăng ký → đơn, khoản thu Đã TT, nhập cọc → hóa đơn (delay 2 giờ) → gạch nợ theo cọc.',
     nodes: [
       ['st', 0, 1, 'Đăng ký & thanh toán', 'Khách thanh toán ngay khi đăng ký gói', 'dev.fptplay.vn', 'st'],
       ['o', 1, 1, 'Tạo đơn hàng', 'Sau khi đăng ký thành công', 'SPF', 'o', 'order-info'],
@@ -1726,7 +1725,7 @@ const FLOWCHART = {
   'ch-tiktok': TMDT_FLOW('TikTok'),
   /* W-Sale · tab 1 Lên đơn tích hợp SOP: theo TC ISC_WSale_v1.6 R3 (sheet Lên đơn hàng, Tích hợp SOP Click to Call, Khách hàng tiềm năng) + bảng mapping tình trạng SOP và W-Sale */
   'ch-wsale': {
-    desc: 'Mục đích: W-Sale là điểm vào tư vấn KHTN trên SOP Web, không tự lên đơn.\nLuồng chính: Nhận KHTN → gọi Click to Call, lưu kết quả tư vấn → Đồng ý thì chọn bán mới / bán thêm → lên đơn theo SOP → W-Sale đồng bộ trạng thái.\nLưu ý: Khoản thu, BBĐT, hóa đơn theo luồng SOP.',
+    desc: 'Tổng quan: W-Sale tích hợp trên SOP Web, là điểm vào tư vấn khách tiềm năng.\nMục đích: Sale tư vấn KHTN rồi chuyển sang SOP lên đơn; riêng Swap lên đơn ngay trên W-Sale.\nLuồng chính: Nhận KHTN → gọi Click to Call, lưu kết quả tư vấn → Đồng ý thì chọn bán mới / bán thêm → lên đơn theo SOP → W-Sale đồng bộ trạng thái.',
     nodes: [
       ['st', 0, 1, 'KHTN được phân phối', 'Menu Khách được phân phối trên SOP · tiếp nhận KHTN', 'SOP Web · W-Sale', 'st'],
       ['tv', 1, 1, 'Tư vấn khách hàng', 'Chi tiết KHTN · gọi qua SOP Click to Call', 'W-Sale · SOP', 'o'],
@@ -1754,7 +1753,7 @@ const FLOWCHART = {
   },
   /* CRM: luồng theo URD ISC_FTEL_B2B CRM V1.6 Sprint 2 (mục 1 Cơ hội kinh doanh, mục 4 Đơn hàng) + rule owner (đánh dấu version, chờ 5 phút) */
   'ch-crm': {
-    desc: 'Mục đích: Bán FPT Play SME trên Web / App CRM.\nLuồng chính: Cơ hội: Khảo sát → Demo → Chào giá → Đàm phán → Kết thúc → tạo Order ID theo mã triển khai → kích hoạt triển khai → phiếu thi công → khoản thu.\nLưu ý: Mỗi giai đoạn cần ít nhất 1 tracklog. BBĐT, hóa đơn chưa có thông tin; CRM ngoài scope test XHD.',
+    desc: 'Tổng quan: Kênh Web / App CRM (cần host).\nMục đích: Bán FPT Play SME theo cơ hội bán hàng.\nLuồng chính: Cơ hội: Khảo sát → Demo → Chào giá → Đàm phán → Kết thúc → tạo Order ID theo mã triển khai → kích hoạt triển khai → phiếu thi công → khoản thu.',
     nodes: [
       ['st', 0, 1, 'Tạo cơ hội', 'Danh mục FPT Play SME · chọn sản phẩm, dịch vụ quan tâm', 'Web / App CRM · cần host', 'st'],
       ['pd', 1, 1, 'Phê duyệt?', '', '', 'd'],
@@ -1780,13 +1779,13 @@ const FLOWCHART = {
       ['p1', 'kt', { c: 'B' }], ['p1', 'h1', {}], ['kt', 'na', { dash: 1, c: 'na' }]
     ]
   },
-  'ch-crmapp': SIMPLE('Mục đích: Khách đặt trên App FPT Life, chỉ bán Cloud trong nhóm FPT Camera Only.\nLưu ý: Các bước tạo đơn, hình thức triển khai, khoản thu chưa có thông tin.', [
+  'ch-crmapp': SIMPLE('Tổng quan: Kênh App FPT Life, khách tự đặt.\nMục đích: Bán Cloud trong nhóm FPT Camera Only.', [
     ['st', 'Đặt trên App FPT Life', 'Cloud · nhóm FPT Camera Only', 'App FPT Life', 'st'],
     ['o', 'Tạo đơn hàng', 'Chỉ bán mới', 'SPF', 'o', 'order-info'],
     ['na', 'Triển khai, khoản thu', 'Chưa có thông tin', '', 'na', 'receipt']
   ]),
   'ch-momo': {
-    desc: 'Mục đích: Đơn Momo do owner tạo hộ (FPT Play, combo FPT Play; Camera đang off).\nLuồng chính: Tạo đơn → khoản thu, phiếu thi công, BBĐT → hoàn tất phiếu → xuất hóa đơn.\nLưu ý: Chưa rõ thời điểm gen khoản thu, BBĐT và trạng thái thanh toán.',
+    desc: 'Tổng quan: Kênh Momo, owner tạo đơn hộ.\nMục đích: Bán FPT Play, combo FPT Play (Camera đang off).\nLuồng chính: Tạo đơn → khoản thu, phiếu thi công, BBĐT → hoàn tất phiếu → xuất hóa đơn.',
     nodes: [
       ['st', 0, 1, 'Nhờ owner tạo đơn', 'FPT Play, combo Play · Camera off', 'Momo', 'st'],
       ['o', 1, 1, 'Tạo đơn hàng', 'Chỉ bán mới · đơn + hợp đồng', 'SPF', 'o', 'order-info'],
@@ -1801,7 +1800,7 @@ const FLOWCHART = {
   },
   /* MB Bank · mini app FTEL: lấy từ bộ test case ISC_SalePlatform_v4.18_TC V1.0_R1 (3 màn: Danh mục gói, Thông tin đăng ký, Thông tin thanh toán) */
   'ch-mbbank': {
-    desc: 'Mục đích: Khách tự đăng ký trên mini app FTEL trong app MB Bank (chưa có trên PRO).\nLuồng chính: Chọn gói theo địa chỉ → điền thông tin, chọn trả hàng tháng / trả trước → thanh toán trên MB Bank (OTP).\nLưu ý: Phần sau thanh toán chưa test được (lỗi phía MB Bank); BBĐT, hóa đơn chưa có thông tin.',
+    desc: 'Tổng quan: Mini app FTEL trong app MB Bank (chưa có trên PRO).\nMục đích: Khách tự đăng ký và thanh toán ngay trên MB Bank.\nLuồng chính: Chọn gói theo địa chỉ → điền thông tin, chọn trả hàng tháng / trả trước → thanh toán trên MB Bank (OTP).',
     nodes: [
       ['st', 0, 1, 'Mở mini app FTEL', 'Trong app MB Bank · xác minh khách hàng', 'App MB Bank', 'st'],
       ['xm', 1, 1, 'Xác minh KH?', '', '', 'd'],
@@ -1831,7 +1830,7 @@ const FLOWCHART = {
       ['ok', 'kt', { c: 'B' }], ['ok', 'hd', {}], ['ok', 'p1', { c: 'dep' }], ['hd', 'na', { dash: 1, c: 'na' }]
     ]
   },
-  'ch-vntt': SIMPLE('Mục đích: Kênh VNTT, owner chỉ ghi nhận hợp đồng.\nLuồng chính: Ghi nhận hợp đồng, không tạo khoản thu.\nLưu ý: Cần xác nhận VNTT có giao & lắp đặt và BBĐT không.', [
+  'ch-vntt': SIMPLE('Tổng quan: Kênh VNTT.\nMục đích: Owner chỉ ghi nhận hợp đồng.\nLuồng chính: Ghi nhận hợp đồng, không tạo khoản thu.', [
     ['st', 'Owner lên đơn', 'Chỉ ghi nhận hợp đồng', 'VNTT', 'st'],
     ['o', 'Tạo đơn hàng', '', 'SPF', 'o', 'order-info'],
     ['hd', 'Ghi nhận hợp đồng', 'Không tạo khoản thu', 'Inside', 'A', 'contract'],
@@ -1841,7 +1840,7 @@ const FLOWCHART = {
 /* Sơ đồ luồng của chủ thể (không phải kênh): hiện trong popup chi tiết thay cho sơ đồ liên kết */
 const SUBJECT_FLOW = {
   'order-entity': {
-    desc: 'Mục đích: Đơn hàng tạo từ kênh bán theo chính sách bán hàng, xem ở SPF Web admin.\nLuồng chính: Tạo đơn → hợp đồng → khoản thu, giao & lắp đặt, BBĐT (theo PTTT) → xuất hóa đơn → gạch nợ, hậu kỳ.\nLưu ý: Đã thanh toán là tín hiệu hóa đơn dịch vụ; giao xong là tín hiệu hóa đơn thiết bị.',
+    desc: 'Tổng quan: Đơn hàng trên SPF, tạo từ kênh bán, xem ở SPF Web admin.\nMục đích: Ghi nhận khách mua gì theo chính sách bán hàng; là gốc của hợp đồng, khoản thu, phiếu, BBĐT, hóa đơn.\nLuồng chính: Tạo đơn → hợp đồng → khoản thu, giao & lắp đặt, BBĐT (theo PTTT) → xuất hóa đơn → gạch nợ, hậu kỳ.',
     nodes: [
       ['ch', 0, 1.2, 'Kênh bán', '11 kênh đang tạo được đơn', 'Web SOP, HiFPT, sàn…', 'st', 'channel'],
       ['cs', 0, 2.8, 'Chính sách bán hàng', 'Giá, gói, PTTT, HT triển khai, DV/TB', 'Tool BP', 'st', 'policy'],
@@ -1863,7 +1862,7 @@ const SUBJECT_FLOW = {
     ]
   },
   scm: {
-    desc: 'Mục đích: Kho FTELSCM cấp vật tư cho tool vật tư trên Fox ERP (TIN/PNC, quầy).\nLuồng chính: Tạm ứng (thủ kho FMD xác nhận) → dùng vật tư → hoàn ứng (FAF xác nhận) → trả, bồi thường, thu hồi → đối soát kho tạm → Dataload ORC ERP.\nLưu ý: STG cần host.',
+    desc: 'Tổng quan: Kho FTELSCM (cần host), nối với tool vật tư trên Fox ERP.\nMục đích: Cấp, nhận lại và đối soát vật tư cho TIN/PNC và quầy.\nLuồng chính: Tạm ứng (thủ kho FMD xác nhận) → dùng vật tư → hoàn ứng (FAF xác nhận) → trả, bồi thường, thu hồi → đối soát kho tạm → Dataload ORC ERP.',
     nodes: [
       ['src', 0, 2, 'Tool vật tư (Fox ERP)', 'Quản lý vật tư (MobiX) · vật tư quầy', 'Fox ERP', 'st', 'mat-ptc'],
       ['tu', 1.3, 0, 'Đề nghị tạm ứng', 'NVKT / giao dịch viên', 'Fox ERP', 'o'],
@@ -1892,7 +1891,7 @@ const SUBJECT_FLOW = {
     ]
   },
   policy: {
-    desc: 'Mục đích: Tool BP (QLCS) quản lý chính sách bán hàng: giá, gói, khu vực, PTTT, hình thức triển khai.\nLuồng chính: Tạo đề xuất → xem xét, phê duyệt → ra quyết định → ban hành → các tool bán hàng lấy giá từ đây.\nLưu ý: QLCS lấy dữ liệu thiết bị từ Quản lý vật tư rồi trả ra SPF.',
+    desc: 'Tổng quan: Chính sách bán hàng khai báo trên Tool BP (QLCS).\nMục đích: Quyết định giá, gói, khu vực, PTTT, hình thức triển khai của đơn.\nLuồng chính: Tạo đề xuất → xem xét, phê duyệt → ra quyết định → ban hành → các tool bán hàng lấy giá từ đây.',
     nodes: [
       ['pq', 0, 1, 'Phân quyền sử dụng', 'Ai được tạo, tra cứu chính sách', 'Tool QLCS', 'st'],
       ['tc', 1, 1, 'Tạo chính sách', 'Only / combo 1 DV nhiều phí', 'Tool QLCS · cần host', 'st'],
@@ -1912,7 +1911,7 @@ const SUBJECT_FLOW = {
     ]
   },
   contract: {
-    desc: 'Mục đích: Hợp đồng sinh ra khi tạo đơn (bán mới: hợp đồng mới; bán thêm: gắn hợp đồng đang có).\nLuồng chính: Khoản thu Đã TT → active dịch vụ → xuất hóa đơn theo thông tin hợp đồng → add tiền trả trước sau khi gạch nợ.\nLưu ý: Cập nhật hợp đồng: Inside chỉ đổi thông tin khách; SR làm được nhiều hơn (bấm từng SR để xem luồng).',
+    desc: 'Tổng quan: Hợp đồng trên Inside, sinh ra khi tạo đơn (bán mới: hợp đồng mới; bán thêm: gắn hợp đồng đang có).\nMục đích: Giữ thông tin khách, dịch vụ, trạng thái; là căn cứ xuất hóa đơn.\nLuồng chính: Khoản thu Đã TT → active dịch vụ → xuất hóa đơn theo thông tin hợp đồng → add tiền trả trước sau khi gạch nợ.',
     nodes: [
       ['od', 0, 1.5, 'Đơn hàng', 'Tạo đơn trên kênh bán', 'SPF', 'st', 'order'],
       ['lo', 1, 1.5, 'Loại đơn?', '', '', 'd'],
@@ -1940,7 +1939,7 @@ const SUBJECT_FLOW = {
     ]
   },
   deploy: {
-    desc: 'Mục đích: Giao & lắp đặt theo hình thức triển khai: phiếu thi công, phiếu giao tại quầy, phiếu giao hàng NCC hoặc không phiếu.\nLuồng chính: Thanh toán khi triển khai: gen phiếu ngay khi tạo đơn · Online: gen sau khi Đã TT → hoàn tất phiếu → hóa đơn thiết bị.\nLưu ý: Phiếu quầy, NCC chỉ gen khi đơn đã thanh toán. Có 1 dịch vụ TIN/PNC thì cả đơn đi TIN/PNC; combo, Triple chỉ có phiếu thi công.',
+    desc: 'Tổng quan: Giao & lắp đặt gồm phiếu thi công, phiếu giao tại quầy, phiếu giao hàng NCC hoặc không phiếu, theo hình thức triển khai.\nMục đích: Đưa dịch vụ, thiết bị tới khách; hoàn tất phiếu là tín hiệu xuất hóa đơn thiết bị.\nLuồng chính: Thanh toán khi triển khai: gen phiếu ngay khi tạo đơn · Online: gen sau khi Đã TT → hoàn tất phiếu → hóa đơn thiết bị.',
     nodes: [
       ['od', 0, 1.5, 'Đơn hàng', 'Tạo đơn trên kênh bán', 'SPF', 'st', 'order'],
       ['pt', 1, 1.5, 'PTTT?', '', '', 'd'],
@@ -1965,7 +1964,7 @@ const SUBJECT_FLOW = {
     ]
   },
   minutes: {
-    desc: 'Mục đích: Biên bản điện tử của đơn, độc lập với phiếu thi công.\nLuồng chính: Có đơn / hợp đồng → gen BBĐT (không chờ thanh toán) → auto ký hoặc ký tay (SPF Web admin, app HiFPT).\nLưu ý: Đơn có FPT Play ký tay: ký xong tài khoản FPT Play mới kích hoạt.',
+    desc: 'Tổng quan: Biên bản điện tử (BBĐT) của đơn trên SPF, độc lập với phiếu thi công.\nMục đích: Khách xác nhận dịch vụ đã đăng ký; đơn có FPT Play ký xong mới kích hoạt.\nLuồng chính: Có đơn / hợp đồng → gen BBĐT (không chờ thanh toán) → auto ký hoặc ký tay (SPF Web admin, app HiFPT).',
     nodes: [
       ['od', 0, 1, 'Đơn hàng', 'Tạo đơn trên kênh bán', 'SPF', 'st', 'order'],
       ['gn', 1, 1, 'Gen BBĐT', 'Khi có đơn · SOP mới: sau Tạo hợp đồng · SOP thêm: sau Gen BBĐT/PLHD', 'SPF', 'B'],
@@ -1981,7 +1980,7 @@ const SUBJECT_FLOW = {
     ]
   },
   invoice: {
-    desc: 'Mục đích: INVOICE tự xuất hóa đơn: dịch vụ khi Đã thanh toán, thiết bị khi giao xong.\nLuồng chính: Nhận tín hiệu → kiểm tra đơn hợp lệ → worker theo đợt (gộp) hoặc realtime → Billing phát hành → sang gạch nợ, hậu kỳ.\nLưu ý: Đơn không hợp lệ thì không xuất, không giữ lại để xuất sau.',
+    desc: 'Tổng quan: INVOICE + Billing System, hệ thống tự chạy.\nMục đích: Tự xuất hóa đơn: dịch vụ khi Đã thanh toán, thiết bị khi giao xong.\nLuồng chính: Nhận tín hiệu → kiểm tra đơn hợp lệ → worker theo đợt (gộp) hoặc realtime → Billing phát hành → sang gạch nợ, hậu kỳ.',
     nodes: [
       ['kt', 0, 0, 'Khoản thu Đã TT', 'Tín hiệu đã thanh toán → DV', 'SPF', 'B', 'receipt'],
       ['gh', 0, 2, 'Giao hàng hoàn tất', 'Tín hiệu của phiếu → TB', 'Tool theo phiếu', 'dep', 'deploy'],
@@ -2005,7 +2004,7 @@ const SUBJECT_FLOW = {
     ]
   },
   postproc: {
-    desc: 'Mục đích: Gạch nợ hóa đơn đã phát hành, rồi đẩy hóa đơn điện tử và tiền trả trước.\nLuồng chính: Có Paid hoặc cọc → gạch nợ → hóa đơn Đã gạch nợ → add tiền trả trước.\nLưu ý: Đơn sàn TMĐT gạch nợ tạm rồi gạch thật. Hóa đơn điện tử đẩy ngay khi phát hành; tiền trả trước chỉ add sau khi gạch nợ xong.',
+    desc: 'Tổng quan: INVOICE tự chạy sau khi hóa đơn phát hành.\nMục đích: Gạch nợ hóa đơn, rồi đẩy hóa đơn điện tử và tiền trả trước.\nLuồng chính: Có Paid hoặc cọc → gạch nợ → hóa đơn Đã gạch nợ → add tiền trả trước.',
     nodes: [
       ['pd', 0, 0.4, 'Đồng bộ Paid', 'Từ kênh thanh toán, luôn ghi nhận', 'INVOICE', 'B', 'receipt'],
       ['ph', 0, 1.6, 'Phát hành hóa đơn', 'Billing', 'INVOICE', 'inv', 'invoice'],
@@ -2024,7 +2023,7 @@ const SUBJECT_FLOW = {
     ]
   },
   revenue: {
-    desc: 'Mục đích: Chia doanh thu của hóa đơn vào các tháng khách dùng dịch vụ.\nLuồng chính: Hóa đơn phát hành → có kỳ hạn thì chia như cũ · chưa có: đã active thì chia từ ngày active, chưa active thì treo → hóa đơn giảm thì trừ hoặc treo khoản giảm.\nLưu ý: Ngoài danh mục hoặc hợp đồng FTI (chi nhánh 90) không chia. Xem kết quả ở Master doanh thu.',
+    desc: 'Tổng quan: Phân bổ doanh thu tự chạy, xem ở Inside › Quản lý kế toán › Master doanh thu.\nMục đích: Chia doanh thu của hóa đơn vào các tháng khách dùng dịch vụ.\nLuồng chính: Hóa đơn phát hành → có kỳ hạn thì chia như cũ · chưa có: đã active thì chia từ ngày active, chưa active thì treo → hóa đơn giảm thì trừ hoặc treo khoản giảm.',
     nodes: [
       ['inv', 0, 1, 'Xuất hóa đơn', 'Giao hàng / thanh toán hoàn tất', 'INVOICE', 'inv', 'invoice'],
       ['dm', 1.2, 1, 'Trong danh mục?', '', '', 'd'],
@@ -2046,7 +2045,7 @@ const SUBJECT_FLOW = {
     ]
   },
   ptc: {
-    desc: 'Mục đích: Phiếu thi công TIN/PNC, FTI, tạo từ đơn hàng hoặc từ SR (chuyển dịch vụ, chuyển địa điểm, khôi phục).\nLuồng chính: Tạo PTC → phân công → thi công trên MobiX → hoàn tất khi đủ điều kiện → nghiệm thu vật tư → tín hiệu hoàn tất về INVOICE.\nLưu ý: Bán thêm mà hợp đồng đang có PTC thì đẩy vào PTC đó. Không thi công được thì PTC NOT OK.',
+    desc: 'Tổng quan: Phiếu thi công TIN/PNC, FTI trên Inside new v5; nhân sự xử lý trên app MobiX.\nMục đích: Lắp đặt cho khách; phiếu tạo từ đơn hàng hoặc từ SR (chuyển dịch vụ, chuyển địa điểm, khôi phục).\nLuồng chính: Tạo PTC → phân công → thi công trên MobiX → hoàn tất khi đủ điều kiện → nghiệm thu vật tư → tín hiệu hoàn tất về INVOICE.',
     nodes: [
       ['ex', 2.2, 0, 'Đẩy đơn vào PTC hiện có', 'Không tạo PTC mới', 'Inside', 'dep'],
       ['od', 0, 1.2, 'Đơn hàng', 'Theo flow bán hàng của kênh', 'SPF', 'st', 'order'],
@@ -2072,7 +2071,7 @@ const SUBJECT_FLOW = {
     ]
   },
   counter: {
-    desc: 'Mục đích: Phiếu giao thiết bị tại quầy, giao qua đơn vị vận chuyển (đơn SPF: phiếu bán thiết bị).\nLuồng chính: Phiếu Chờ xác nhận → xác nhận, xuất vật tư → đóng hàng, tạo vận đơn → giao thành công → hoàn ứng, báo SPF hoàn tất.\nLưu ý: Đơn sàn TMĐT tạo phiếu ngay khi tạo đơn. Hủy khi ĐVVC đã lấy hàng thì thu hồi về kho.',
+    desc: 'Tổng quan: Phiếu giao dịch thiết bị tại quầy (đơn SPF: phiếu bán thiết bị), xử lý ở Quản lý chuỗi cung ứng.\nMục đích: Giao thiết bị cho khách tại quầy hoặc qua đơn vị vận chuyển.\nLuồng chính: Phiếu Chờ xác nhận → xác nhận, xuất vật tư → đóng hàng, tạo vận đơn → giao thành công → hoàn ứng, báo SPF hoàn tất.',
     nodes: [
       ['s1', 0, 0, 'Tạo đơn bán hàng', 'Sale · thanh toán thành công', 'SPF', 'st', 'order'],
       ['s2', 1, 0, 'Tạo phiếu GDTB', 'System · loại Giao hàng', 'GDTB', 'dep'],
@@ -2099,7 +2098,7 @@ const SUBJECT_FLOW = {
     ]
   },
   vendor: {
-    desc: 'Mục đích: Phiếu giao hàng NCC cho thiết bị lẻ Samsung / Sony / Casper (chỉ khi bán Smart TV).\nLuồng chính: Đơn đã thanh toán → BBĐT tự ký → Chưa giao hàng → Đang giao hàng (nhập hóa đơn NCU, HĐĐT) → Đã hoàn tất → hóa đơn thiết bị.\nLưu ý: Chỉ hủy được khi phiếu còn Chưa giao hàng.',
+    desc: 'Tổng quan: Phiếu giao hàng NCC trên M-Vendor (Fox ERP).\nMục đích: Giao thiết bị lẻ Samsung / Sony / Casper (chỉ khi bán Smart TV).\nLuồng chính: Đơn đã thanh toán → BBĐT tự ký → Chưa giao hàng → Đang giao hàng (nhập hóa đơn NCU, HĐĐT) → Đã hoàn tất → hóa đơn thiết bị.',
     nodes: [
       ['od', 0, 1, 'Đơn đã thanh toán', 'Thiết bị lẻ NCC · đơn có Smart TV', 'SPF', 'st', 'order'],
       ['po', 1.2, 1, 'Đơn đặt hàng NCU', 'PO · BBĐT tự động ký', 'Vendor', 'dep'],
@@ -2115,7 +2114,7 @@ const SUBJECT_FLOW = {
     ]
   },
   'mat-ptc': {
-    desc: 'Mục đích: Tool Quản lý vật tư cấp vật tư cho TIN/PNC (nhân sự thao tác trên Mobinet = app MobiX).\nLuồng chính: Khai báo, định mức → đề nghị tạm ứng → FMD xác nhận trên SCM → dùng khi triển khai / bảo trì → hoàn ứng (FAF xác nhận) → Dataload ORC ERP.\nLưu ý: Thiết bị thu hồi xử lý ở Quản lý vật tư thu hồi.',
+    desc: 'Tổng quan: Tool Quản lý vật tư trên Fox ERP; nhân sự thao tác trên Mobinet = app MobiX.\nMục đích: Cấp vật tư cho TIN/PNC triển khai, bảo trì.\nLuồng chính: Khai báo, định mức → đề nghị tạm ứng → FMD xác nhận trên SCM → dùng khi triển khai / bảo trì → hoàn ứng (FAF xác nhận) → Dataload ORC ERP.',
     nodes: [
       ['kb', 0, 0, 'Khai báo, phân quyền', 'Vật tư · kho – đối tác · định mức', 'Inside · FTQ, FAF', 'st'],
       ['cs', 0, 1.3, 'Quản lý chính sách', 'Bán thiết bị: lấy dữ liệu vật tư', 'Tool QLCS (BP)', 'st', 'policy'],
@@ -2138,7 +2137,7 @@ const SUBJECT_FLOW = {
     ]
   },
   'mat-counter': {
-    desc: 'Mục đích: Tool Quản lý vật tư quầy cho giao dịch thiết bị tại quầy.\nLuồng chính: Đề nghị tạm ứng → FMD xác nhận trên SCM → bàn giao → giao dịch thiết bị → hoàn tất phiếu → hoàn ứng (FAF xác nhận).\nLưu ý: STG chưa có MAC thì tạm ứng rồi nhập MAC trên SCM.',
+    desc: 'Tổng quan: Tool Quản lý vật tư quầy trên Fox ERP.\nMục đích: Cấp vật tư cho giao dịch thiết bị tại quầy.\nLuồng chính: Đề nghị tạm ứng → FMD xác nhận trên SCM → bàn giao → giao dịch thiết bị → hoàn tất phiếu → hoàn ứng (FAF xác nhận).',
     nodes: [
       ['kb', 0, 0, 'Khai báo, phân quyền', 'Vật tư · đối tác – kho · định mức', 'Inside · FTQ, FAF', 'st'],
       ['tu', 1.2, 0, 'Đề nghị tạm ứng', 'Giao dịch viên', 'Vật tư quầy', 'o'],
@@ -2158,7 +2157,7 @@ const SUBJECT_FLOW = {
     ]
   },
   cancel: {
-    desc: 'Mục đích: Hủy đơn bằng Inside › Hợp đồng NOT OK V3 › tab Trước sử dụng.\nLuồng chính: Chưa thanh toán: hủy ngay PTC, khoản thu, đơn Đã hủy · Đã thanh toán: TPKD duyệt → ghi nhận hủy → PTC chưa hoàn tất thì hủy.\nLưu ý: Đơn bị hủy không xuất hóa đơn. Đơn đã thanh toán có thể đề nghị hoàn tiền.',
+    desc: 'Tổng quan: Inside › Quản lý hợp đồng › Hợp đồng NOT OK V3 › tab Trước sử dụng.\nMục đích: Hủy đơn hàng; xử lý khác nhau theo đơn đã hay chưa thanh toán.\nLuồng chính: Chưa thanh toán: hủy ngay PTC, khoản thu, đơn Đã hủy · Đã thanh toán: TPKD duyệt → ghi nhận hủy → PTC chưa hoàn tất thì hủy.',
     nodes: [
       ['od', 0, 1.2, 'Đơn hàng', 'Tạo đơn trên kênh bán', 'SPF', 'st', 'order'],
       ['hy', 1.15, 1.2, 'Thao tác hủy đơn', 'HĐ NOT OK V3 › tab Trước sử dụng', 'Inside', 'A'],
@@ -2182,7 +2181,7 @@ const SUBJECT_FLOW = {
     ]
   },
   receipt: {
-    desc: 'Mục đích: Khoản thu của đơn (số tiền = tiền đơn), sinh theo PTTT.\nLuồng chính: Tạo đơn → khoản thu Chưa / Đã thanh toán → khách trả → Đã TT, active dịch vụ, nhập cọc → tín hiệu hóa đơn dịch vụ → gạch nợ bằng cọc.\nLưu ý: TMĐT, VNTT không có khoản thu. Đơn chưa thanh toán bị hủy thì khoản thu bị hủy.',
+    desc: 'Tổng quan: Khoản thu của đơn trên SPF, số tiền = tiền đơn, sinh theo PTTT.\nMục đích: Thu tiền khách; thanh toán xong là tín hiệu xuất hóa đơn dịch vụ.\nLuồng chính: Tạo đơn → khoản thu Chưa / Đã thanh toán → khách trả → Đã TT, active dịch vụ, nhập cọc → tín hiệu hóa đơn dịch vụ → gạch nợ bằng cọc.',
     nodes: [
       ['st', 0, 2, 'Đơn hàng', 'Tạo đơn trên kênh bán', 'SPF', 'st', 'order'],
       ['pt', 1, 2, 'PTTT?', '', '', 'd'],
@@ -2226,7 +2225,7 @@ const SR_TICKETS = (pre, after, last) => ({
 });
 Object.assign(SUBJECT_FLOW, {
   'contract-sr': {
-    desc: 'Mục đích: Luồng chung của mọi SR; mỗi SR gắn 1 hợp đồng.\nLuồng chính: Tạo SR → phân công → liên hệ, tư vấn → khách đồng ý → xử lý giao dịch, ticket → cập nhật hợp đồng → khách đánh giá.\nLưu ý: Không cần liên hệ, khách không đồng ý hoặc 3 lần không liên lạc được thì Xử lý không thành công.',
+    desc: 'Tổng quan: Tool SR (Fox ERP › Service Request); mỗi SR gắn 1 hợp đồng.\nMục đích: Ghi nhận yêu cầu của khách sau bán và điều phối ticket để cập nhật hợp đồng.\nLuồng chính: Tạo SR → phân công → liên hệ, tư vấn → khách đồng ý → xử lý giao dịch, ticket → cập nhật hợp đồng → khách đánh giá.',
     nodes: [
       ['tao', 0, 1, 'Tạo SR, phân công', 'Chọn hợp đồng → loại yêu cầu → dịch vụ', 'Hệ thống SR', 'A'],
       ['lh', 1.2, 1, 'Liên hệ, tư vấn KH', 'SR Đang xử lý', 'Hệ thống SR', 'A'],
@@ -2243,7 +2242,7 @@ Object.assign(SUBJECT_FLOW, {
     ]
   },
   'sr-ttkh': {
-    desc: 'Mục đích: Đổi thông tin khách hàng trên hợp đồng, gồm chuyển chủ sở hữu.\nLuồng chính: Tạo SR → nhập thông tin mới → biên bản điện tử (khách ký trên HiFPT) → cập nhật hợp đồng.\nLưu ý: Chuyển chủ sở hữu thu tiền chốt cước, 2 bên cùng ký. Hóa đơn lần sau dùng thông tin mới, không tự phát hành.',
+    desc: 'Tổng quan: SR thay đổi thông tin khách hàng trên tool SR.\nMục đích: Đổi thông tin khách trên hợp đồng, gồm chuyển chủ sở hữu.\nLuồng chính: Tạo SR → nhập thông tin mới → biên bản điện tử (khách ký trên HiFPT) → cập nhật hợp đồng.',
     nodes: [
       ['tao', 0, 1, 'Tạo SR đổi thông tin KH', 'Chọn hợp đồng, loại thay đổi, nguyên nhân', 'Hệ thống SR', 'A'],
       ['lh', 1.2, 1, 'Liên hệ, tư vấn KH', 'Không đồng ý → không thành công', 'Hệ thống SR', 'A', 'contract-sr'],
@@ -2261,7 +2260,7 @@ Object.assign(SUBJECT_FLOW, {
     ]
   },
   'sr-cdd': {
-    desc: 'Mục đích: Chuyển nơi lắp đặt của cả hợp đồng sang địa chỉ mới cùng tỉnh.\nLuồng chính: Tạo SR → (chuyển chủ sở hữu dưới 6 tháng thì duyệt) → thu tiền → hóa đơn, ký kết, phiếu thi công → cập nhật địa chỉ.\nLưu ý: COD thì ký kết, triển khai chạy cùng lúc thu tiền.',
+    desc: 'Tổng quan: SR chuyển địa điểm cùng tỉnh (CDD) trên tool SR.\nMục đích: Chuyển nơi lắp đặt của cả hợp đồng sang địa chỉ mới cùng tỉnh.\nLuồng chính: Tạo SR → (chuyển chủ sở hữu dưới 6 tháng thì duyệt) → thu tiền → hóa đơn, ký kết, phiếu thi công → cập nhật địa chỉ.',
     ...SR_TICKETS([
       ['tao', 0, 1, 'Tạo SR chuyển địa điểm', 'Cả hợp đồng · địa chỉ mới cùng tỉnh', 'Hệ thống SR', 'A'],
       ['ch', 1.2, 1, 'Chuyển CSH dưới 6 tháng?', '', '', 'd'],
@@ -2276,7 +2275,7 @@ Object.assign(SUBJECT_FLOW, {
     ]
   },
   'sr-cdv': {
-    desc: 'Mục đích: Đổi gói, gói tính cước, câu lệnh giá của dịch vụ đang dùng.\nLuồng chính: Tạo SR → (câu lệnh giá mới rẻ hơn thì duyệt 2 cấp) → thu tiền → hóa đơn, ký kết → cập nhật dịch vụ.\nLưu ý: Chỉ đổi thiết bị mới có phiếu thi công.',
+    desc: 'Tổng quan: SR chuyển dịch vụ (CDV) trên tool SR.\nMục đích: Đổi gói, gói tính cước, câu lệnh giá của dịch vụ đang dùng.\nLuồng chính: Tạo SR → (câu lệnh giá mới rẻ hơn thì duyệt 2 cấp) → thu tiền → hóa đơn, ký kết → cập nhật dịch vụ.',
     ...SR_TICKETS([
       ['tao', 0, 1, 'Tạo SR chuyển dịch vụ', 'Dịch vụ cũ → gói, gói cước, CLG mới', 'Hệ thống SR', 'A'],
       ['lh', 1.2, 1, 'Liên hệ, tư vấn KH', 'Đồng ý → xử lý giao dịch', 'SR → Inside', 'A', 'contract-sr'],
@@ -2291,7 +2290,7 @@ Object.assign(SUBJECT_FLOW, {
     ]
   },
   'sr-tltn': {
-    desc: 'Mục đích: Thanh lý hoặc tạm ngưng hợp đồng (tạm ngưng 1–6 tháng).\nLuồng chính: Tư vấn giữ khách → không dùng tiếp: miễn giảm, thu tiền, thu hồi thiết bị, ký kết → cập nhật trạng thái hợp đồng.\nLưu ý: Khách dùng tiếp thì hỗ trợ (kỹ thuật, bồi hoàn, hóa đơn, sub SR).',
+    desc: 'Tổng quan: SR thanh lý / tạm ngưng (TL/TN) trên tool SR.\nMục đích: Thanh lý hoặc tạm ngưng hợp đồng (tạm ngưng 1–6 tháng).\nLuồng chính: Tư vấn giữ khách → không dùng tiếp: miễn giảm, thu tiền, thu hồi thiết bị, ký kết → cập nhật trạng thái hợp đồng.',
     nodes: [
       ['tao', 0, 1, 'Tạo SR thanh lý / tạm ngưng', 'Tạm ngưng chọn 1–6 tháng', 'Hệ thống SR', 'A'],
       ['lh', 1.2, 1, 'Liên hệ, tư vấn giữ khách', 'SR Đang xử lý', 'SR → Inside', 'A', 'contract-sr'],
@@ -2308,7 +2307,7 @@ Object.assign(SUBJECT_FLOW, {
     ]
   },
   'sr-kpdv': {
-    desc: 'Mục đích: Bật lại dịch vụ đang Chủ thuê bao đi vắng hoặc Đã chấm dứt.\nLuồng chính: Tạo SR → chọn gói, câu lệnh giá → đơn hàng SPF thu tiền → cấu hình từ xa, phát hành hóa đơn → hợp đồng về Bình thường.\nLưu ý: Đơn NOT OK thì SR không thành công, hủy phiếu mua hàng nếu có.',
+    desc: 'Tổng quan: SR khôi phục dịch vụ (KPDV) trên tool SR.\nMục đích: Bật lại dịch vụ đang Chủ thuê bao đi vắng hoặc Đã chấm dứt.\nLuồng chính: Tạo SR → chọn gói, câu lệnh giá → đơn hàng SPF thu tiền → cấu hình từ xa, phát hành hóa đơn → hợp đồng về Bình thường.',
     nodes: [
       ['tao', 0, 1, 'Tạo SR khôi phục dịch vụ', 'Dịch vụ CTBĐV hoặc Đã chấm dứt HĐ', 'Hệ thống SR', 'A'],
       ['lh', 1.2, 1, 'Liên hệ, tư vấn KH', 'Không đồng ý → không thành công', 'Hệ thống SR', 'A', 'contract-sr'],
@@ -2326,7 +2325,7 @@ Object.assign(SUBJECT_FLOW, {
     ]
   },
   'sr-tltsd': {
-    desc: '⚠ Chỉ áp dụng cho đơn hàng CHƯA THANH TOÁN.\nMục đích: Hủy toàn phần đơn chưa thanh toán khi dịch vụ chưa active.\nLuồng chính: Tạo SR → tư vấn → CBQL duyệt thanh lý → SPF hủy dịch vụ, sản phẩm, phiếu thi công, khoản thu.\nLưu ý: Có dịch vụ đã active thì không hủy được.',
+    desc: '⚠ Chỉ áp dụng cho đơn hàng CHƯA THANH TOÁN.\nTổng quan: SR thanh lý trước sử dụng (TL TSD), tạo trên tool SR hoặc tự động từ SPF.\nMục đích: Hủy toàn phần đơn chưa thanh toán khi dịch vụ chưa active.\nLuồng chính: Tạo SR → tư vấn → CBQL duyệt thanh lý → SPF hủy dịch vụ, sản phẩm, phiếu thi công, khoản thu.',
     nodes: [
       ['tao', 0, 1, 'Tạo SR thanh lý trước SD', 'Chỉ đơn CHƯA thanh toán · theo mã đơn', 'Hệ thống SR', 'A', 'order-entity'],
       ['pc', 1.2, 1, 'Phân công tự động', 'NV bán → AU → rổ đơn vị', 'Hệ thống SR', 'A'],
@@ -2348,7 +2347,7 @@ Object.assign(SUBJECT_FLOW, {
     ]
   },
   'sr-fplock': {
-    desc: 'Mục đích: Khóa / mở khóa ứng dụng hoặc đăng ký dịch vụ FPT Play theo yêu cầu khách.\nLuồng chính: Tạo SR → chọn loại khóa / mở → biên bản tự ký → SR gọi FLI khóa / mở.\nLưu ý: Hợp đồng phải có FPT Play đang Bình thường.',
+    desc: 'Tổng quan: SR khóa ứng dụng FPT Play trên tool SR.\nMục đích: Khóa / mở khóa ứng dụng hoặc đăng ký dịch vụ FPT Play theo yêu cầu khách.\nLuồng chính: Tạo SR → chọn loại khóa / mở → biên bản tự ký → SR gọi FLI khóa / mở.',
     nodes: [
       ['tao', 0, 1, 'Tạo SR khóa ứng dụng', 'HĐ chưa chấm dứt · có FPT Play Bình thường', 'Hệ thống SR', 'A'],
       ['lh', 1.2, 1, 'Liên hệ, tư vấn KH', '3 lần không liên lạc được → dừng', 'Hệ thống SR', 'A', 'contract-sr'],
@@ -2360,7 +2359,7 @@ Object.assign(SUBJECT_FLOW, {
     edges: [['tao', 'lh', {}], ['lh', 'gd', {}], ['gd', 'bb', {}], ['bb', 'fl', {}], ['fl', 'xl', { c: 'done' }]]
   },
   'sr-pay': {
-    desc: 'Mục đích: Xử lý yêu cầu thanh toán: thu tại nhà, đổi ngày thanh toán, mở dịch vụ bị khóa, kích thanh toán, nộp tại quầy.\nLuồng chính: Tạo SR → tạo giao dịch → xử lý theo loại → thu tiền, gạch nợ → hợp đồng về Bình thường.\nLưu ý: Miễn phí gia hạn phải duyệt. Đã trả mà chưa ghi nhận thì đối soát (Merchant view, sổ phụ).',
+    desc: 'Tổng quan: SR thủ tục thanh toán trên tool SR.\nMục đích: Xử lý yêu cầu thanh toán: thu tại nhà, đổi ngày thanh toán, mở dịch vụ bị khóa, kích thanh toán, nộp tại quầy.\nLuồng chính: Tạo SR → tạo giao dịch → xử lý theo loại → thu tiền, gạch nợ → hợp đồng về Bình thường.',
     nodes: [
       ['tao', 0, 1.5, 'Tạo SR thủ tục thanh toán', 'Chọn loại yêu cầu theo tình trạng HĐ', 'Hệ thống SR', 'A'],
       ['gd', 1.2, 1.5, 'Tạo giao dịch', 'Chọn hóa đơn, khoản thu nợ · lịch hẹn TT', 'Hệ thống SR', 'A'],
@@ -2380,7 +2379,7 @@ Object.assign(SUBJECT_FLOW, {
     ]
   },
   'sr-refund': {
-    desc: 'Mục đích: Hoàn tiền cho khách, tạo từ SR cha (thanh lý, khiếu nại).\nLuồng chính: Chọn giao dịch cần hoàn, trừ cọc → chuyển khoản qua ePayment hoặc hoàn online qua HO.\nLưu ý: Chủ tài khoản khác chủ hợp đồng thì GĐCN duyệt. ePayment NOT OK quá 3 lần thì hoàn cọc.',
+    desc: 'Tổng quan: SR hoàn tiền trên tool SR, tạo từ SR cha.\nMục đích: Hoàn tiền cho khách (thanh lý, khiếu nại).\nLuồng chính: Chọn giao dịch cần hoàn, trừ cọc → chuyển khoản qua ePayment hoặc hoàn online qua HO.',
     nodes: [
       ['tao', 0, 1, 'Tạo SR hoàn tiền', 'Từ SR cha: thanh lý TSD / SSD, khiếu nại', 'Hệ thống SR', 'A', 'sr-tltsd'],
       ['gd', 1.2, 1, 'Xử lý giao dịch', 'Chọn giao dịch cần hoàn · âm cọc', 'Hệ thống SR', 'B', 'receipt'],
@@ -2413,7 +2412,7 @@ const FLOW_TABS = {
 FLOW_TABS['grp-sop'] = FLOW_TABS['ch-desktop'];
 /* W-Sale · tab 2 Swap: luồng tự lên đơn trên W-Sale (bảng mapping UC1–12, Bảng định nghĩa dịch vụ) + URD FPT Swap Modem Wifi 6 + TC v1.6 sheet Tự động tạo SR HTKT */
 const WSALE_SWAP = {
-  desc: 'Mục đích: Swap thiết bị cho khách đang có hợp đồng, lên đơn ngay trên W-Sale.\nLuồng chính: Tư vấn → Đồng ý → W-Sale gửi SPF tạo đơn → hẹn triển khai → phiếu thi công → bấm Hoàn tất giao dịch (tạo SR HTKT) → xuất hóa đơn.\nLưu ý: SR HTKT chạy kèm, không phải điều kiện xuất hóa đơn. Đơn có khoản thu.',
+  desc: 'Tổng quan: Swap trên W-Sale cho khách đang có hợp đồng.\nMục đích: Đổi thiết bị (Wifi 6, Box, Combo), lên đơn ngay trên W-Sale.\nLuồng chính: Tư vấn → Đồng ý → W-Sale gửi SPF tạo đơn → hẹn triển khai → phiếu thi công → bấm Hoàn tất giao dịch (tạo SR HTKT) → xuất hóa đơn.',
   nodes: [
     ['st', 0, 1, 'KHTN dịch vụ Swap', 'KH có HĐ đang hoạt động · thiết bị NET đủ điều kiện swap', 'Omnisell · Web W-Sale', 'st'],
     ['tv', 1, 1, 'Tư vấn Swap', 'Swap Wifi 6 / Box Only / Combo · tra CS giá, năng lực triển khai 7 ngày', 'Web W-Sale · CS giá', 'o', 'policy'],
@@ -2448,7 +2447,7 @@ const DKOL_UPG_HIFPT = (() => {
   const C = c => c, ch = 'App HiFPT';
   const ST = 'Tạo SR đứt gãy · Trạng thái SR: Chưa phân công (HĐ không có AU) / Chưa xử lý (đã phân công nhân sự)';
   return {
-    desc: 'Mục đích: Nâng cấp / mua thêm trên App HiFPT cho hợp đồng đang Bình thường.\nLuồng chính: Chọn hợp đồng, dịch vụ → lấy chính sách → chọn gói, PTTT → tạo đơn → nâng cấp: SR chuyển dịch vụ → hóa đơn → ký PLHĐ → active gói.\nLưu ý: COD chỉ khi chính sách có phiếu thi công. Khách bỏ dở quá 1 giờ: mua thêm sang Omnisell, nâng cấp tạo SR đứt gãy.',
+    desc: 'Tổng quan: Nâng cấp / mua thêm trên App HiFPT.\nMục đích: Khách tự nâng cấp gói hoặc mua thêm cho hợp đồng đang Bình thường.\nLuồng chính: Chọn hợp đồng, dịch vụ → lấy chính sách → chọn gói, PTTT → tạo đơn → nâng cấp: SR chuyển dịch vụ → hóa đơn → ký PLHĐ → active gói.',
     nodes: [
       ['st', 0, 1, 'Đăng nhập App HiFPT', 'KH hiện hữu · vào Nâng cấp / mua thêm', 'App HiFPT', 'st'],
       ['hd', C(1), 1, 'Có HĐ billing?', '', '', 'd'],
@@ -2486,7 +2485,7 @@ const DKOL_UPG_HIFPT = (() => {
 })();
 /* DKOL nâng cấp / mua thêm FPT.vn: CHỈ theo PRD FPT.vn OTP Nâng cấp/Bán thêm v1.2 (§5.2 Luồng 1, Luồng 2 · FR01–FR03). Không lấy URD Nâng cấp All kênh */
 const DKOL_UPG_FPTVN = {
-  desc: 'Mục đích: Nâng cấp / mua thêm trên FPT.vn.\nLuồng chính: fpt.vn/nang-cap: nhập SĐT, OTP → chọn hợp đồng → Checkout → tạo đơn. Link ZNS ưu đãi Camera: vào thẳng Checkout, không OTP, PTTT COD.\nLưu ý: Phiên 30 phút từ lúc xác thực OTP. PRD không mô tả xử lý sau khi tạo đơn.',
+  desc: 'Tổng quan: Nâng cấp / mua thêm trên FPT.vn.\nMục đích: Khách tự nâng cấp, mua thêm (kể cả link ZNS ưu đãi Camera).\nLuồng chính: fpt.vn/nang-cap: nhập SĐT, OTP → chọn hợp đồng → Checkout → tạo đơn. Link ZNS ưu đãi Camera: vào thẳng Checkout, không OTP, PTTT COD.',
   nodes: [
     ['st', 0, 1, 'Nhập SĐT · fpt.vn/nang-cap', 'Bấm Xác nhận · kiểm tra định dạng SĐT', 'fpt.vn', 'st'],
     ['otp', 1, 1, 'Xác thực OTP', 'OTP 6 số qua SMS · hiệu lực 5 phút · tối đa 5 lần gửi/ngày', 'fpt.vn · SMS', 'o'],
@@ -2530,7 +2529,7 @@ const DKOL_FULL = (def, from, lab) => {
 };
 /* PRD F-citizen v1.1 §B.II */
 const DKOL_FCITIZEN = {
-  desc: 'Mục đích: Trang bán mới ưu đãi cho CBNV FPT (fpt.vn/fcitizen).\nLuồng chính: Chọn gói → xác thực email CBNV bằng OTP → kiểm tra HĐLĐ chính thức, hợp đồng Internet đang có → chọn PTTT → luồng bán mới chung.\nLưu ý: Không đạt điều kiện thì tạo KHTN cho ECOM hoặc SR Tư vấn giải đáp.',
+  desc: 'Tổng quan: Trang F-citizen trên FPT.vn (fpt.vn/fcitizen).\nMục đích: Bán mới ưu đãi cho CBNV FPT.\nLuồng chính: Chọn gói → xác thực email CBNV bằng OTP → kiểm tra HĐLĐ chính thức, hợp đồng Internet đang có → chọn PTTT → luồng bán mới chung.',
   nodes: [
     ['f0', 0, 0, 'fpt.vn/fcitizen', 'Gói ưu đãi CBNV FPT · bấm Đăng ký ngay', 'fpt.vn', 'st'],
     ['f1', 1, 0, 'Xác thực CBNV', 'Chọn công ty, nhập email → OTP 6 số gửi email', 'Selfservice', 'o'],
@@ -2550,7 +2549,7 @@ const DKOL_FCITIZEN = {
 };
 /* Testcase CL_BCA (Self Service v2.5 sprint 1): Landing page, Combo, Triple */
 const DKOL_CAND = {
-  desc: 'Mục đích: Trang bán mới ưu đãi cho cán bộ, chiến sĩ Công an (fpt.vn/vip).\nLuồng chính: Nhập mã khuyến mãi → chọn gói Combo / Triple → nhập thông tin → chọn PTTT → luồng bán mới chung.',
+  desc: 'Tổng quan: Trang Tri ân CAND trên FPT.vn (fpt.vn/vip).\nMục đích: Bán mới ưu đãi cho cán bộ, chiến sĩ Công an.\nLuồng chính: Nhập mã khuyến mãi → chọn gói Combo / Triple → nhập thông tin → chọn PTTT → luồng bán mới chung.',
   nodes: [
     ['c0', 0, 0, 'fpt.vn/vip · Tri ân CAND', 'Popup chào mừng · nhập mã khuyến mãi', 'fpt.vn', 'st'],
     ['c1', 1, 0, 'Landing ưu đãi CAND', 'Banner, ưu đãi dành riêng cán bộ chiến sĩ Công an', 'fpt.vn', 'o'],
@@ -2561,7 +2560,7 @@ const DKOL_CAND = {
 };
 /* PRD shop.fpt.vn AM v2.0 §5.2 · PRD Cập nhật đơn AM bằng Code v2.4 §5.2 */
 const DKOL_AM = {
-  desc: 'Mục đích: Luồng bán của chương trình Affiliate Marketing.\nLuồng chính: Vào qua link Sale AM hoặc khách vãng lai → chọn gói, kiểm tra chính sách tại địa chỉ → cấu hình đơn, tự áp voucher → chọn PTTT → tạo đơn.\nLưu ý: Đổi thông tin đơn chưa thanh toán: Sale hủy đơn, gửi link AM mới, đơn mới gắn lại hợp đồng cũ.',
+  desc: 'Tổng quan: Luồng Affiliate Marketing (AM) trên FPT.vn.\nMục đích: Bán qua link Sale AM hoặc cho khách vãng lai.\nLuồng chính: Vào qua link Sale AM hoặc khách vãng lai → chọn gói, kiểm tra chính sách tại địa chỉ → cấu hình đơn, tự áp voucher → chọn PTTT → tạo đơn.',
   nodes: [
     ['a0', 0, 0, 'Link Sale AM', 'Link Sale AM: bộ gói Sales cấu hình · vãng lai: 9 gói chung', 'AM SOP', 'st'],
     ['a1', 1, 0, 'Thông tin & chính sách', 'Nhập địa chỉ lắp đặt, kiểm tra chính sách tại địa chỉ', 'Shop · Selfservice', 'o'],
@@ -2589,7 +2588,7 @@ const DKOL_DROP = (f, ids, endDesc) => {
   nodes = nodes.map(n => n[0] in row ? [n[0], n[1], row[n[0]], ...n.slice(3)] : n);
   return {
     ...f,
-    desc: f.desc.includes('\nLưu ý: ') ? f.desc + ' ' + endDesc : f.desc + '\nLưu ý: ' + endDesc,
+    desc: f.desc,
     nodes,
     edges: f.edges.filter(e => !drop.has(e[0]) && !drop.has(e[1]))
   };
@@ -2800,13 +2799,13 @@ function drawLegend(def, ES) {
 }
 /* Popup: ô kênh → sơ đồ luồng bán hàng; ô khác → sơ đồ liên kết của chủ thể. Có nút Quay lại theo lịch sử trong popup */
 let FCM_ID = null, FCM_BACK = null, FCM_HIST = [];
-/* Mô tả popup: nhiều dòng "Mục đích: … / Luồng chính: … / Lưu ý: …" thì hiện từng dòng, nhãn in đậm */
+/* Mô tả popup: nhiều dòng "Tổng quan: … / Mục đích: … / Luồng chính: …" thì hiện từng dòng, nhãn in đậm */
 function setDesc(box, text) {
   box.replaceChildren();
   const lines = String(text || '').split('\n').filter(Boolean);
-  if (lines.length < 2 && !/^(Mục đích|Luồng chính|Lưu ý):/.test(lines[0] || '')) { box.textContent = text || ''; return; }
+  if (lines.length < 2 && !/^(Tổng quan|Mục đích|Luồng chính):/.test(lines[0] || '')) { box.textContent = text || ''; return; }
   lines.forEach(l => {
-    const m = /^(Mục đích|Luồng chính|Lưu ý):\s*(.*)$/.exec(l), row = el('div', 'desc-row' + (m ? '' : ' desc-warn'));
+    const m = /^(Tổng quan|Mục đích|Luồng chính):\s*(.*)$/.exec(l), row = el('div', 'desc-row' + (m ? '' : ' desc-warn'));
     if (m) { row.append(el('b', null, m[1] + ': '), m[2]); } else row.textContent = l;
     box.append(row);
   });
