@@ -3520,7 +3520,7 @@ function buildFlow() {
     const item = (draw, label) => { draw(x); g.append(sv('text', { x: x + 34, y: y + 4 }, label)); x += 34 + label.length * 6.6 + 26; };
     item(x0 => g.append(sv('line', { class: 'lg-main', x1: x0, y1: y, x2: x0 + 26, y2: y })), 'Luồng chính của đơn (nét liền, đậm)');
     item(x0 => g.append(sv('line', { class: 'lg-sub', x1: x0, y1: y, x2: x0 + 26, y2: y })), 'Liên kết phụ (nét chấm)');
-    item(x0 => g.append(sv('line', { class: 'lg-back', x1: x0, y1: y, x2: x0 + 26, y2: y })), 'Dữ liệu ngược chiều: Quản lý vật tư → QLCS');
+    item(x0 => g.append(sv('line', { class: 'lg-back', x1: x0, y1: y, x2: x0 + 26, y2: y })), 'Dữ liệu ngược chiều');
     item(x0 => g.append(sv('rect', { class: 'lg-minor', x: x0 + 3, y: y - 8, width: 20, height: 16, rx: 4 })), 'Ô nhạt: chủ thể phụ');
     g.append(sv('text', { class: 'lg-tip', x: 1428, y: y + 4, 'text-anchor': 'end' }, 'Rê chuột vào ô để xem chữ trên đường nối · bấm ô để mở chi tiết'));
     svg.append(g); }
