@@ -17,7 +17,7 @@ Chỉ đọc file cần cho task, không đọc cả 3 file mindmap HTML (rất 
 |---|---|
 | `nghiep-vu/<NN-CHU-THE>/` | 1 chủ thể = `input/` (nguồn + `README.md` liệt kê nguồn) + `quy-trinh-nghiep-vu.md` |
 | `nghiep-vu/01-DON-HANG/kenh-ban/` | Ngoại lệ: không có `input/` chung; `00-CHUNG.md` + 1 thư mục/kênh `<KÊNH>/<KÊNH>.md` + `input/` riêng. Desktop + Mobile chung `SOP/` |
-| `nghiep-vu/05-PHIEU-TRIEN-KHAI/` | 3 thư mục con theo loại triển khai (thi công / giao tại quầy / vendor), mỗi con có `input/` + `quy-trinh-nghiep-vu.md` |
+| `nghiep-vu/05-GIAO-LAP-DAT/` | 3 thư mục con theo loại triển khai (thi công / giao tại quầy / vendor), mỗi con có `input/` + `quy-trinh-nghiep-vu.md` |
 | `mindmap-don-hang-v2.html` | Mindmap bản chính (popup kênh bán, nút 📄 Tài liệu hiện `quy-trinh-nghiep-vu.md`) |
 | `mindmap-don-hang.html` | Mindmap v1 (vẫn được nhúng docs) |
 | `mindmap-don-hang-lite.html` | Bản rút gọn (owner, nơi thao tác) — **không** nhúng docs, sửa tay |

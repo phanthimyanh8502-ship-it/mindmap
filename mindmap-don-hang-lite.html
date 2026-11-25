@@ -506,12 +506,12 @@ summary > .sub { display: block; flex-basis: 100%; width: 100%; font-size: 12px;
 <div class="wrap">
   <header>
     <h1>Mindmap Đơn hàng</h1>
-    <p class="sub">Đơn hàng đến từ nhiều kênh bán. Mỗi đơn sinh ra <b>Hợp đồng</b>, <b>Khoản thu</b>, <b>Phiếu triển khai</b> (kèm biên bản điện tử). Tín hiệu thanh toán và giao hàng hoàn tất đẩy về INVOICE để xuất hóa đơn, rồi gạch nợ và hậu kỳ.</p>
+    <p class="sub">Đơn hàng đến từ nhiều kênh bán. Mỗi đơn sinh ra <b>Hợp đồng</b>, <b>Khoản thu</b>, <b>Giao & lắp đặt</b> (kèm biên bản điện tử). Tín hiệu thanh toán và giao hàng hoàn tất đẩy về INVOICE để xuất hóa đơn, rồi gạch nợ và hậu kỳ.</p>
   </header>
 
   <h2>Sơ đồ liên kết</h2>
   <p class="hint">Rê chuột hoặc bấm vào ô để xem <b>Owner</b> và <b>Nơi thao tác</b>. Bấm vào nơi thao tác để mở link, bấm biểu tượng copy để sao chép link.</p>
-  <div class="panel flow"><svg id="flow" viewBox="0 60 1440 556" role="img" aria-label="Sơ đồ liên kết: kênh bán tạo Đơn hàng; Đơn hàng sinh Hợp đồng, Khoản thu, Phiếu triển khai, Biên bản điện tử; tín hiệu về Xuất hóa đơn; sau đó gạch nợ, hậu kỳ và phân bổ doanh thu"></svg></div>
+  <div class="panel flow"><svg id="flow" viewBox="0 60 1440 556" role="img" aria-label="Sơ đồ liên kết: kênh bán tạo Đơn hàng; Đơn hàng sinh Hợp đồng, Khoản thu, Giao & lắp đặt, Biên bản điện tử; tín hiệu về Xuất hóa đơn; sau đó gạch nợ, hậu kỳ và phân bổ doanh thu"></svg></div>
 </div>
 
 <div class="icard" id="icard" hidden role="dialog" aria-labelledby="icTitle">
@@ -625,7 +625,7 @@ const FN = [
   { id: 'cancel',   x: 296,  y: 470, col: 9, t: 'Hủy đơn hàng',       s: 'Hủy PTC, khoản thu · Đã hủy', minor: 1 },
   { id: 'contract', x: 606,  y: 100, col: 3, t: 'Hợp đồng',           s: 'Khách hàng · dịch vụ · trạng thái' },
   { id: 'receipt',  x: 606,  y: 215, col: 4, t: 'Khoản thu',          s: 'Theo PTTT · TMĐT/VNTT: không' },
-  { id: 'deploy',   x: 606,  y: 330, col: 5, t: 'Phiếu triển khai · 3', s: 'Thi công · tại quầy · Vendor' },
+  { id: 'deploy',   x: 606,  y: 330, col: 5, t: 'Giao & lắp đặt · 3', s: 'Thi công · tại quầy · Vendor' },
   { id: 'minutes',  x: 606,  y: 445, col: 13, t: 'Biên bản điện tử',   s: 'Ký xong → kích hoạt FPT Play' },
   { id: 'invoice',  x: 916,  y: 215, col: 7, t: 'Xuất hóa đơn',       s: 'Billing · DV, TB độc lập' },
   { id: 'revenue',  x: 1196, y: 100, col: 14, t: 'Phân bổ doanh thu',  s: 'Từ ngày active · chưa active treo' },
