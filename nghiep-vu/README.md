@@ -4,10 +4,10 @@ Mỗi thư mục là 1 chủ thể của mindmap, gồm 2 thành phần:
 
 | Thành phần | Nội dung |
 |---|---|
-| `input/` | Tài liệu đầu vào: file gốc (URD, PRD, Excel) nếu có, và `README.md` liệt kê mọi nguồn (gồm cả thông tin bạn cung cấp theo ngày) |
+| `input/` | Tài liệu đầu vào: file gốc (URD, PRD, Excel) nếu có, và `README.md` liệt kê mọi nguồn (gồm cả thông tin QC cung cấp theo ngày) |
 | `quy-trinh-nghiep-vu.md` | Quy trình nghiệp vụ / rule của chủ thể. Mindmap v2 hiện file này ở nút **📄 Tài liệu** trong popup chủ thể |
 
-Riêng **Đơn hàng** (`01-DON-HANG`) **không có `input/` chung** (nguồn chung ghi ngay trong `quy-trinh-nghiep-vu.md`), thay bằng thư mục `kenh-ban/`: rule chung mọi kênh (`00-CHUNG.md`) và 1 thư mục / kênh bán (`kenh-ban/<KÊNH>/` gồm `<KÊNH>.md` + `input/` riêng, không dùng chung; Desktop + Mobile chung thư mục `SOP/`), vì kênh bán là nơi tạo đơn. **Giao & lắp đặt** (`05`) tách 3 thư mục con theo loại triển khai, mỗi thư mục cũng có `input/` + `quy-trinh-nghiep-vu.md`.
+Riêng **Đơn hàng** (`01-DON-HANG`): `input/README.md` chỉ chứa nội dung nút 📄 Tài liệu (tool, thao tác, nghiệp vụ chính), không chứa file gốc (nguồn chung ghi ngay trong `quy-trinh-nghiep-vu.md`), thay bằng thư mục `kenh-ban/`: rule chung mọi kênh (`00-CHUNG.md`) và 1 thư mục / kênh bán (`kenh-ban/<KÊNH>/` gồm `<KÊNH>.md` + `input/` riêng, không dùng chung; Desktop + Mobile chung thư mục `SOP/`), vì kênh bán là nơi tạo đơn. **Giao & lắp đặt** (`05`) tách 3 thư mục con theo loại triển khai, mỗi thư mục cũng có `input/` + `quy-trinh-nghiep-vu.md`.
 
 | Thư mục | Chủ thể | File gốc trong `input/` |
 |---|---|---|
@@ -24,6 +24,7 @@ Riêng **Đơn hàng** (`01-DON-HANG`) **không có `input/` chung** (nguồn ch
 | `11-QUAN-LY-VAT-TU-QUAY` | Tool Quản lý vật tư quầy | — |
 | `12-TOOL-SCM` | Tool SCM | — |
 | `13-PHAN-BO-DOANH-THU` | Phân bổ doanh thu | `Phan_bo_doanh_thu_v1_0_PRD_v1_1.docx` |
+| `14-SR` | SR (Service Request) — luồng chung ở thư mục cha; 9 thư mục con `01`…`09`, mỗi loại SR 1 tài liệu (`quy-trinh-nghiep-vu.md` + `input/README.md`). Trên mindmap: Hợp đồng › Cập nhật hợp đồng › Tool SR; SR thanh lý trước sử dụng ở Hủy đơn hàng | 9 URD SR, để chung ở `14-SR/input/` |
 
 Mỗi file gốc chỉ để ở 1 chủ thể; chủ thể khác dùng chung thì `input/README.md` trỏ tới. Riêng kênh bán: mỗi kênh giữ bản riêng trong `input/` của kênh; Desktop + Mobile gom chung thư mục `kenh-ban/SOP/` (1 `input/`).
 
