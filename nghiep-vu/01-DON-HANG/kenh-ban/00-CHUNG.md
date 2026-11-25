@@ -43,7 +43,7 @@ Thiết bị có nhiều hình thức triển khai tùy theo chính sách khai b
 |---|---|
 | Không, Quầy, Sale | **Tool quầy** |
 | NCC-Samsung, NCC-Casper | **M-Vendor** |
-| TIN/PNC | **Phiếu triển khai** |
+| TIN/PNC | **Giao & lắp đặt** |
 
 ### 2.1 Dịch vụ nào triển khai theo hình thức nào (theo qc-iia)
 
@@ -103,13 +103,13 @@ Liên quan xuất hóa đơn (`RULE-XHD.md`): hợp đồng tạm ngưng / đã 
 
 ## 4. Thanh toán & khoản thu (chung)
 
-### 4.0 Khi nào sinh khoản thu, phiếu triển khai, BBĐT (tổng hợp)
+### 4.0 Khi nào sinh khoản thu, giao & lắp đặt, BBĐT (tổng hợp)
 
 > Tổng hợp từ §4.1, §4.2, §4.4 và rule từng kênh. BBĐT là **thực thể riêng**, không phụ thuộc phiếu thi công.
 >
 > **Loại BBĐT** (nguồn: user cung cấp 11/11/2026): **Không auto ký** (phải ký trên SPF Web admin) → Internet, FPT Camera B2B, FPT Camera Combo, Tổng đài Oncall, Ultra Fast, FPT Play · **Auto ký** → các dịch vụ còn lại: FPT Camera Only, FPT Play Stands Alone, Sản phẩm khác, FPT Smart Home, Ultra Fast Stand Alone, FPro, FSafe Go, VioEdu Stand Alone, VIP 247, SIM data, Pay Wifi, HyperFast, FPT AI Wi-Fi · Vendor → tự động ký · Shopee/TikTok → có BBĐT, gen sau khi tạo đơn thành công; loại BBĐT (auto ký / ký tay) theo dịch vụ như mọi kênh (user xác nhận 19/11/2026).
 
-| Trường hợp | Áp dụng | Khoản thu | Phiếu triển khai | BBĐT |
+| Trường hợp | Áp dụng | Khoản thu | Giao & lắp đặt | BBĐT |
 |---|---|---|---|---|
 | 1. Cả 3 cùng lúc | PTTT = Thanh toán khi triển khai (mọi kênh có khoản thu) | Sau khi tạo đơn, Chưa thanh toán | **Phiếu thi công:** sau khi tạo đơn (không chờ thanh toán) | Sau khi tạo đơn |
 | 2. Khoản thu trước | Desktop / Mobile, PTTT Online | **Sau khi bấm Tạo hợp đồng** (user xác nhận 19/11/2026), Chưa thanh toán | Sau khi KH thanh toán khoản thu | **Sau khi bấm Tạo hợp đồng**, cùng lúc khoản thu (chưa thanh toán đã có BBĐT — user xác nhận 19/11/2026) |
@@ -270,14 +270,14 @@ Có 3 cách:
 
 > Nguồn: thông tin user cung cấp ngày 04/11/2026.
 
-**Luồng vật tư:** Kho SCM ⇒ (tạm ứng) ⇒ Tool vật tư ⇒ (load vật tư) ⇒ Phiếu triển khai.
+**Luồng vật tư:** Kho SCM ⇒ (tạm ứng) ⇒ Tool vật tư ⇒ (load vật tư) ⇒ Giao & lắp đặt.
 
 1. Tool vật tư **đề nghị tạm ứng**.
 2. Tool **kho SCM** (https://ftelscm-uat.fpt.net — **cần host**):
    - **Quản lý kho › Nhập kho › Tạo phiếu nhập** hàng hóa (kho **KTN test MAC**).
    - **Quản lý kho › Xác nhận tạm ứng từ Inside**.
 3. Vật tư được tạm ứng về tool vật tư.
-4. Phiếu triển khai **load vật tư** từ tool vật tư.
+4. Giao & lắp đặt **load vật tư** từ tool vật tư.
 
 | Tool vật tư | Phiếu load vật tư từ tool này |
 |---|---|

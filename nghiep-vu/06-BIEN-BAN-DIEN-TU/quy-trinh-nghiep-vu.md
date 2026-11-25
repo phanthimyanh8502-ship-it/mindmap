@@ -5,13 +5,13 @@
 
 ---
 
-### 4.0 Khi nào sinh khoản thu, phiếu triển khai, BBĐT (tổng hợp)
+### 4.0 Khi nào sinh khoản thu, giao & lắp đặt, BBĐT (tổng hợp)
 
 > Tổng hợp từ §4.1, §4.2, §4.4 và rule từng kênh. BBĐT là **thực thể riêng**, không phụ thuộc phiếu thi công.
 >
 > **Loại BBĐT** (nguồn: user cung cấp 11/11/2026): **Không auto ký** (phải ký trên SPF Web admin) → Internet, FPT Camera B2B, FPT Camera Combo, Tổng đài Oncall, Ultra Fast, FPT Play · **Auto ký** → các dịch vụ còn lại: FPT Camera Only, FPT Play Stands Alone, Sản phẩm khác, FPT Smart Home, Ultra Fast Stand Alone, FPro, FSafe Go, VioEdu Stand Alone, VIP 247, SIM data, Pay Wifi, HyperFast, FPT AI Wi-Fi · Vendor → tự động ký · Shopee/TikTok → có BBĐT, gen sau khi tạo đơn thành công; loại BBĐT (auto ký / ký tay) theo dịch vụ như mọi kênh (user xác nhận 19/11/2026).
 
-| Trường hợp | Áp dụng | Khoản thu | Phiếu triển khai | BBĐT |
+| Trường hợp | Áp dụng | Khoản thu | Giao & lắp đặt | BBĐT |
 |---|---|---|---|---|
 | 1. Cả 3 cùng lúc | PTTT = Thanh toán khi triển khai (mọi kênh có khoản thu) | Sau khi tạo đơn, Chưa thanh toán | **Phiếu thi công:** sau khi tạo đơn (không chờ thanh toán) | Sau khi tạo đơn |
 | 2. Khoản thu trước | Desktop / Mobile, PTTT Online | **Sau khi bấm Tạo hợp đồng** (user xác nhận 19/11/2026), Chưa thanh toán | Sau khi KH thanh toán khoản thu | **Sau khi bấm Tạo hợp đồng**, cùng lúc khoản thu (chưa thanh toán đã có BBĐT — user xác nhận 19/11/2026) |

@@ -58,7 +58,7 @@ Tổng hợp từ việc đọc các tài liệu `input/`. **Phạm vi: chỉ wo
 ### Khác (từ rule hiện có)
 | # | Câu hỏi |
 |---|---|
-| B8 | 🟡 Bạn: **chưa có thông tin** (19/11/2026) — mindmap giữ "Chưa rõ" · (hỏi: VNTT có phiếu triển khai và BBĐT không?) |
+| B8 | 🟡 Bạn: **chưa có thông tin** (19/11/2026) — mindmap giữ "Chưa rõ" · (hỏi: VNTT có giao & lắp đặt và BBĐT không?) |
 
 ### Mới sau khi đọc input cập nhật
 | # | Câu hỏi |

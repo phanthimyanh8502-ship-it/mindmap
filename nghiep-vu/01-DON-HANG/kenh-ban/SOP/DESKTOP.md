@@ -45,7 +45,7 @@ Bán thêm **không qua báo giá**.
 7. Cập nhật đơn hàng (nếu có)
 8. Nhấn **Gen BBĐT/PLHD** ⇒ gen xong mới có **khoản thu** và **BBĐT**
 
-Phiếu triển khai của đơn bán thêm (theo PTTT — user cung cấp 20/11/2026):
+Giao & lắp đặt của đơn bán thêm (theo PTTT — user cung cấp 20/11/2026):
 - **Thanh toán khi triển khai:** Gen BBĐT/PLHD xong **luôn có phiếu thi công**, không chờ ký BBĐT hay thanh toán.
 - **Online:** **ký BBĐT** ⇒ khách **thanh toán** xong ⇒ mới gen phiếu theo hình thức triển khai.
 - Phần sau (hoàn tất phiếu, hóa đơn, gạch nợ theo cọc, add tiền trả trước) **giống bán mới**.

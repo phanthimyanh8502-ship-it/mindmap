@@ -1,6 +1,6 @@
 # RULE CHỦ THỂ — ĐƠN HÀNG
 
-> Xem đơn hàng sau khi tạo, thời điểm sinh khoản thu / phiếu triển khai / BBĐT, các kênh tạo đơn.
+> Xem đơn hàng sau khi tạo, thời điểm sinh khoản thu / giao & lắp đặt / BBĐT, các kênh tạo đơn.
 > Tách từ `../01-DON-HANG/kenh-ban/00-CHUNG.md`; số mục (§) giữ theo file gốc.
 
 Rule riêng từng kênh tạo đơn: thư mục [`kenh-ban/`](kenh-ban/) ngay trong chủ thể này (rule chung `kenh-ban/00-CHUNG.md` + 1 file / kênh), mục lục ở [`RULE-CHINH-SACH-KENH-BAN.md`](../../RULE-CHINH-SACH-KENH-BAN.md).
@@ -10,7 +10,7 @@ Rule riêng từng kênh tạo đơn: thư mục [`kenh-ban/`](kenh-ban/) ngay t
 ## 3. Sau khi tạo đơn hàng (mọi kênh)
 
 - **Xem thông tin đơn hàng:** vào **SPF Web admin** — http://saleplatform-stag.fpt.net/web-admin/Account/Login (nguồn: user cung cấp 04/11/2026).
-- Tạo đơn hàng xong sẽ có **thông tin hợp đồng**. Riêng **SOP (Desktop, Mobile)**: **bán mới** tạo báo giá xong mới có đơn hàng, phải bấm **Tạo hợp đồng** mới có hợp đồng (xem mục Báo giá SOP bên dưới). **Bán thêm** không qua báo giá: chọn dịch vụ → màn Tạo đơn (có sẵn số hợp đồng) → nhấn **Tạo đơn hàng** ⇒ sang màn Chi tiết đơn hàng, cập nhật đơn nếu có → nhấn **Gen BBĐT/PLHD** ⇒ gen xong mới có **khoản thu** và **BBĐT**; phiếu triển khai theo PTTT: **Thanh toán khi triển khai** ⇒ Gen xong **luôn có phiếu thi công**, **Online** ⇒ **ký BBĐT** ⇒ **thanh toán xong** ⇒ mới gen phiếu; phần sau giống bán mới (nguồn: user cung cấp 20/11/2026).
+- Tạo đơn hàng xong sẽ có **thông tin hợp đồng**. Riêng **SOP (Desktop, Mobile)**: **bán mới** tạo báo giá xong mới có đơn hàng, phải bấm **Tạo hợp đồng** mới có hợp đồng (xem mục Báo giá SOP bên dưới). **Bán thêm** không qua báo giá: chọn dịch vụ → màn Tạo đơn (có sẵn số hợp đồng) → nhấn **Tạo đơn hàng** ⇒ sang màn Chi tiết đơn hàng, cập nhật đơn nếu có → nhấn **Gen BBĐT/PLHD** ⇒ gen xong mới có **khoản thu** và **BBĐT**; giao & lắp đặt theo PTTT: **Thanh toán khi triển khai** ⇒ Gen xong **luôn có phiếu thi công**, **Online** ⇒ **ký BBĐT** ⇒ **thanh toán xong** ⇒ mới gen phiếu; phần sau giống bán mới (nguồn: user cung cấp 20/11/2026).
 - Kiểm tra thông tin hợp đồng ở **tool Tình trạng** trên **Inside** (vd: hợp đồng con có thông tin hợp đồng cha cũng xem ở đây).
 - Hợp đồng được dùng khi xuất hóa đơn: thông tin khách, hiệu lực hợp đồng, chi nhánh quản lý, mã tỉnh theo địa chỉ hợp đồng; các loại hợp đồng tổ chức / con / SST / nghiệp vụ có rule riêng (xem `RULE-XHD.md` §4, §6, §7).
 
@@ -33,13 +33,13 @@ Rule riêng từng kênh tạo đơn: thư mục [`kenh-ban/`](kenh-ban/) ngay t
 
 ---
 
-### 4.0 Khi nào sinh khoản thu, phiếu triển khai, BBĐT (tổng hợp)
+### 4.0 Khi nào sinh khoản thu, giao & lắp đặt, BBĐT (tổng hợp)
 
 > Tổng hợp từ §4.1, §4.2, §4.4 và rule từng kênh. BBĐT là **thực thể riêng**, không phụ thuộc phiếu thi công.
 >
 > **Loại BBĐT** (nguồn: user cung cấp 11/11/2026): **Không auto ký** (phải ký trên SPF Web admin) → Internet, FPT Camera B2B, FPT Camera Combo, Tổng đài Oncall, Ultra Fast, FPT Play · **Auto ký** → các dịch vụ còn lại: FPT Camera Only, FPT Play Stands Alone, Sản phẩm khác, FPT Smart Home, Ultra Fast Stand Alone, FPro, FSafe Go, VioEdu Stand Alone, VIP 247, SIM data, Pay Wifi, HyperFast, FPT AI Wi-Fi · Vendor → tự động ký · Shopee/TikTok → có BBĐT, gen sau khi tạo đơn thành công; loại BBĐT (auto ký / ký tay) theo dịch vụ như mọi kênh (user xác nhận 19/11/2026).
 
-| Trường hợp | Áp dụng | Khoản thu | Phiếu triển khai | BBĐT |
+| Trường hợp | Áp dụng | Khoản thu | Giao & lắp đặt | BBĐT |
 |---|---|---|---|---|
 | 1. Cả 3 cùng lúc | PTTT = Thanh toán khi triển khai (mọi kênh có khoản thu) | Sau khi tạo đơn, Chưa thanh toán | **Phiếu thi công:** sau khi tạo đơn (không chờ thanh toán) | Sau khi tạo đơn |
 | 2. Khoản thu trước | Desktop / Mobile, PTTT Online | **Sau khi bấm Tạo hợp đồng** (user xác nhận 19/11/2026), Chưa thanh toán | Sau khi KH thanh toán khoản thu | **Sau khi bấm Tạo hợp đồng**, cùng lúc khoản thu (chưa thanh toán đã có BBĐT — user xác nhận 19/11/2026) |

@@ -3,7 +3,7 @@
 Chạy lại mỗi khi sửa quy-trinh-nghiep-vu.md:  python3 scripts/embed-docs.py"""
 import json, pathlib, re
 root = pathlib.Path(__file__).resolve().parent.parent
-# Khóa = đường dẫn thư mục trong nghiep-vu/ (vd 05-PHIEU-TRIEN-KHAI/01-PHIEU-THI-CONG)
+# Khóa = đường dẫn thư mục trong nghiep-vu/ (vd 05-GIAO-LAP-DAT/01-PHIEU-THI-CONG)
 ct = root / 'nghiep-vu'
 docs = {p.parent.relative_to(ct).as_posix(): p.read_text(encoding='utf-8') for p in sorted(ct.rglob('quy-trinh-nghiep-vu.md'))}
 payload = json.dumps(docs, ensure_ascii=False).replace('</', '<\\/')

@@ -1,6 +1,6 @@
-# RULE CHỦ THỂ — PHIẾU TRIỂN KHAI
+# RULE CHỦ THỂ — GIAO & LẮP ĐẶT
 
-> Tổng quan phiếu triển khai: các loại phiếu, quy tắc chung, tín hiệu sang xuất hóa đơn. Viết lại theo góc nhìn BA ngày 19/11/2026.
+> Tổng quan giao & lắp đặt: các loại phiếu, quy tắc chung, tín hiệu sang xuất hóa đơn. Viết lại theo góc nhìn BA ngày 19/11/2026.
 > Nguồn: [`input/`](input/README.md) (List HT triển khai, URD Xuất hóa đơn REQ-XHD-043, thông tin bạn cung cấp 04/11 và 17/11/2026).
 
 **Mỗi loại triển khai 1 thư mục** (mỗi thư mục có `input/` và `quy-trinh-nghiep-vu.md` riêng):
@@ -15,7 +15,7 @@
 
 ## 1. Phạm vi và các loại phiếu
 
-Phiếu triển khai là đầu ra của đơn hàng cho phần **thiết bị**. Loại phiếu phụ thuộc **hình thức triển khai** khai báo trên chính sách bán hàng (Tool BP). Hoàn tất phiếu sinh **tín hiệu giao hàng hoàn tất** để INVOICE xuất hóa đơn thiết bị.
+Giao & lắp đặt là đầu ra của đơn hàng cho phần **thiết bị**. Loại phiếu phụ thuộc **hình thức triển khai** khai báo trên chính sách bán hàng (Tool BP). Hoàn tất phiếu sinh **tín hiệu giao hàng hoàn tất** để INVOICE xuất hóa đơn thiết bị.
 
 | Hình thức triển khai | Áp dụng cho | Loại phiếu | Tool xử lý | Người xử lý | Gửi tín hiệu hoàn tất |
 |---|---|---|---|---|---|

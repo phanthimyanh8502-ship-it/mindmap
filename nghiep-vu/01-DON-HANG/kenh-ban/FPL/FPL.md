@@ -23,7 +23,7 @@
 Chỉ nhóm 5 — FPT Play Stands Alone — `RULE-XHD.md` §1.1.
 
 ## Hình thức triển khai
-Kênh FPL **không có hình thức triển khai** ⇒ không có phiếu triển khai; **BBĐT auto ký** (nguồn: user cung cấp 04/11/2026).
+Kênh FPL **không có hình thức triển khai** ⇒ không cần giao & lắp đặt; **BBĐT auto ký** (nguồn: user cung cấp 04/11/2026).
 
 ## Thanh toán & khoản thu (nguồn: user cung cấp 17/11/2026)
 1. Khách **thanh toán khi đăng ký** trên web FPL.

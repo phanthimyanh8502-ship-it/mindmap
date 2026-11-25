@@ -64,7 +64,7 @@ Bán mới 2 nơi giống nhau. Nâng cấp mỗi nơi theo nguồn riêng: **Hi
 - **TIN/PNC (phiếu thi công):** dịch vụ cần triển khai, kích hoạt tại địa chỉ đăng ký. Phiếu thi công **không phải** dịch vụ Camera (nguồn: user cung cấp 17/11/2026).
 - **Camera:** **Quầy** (có chính sách shipper giao hàng).
 - **TV:** đang đẩy qua **Vendor**.
-- **Ultra Fast SA, FPT Play SA, HyperFast SA:** **không có phiếu triển khai**, **BBĐT auto ký**.
+- **Ultra Fast SA, FPT Play SA, HyperFast SA:** **không cần giao & lắp đặt**, **BBĐT auto ký**.
 
 Cách hoàn tất phiếu: [00-CHUNG.md §5](../00-CHUNG.md#5-cách-hoàn-tất-phiếu-giao-hàng--triển-khai-stg).
 

@@ -21,7 +21,7 @@ Giống Desktop (19 dịch vụ) — xem [DESKTOP.md](DESKTOP.md#dịch-vụ-19)
 Chọn + ở bán mới → tìm địa chỉ → xác nhận → đối tượng KH → dịch vụ → chi tiết giỏ hàng → cập nhật thông tin KH → tạo báo giá → tạo hợp đồng → cập nhật HĐ nếu muốn.
 
 ### Bán thêm (giống Desktop)
-Chọn + ở bán thêm → tìm HĐ → icon + → dịch vụ → màn hình Tạo đơn (có số hợp đồng) → nhấn **Tạo đơn hàng** ⇒ sang màn Chi tiết đơn hàng → cập nhật đơn hàng (nếu có) → nhấn **Gen BBĐT/PLHD** ⇒ gen xong mới có khoản thu và BBĐT. Phiếu triển khai: PTTT Thanh toán khi triển khai ⇒ Gen xong luôn có phiếu thi công; PTTT Online ⇒ ký BBĐT ⇒ thanh toán xong ⇒ mới gen phiếu. Phần sau giống bán mới. Không qua báo giá (nguồn: user cung cấp 20/11/2026).
+Chọn + ở bán thêm → tìm HĐ → icon + → dịch vụ → màn hình Tạo đơn (có số hợp đồng) → nhấn **Tạo đơn hàng** ⇒ sang màn Chi tiết đơn hàng → cập nhật đơn hàng (nếu có) → nhấn **Gen BBĐT/PLHD** ⇒ gen xong mới có khoản thu và BBĐT. Giao & lắp đặt: PTTT Thanh toán khi triển khai ⇒ Gen xong luôn có phiếu thi công; PTTT Online ⇒ ký BBĐT ⇒ thanh toán xong ⇒ mới gen phiếu. Phần sau giống bán mới. Không qua báo giá (nguồn: user cung cấp 20/11/2026).
 
 Chi tiết từng bước: [DESKTOP.md](DESKTOP.md#cách-tạo-đơn).
 

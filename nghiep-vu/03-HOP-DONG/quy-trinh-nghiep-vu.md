@@ -26,7 +26,7 @@
 | **SR khôi phục dịch vụ** | Đưa hợp đồng từ **Đã chấm dứt / Tạm ngưng** về **Bình thường** |
 | **SR chuyển địa điểm** | Chuyển địa điểm sử dụng dịch vụ (bạn cung cấp 19/11/2026) |
 
-**SR sinh phiếu thi công** (bạn xác nhận 19/11/2026): **SR chuyển dịch vụ**, **SR chuyển địa điểm**, **SR khôi phục dịch vụ** tạo PTC từ hợp đồng (xem [Phiếu thi công](../05-PHIEU-TRIEN-KHAI/01-PHIEU-THI-CONG/quy-trinh-nghiep-vu.md)).
+**SR sinh phiếu thi công** (bạn xác nhận 19/11/2026): **SR chuyển dịch vụ**, **SR chuyển địa điểm**, **SR khôi phục dịch vụ** tạo PTC từ hợp đồng (xem [Phiếu thi công](../05-GIAO-LAP-DAT/01-PHIEU-THI-CONG/quy-trinh-nghiep-vu.md)).
 
 Liên quan xuất hóa đơn (`RULE-XHD.md`): hợp đồng tạm ngưng / đã chấm dứt ⇒ không xuất hóa đơn (BR-XHD-10); cập nhật thông tin khách không kích hoạt phát hành, lần phát hành sau dùng thông tin mới nhất (BR-DB-03).
 

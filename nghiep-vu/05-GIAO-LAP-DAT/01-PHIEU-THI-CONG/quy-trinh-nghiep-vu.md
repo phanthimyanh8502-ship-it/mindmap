@@ -1,6 +1,6 @@
 # RULE — PHIẾU THI CÔNG (TIN/PNC, FTI)
 
-> Loại triển khai: TIN/PNC, TIN/PNC giao hàng, FTI. Quy tắc chung (BR-PTK-*) ở [tổng quan Phiếu triển khai](../quy-trinh-nghiep-vu.md).
+> Loại triển khai: TIN/PNC, TIN/PNC giao hàng, FTI. Quy tắc chung (BR-PTK-*) ở [tổng quan Giao & lắp đặt](../quy-trinh-nghiep-vu.md).
 > Nguồn: thông tin bạn cung cấp 04/11 và 17/11/2026 (xem [`input/`](input/README.md)).
 > Bổ sung 19/11/2026 — điều kiện hoàn tất PTC từ `input/validate-completed-deployment.png` (chỉ các nhóm điều kiện); nguồn tạo PTC theo bạn xác nhận.
 > Bổ sung 19/11/2026 — quy trình tổng quan từ URD Phát triển phân hệ Triển khai v2.0 (`ISC_Phat-trien-phan-he-Trien-khai_v2.0_URD-v1.0.docx`) — chỉ mục **Tổng quan › Sơ đồ tổng quan**.

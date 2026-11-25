@@ -1,7 +1,7 @@
 # RULE — ĐƠN ĐẶT HÀNG VENDOR (NCC)
 
 > Loại triển khai: NCC Samsung / Sony / Casper — thiết bị lẻ mua từ nhà cung ứng (NCU) bán lại (TV…). Viết lại theo góc nhìn BA ngày 19/11/2026.
-> Nguồn ([`input/`](input/README.md)): URD INSIDE M-Vendor Cooperation V1.1 — **chỉ mục "Quản lý giao hàng"** (Iteration 2: workflow, diễn giải các bước, BR01–BR02, màn hình danh sách phiếu giao hàng) · List HT triển khai · URD Xuất hóa đơn REQ-XHD-043 · thông tin bạn cung cấp (BBĐT, tool GH Vendor). Quy tắc chung ở [tổng quan Phiếu triển khai](../quy-trinh-nghiep-vu.md).
+> Nguồn ([`input/`](input/README.md)): URD INSIDE M-Vendor Cooperation V1.1 — **chỉ mục "Quản lý giao hàng"** (Iteration 2: workflow, diễn giải các bước, BR01–BR02, màn hình danh sách phiếu giao hàng) · List HT triển khai · URD Xuất hóa đơn REQ-XHD-043 · thông tin bạn cung cấp (BBĐT, tool GH Vendor). Quy tắc chung ở [tổng quan Giao & lắp đặt](../quy-trinh-nghiep-vu.md).
 > **⚠ BA** = điểm cần xác nhận, xem §6.
 
 ---
@@ -48,7 +48,7 @@ Menu **Quản lý NCU › Giao hàng, triển khai NCU** có 2 tab: *Quản lý 
 | 6a | Không đạt điều kiện | Vendor | **Thông báo lỗi**, kết thúc | — |
 | 6b | Đạt điều kiện | Vendor | Lưu dữ liệu, **thông báo cập nhật thành công** | — |
 
-**Sau khi cập nhật** (theo tổng quan Phiếu triển khai, không thuộc mục URD này): phiếu **Đã hoàn tất** ⇒ Vendor gửi tín hiệu giao hàng hoàn tất về INVOICE (khóa mã đơn + ServiceCode + SubserviceType + phương thức triển khai) ⇒ xuất hóa đơn thiết bị ⚠ BA-13.
+**Sau khi cập nhật** (theo tổng quan Giao & lắp đặt, không thuộc mục URD này): phiếu **Đã hoàn tất** ⇒ Vendor gửi tín hiệu giao hàng hoàn tất về INVOICE (khóa mã đơn + ServiceCode + SubserviceType + phương thức triển khai) ⇒ xuất hóa đơn thiết bị ⚠ BA-13.
 
 ## 5. Quy tắc nghiệp vụ
 

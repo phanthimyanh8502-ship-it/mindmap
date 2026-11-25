@@ -64,7 +64,7 @@ Thiết bị có nhiều hình thức triển khai tùy theo chính sách khai b
 |---|---|
 | Không, Quầy, Sale | **Tool quầy** |
 | NCC-Samsung, NCC-Casper | **M-Vendor** |
-| TIN/PNC | **Phiếu triển khai** |
+| TIN/PNC | **Giao & lắp đặt** |
 
 ### 2.1 Dịch vụ nào triển khai theo hình thức nào (theo qc-iia)
 

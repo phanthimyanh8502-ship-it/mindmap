@@ -1,7 +1,7 @@
 # RULE — PHIẾU GIAO DỊCH THIẾT BỊ TẠI QUẦY
 
 > Loại triển khai: Quầy (có shipper giao qua ĐVVC hoặc khách nhận tại quầy), Sale. Viết lại theo góc nhìn BA ngày 19/11/2026.
-> Nguồn ([`input/`](input/README.md)): URD Resource Equipment v2.2 — **chỉ mục "Quy trình giao hàng qua đơn vị vận chuyển"** (bảng B1–B11 + sơ đồ) · thông tin bạn cung cấp 04/11/2026 (thao tác STG). Quy tắc chung ở [tổng quan Phiếu triển khai](../quy-trinh-nghiep-vu.md).
+> Nguồn ([`input/`](input/README.md)): URD Resource Equipment v2.2 — **chỉ mục "Quy trình giao hàng qua đơn vị vận chuyển"** (bảng B1–B11 + sơ đồ) · thông tin bạn cung cấp 04/11/2026 (thao tác STG). Quy tắc chung ở [tổng quan Giao & lắp đặt](../quy-trinh-nghiep-vu.md).
 > Ký hiệu: **[URD B*n*]** = bước trong bảng quy trình của URD · **⚠ BA** = điểm cần xác nhận, xem §3 · **✅ BA-n** = bạn đã xác nhận ngày 19/11/2026.
 > **Phiếu giao tại quầy của đơn SPF là "phiếu bán thiết bị"** trong Tool quầy (URD Retail-Counter) — bạn xác nhận 19/11/2026.
 

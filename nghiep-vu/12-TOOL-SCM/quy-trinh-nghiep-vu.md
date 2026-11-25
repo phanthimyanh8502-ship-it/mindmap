@@ -30,14 +30,14 @@
 
 > Nguồn: thông tin user cung cấp ngày 04/11/2026.
 
-**Luồng vật tư:** Kho SCM ⇒ (tạm ứng) ⇒ Tool vật tư ⇒ (load vật tư) ⇒ Phiếu triển khai.
+**Luồng vật tư:** Kho SCM ⇒ (tạm ứng) ⇒ Tool vật tư ⇒ (load vật tư) ⇒ Giao & lắp đặt.
 
 1. Tool vật tư **đề nghị tạm ứng**.
 2. Tool **kho SCM** (https://ftelscm-uat.fpt.net — **cần host**):
    - **Quản lý kho › Nhập kho › Tạo phiếu nhập** hàng hóa (kho **KTN test MAC**).
    - **Quản lý kho › Xác nhận tạm ứng từ Inside**.
 3. Vật tư được tạm ứng về tool vật tư.
-4. Phiếu triển khai **load vật tư** từ tool vật tư.
+4. Giao & lắp đặt **load vật tư** từ tool vật tư.
 
 | Tool vật tư | Phiếu load vật tư từ tool này |
 |---|---|

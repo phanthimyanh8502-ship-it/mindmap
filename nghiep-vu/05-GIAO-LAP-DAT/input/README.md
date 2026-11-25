@@ -1,4 +1,4 @@
-# Input — PHIẾU TRIỂN KHAI (tổng quan)
+# Input — GIAO & LẮP ĐẶT (tổng quan)
 
 Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-vu.md). Input riêng của từng loại triển khai nằm trong `input/` của thư mục con.
 
