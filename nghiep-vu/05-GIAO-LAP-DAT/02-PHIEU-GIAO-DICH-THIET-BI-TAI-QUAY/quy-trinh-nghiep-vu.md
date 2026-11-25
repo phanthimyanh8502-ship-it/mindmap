@@ -1,9 +1,9 @@
 # RULE — PHIẾU GIAO DỊCH THIẾT BỊ TẠI QUẦY
 
 > Loại triển khai: Quầy (có shipper giao qua ĐVVC hoặc khách nhận tại quầy), Sale. Viết lại theo góc nhìn BA ngày 19/11/2026.
-> Nguồn ([`input/`](input/README.md)): URD Resource Equipment v2.2 — **chỉ mục "Quy trình giao hàng qua đơn vị vận chuyển"** (bảng B1–B11 + sơ đồ) · thông tin bạn cung cấp 04/11/2026 (thao tác STG). Quy tắc chung ở [tổng quan Giao & lắp đặt](../quy-trinh-nghiep-vu.md).
+> Nguồn ([`input/`](input/README.md)): URD Resource Equipment v2.2 — **chỉ mục "Quy trình giao hàng qua đơn vị vận chuyển"** (bảng B1–B11 + sơ đồ) · thông tin QC cung cấp 04/11/2026 (thao tác STG). Quy tắc chung ở [tổng quan Giao & lắp đặt](../quy-trinh-nghiep-vu.md).
 > Ký hiệu: **[URD B*n*]** = bước trong bảng quy trình của URD · **⚠ BA** = điểm cần xác nhận, xem §3 · **✅ BA-n** = bạn đã xác nhận ngày 19/11/2026.
-> **Phiếu giao tại quầy của đơn SPF là "phiếu bán thiết bị"** trong Tool quầy (URD Retail-Counter) — bạn xác nhận 19/11/2026.
+> **Phiếu giao tại quầy của đơn SPF là "phiếu bán thiết bị"** trong Tool quầy (URD Retail-Counter) — QC xác nhận 19/11/2026.
 
 ---
 
@@ -18,7 +18,7 @@
 | Phiếu giao | Phiếu giao dịch thiết bị loại **Giao hàng**: cập nhật thông tin đóng hàng từ FTEL |
 | Phiếu xuất | Gắn với phiếu tạm ứng vật tư, để tạm ứng và xuất vật tư từ kho tổng giao cho khách |
 | ĐVVC | Đơn vị vận chuyển (GHTK, Ahamove…) |
-| Vendor (vận chuyển) | Hệ thống trung gian kết nối ĐVVC: tạo vận đơn, tracking, đối soát. Theo bạn (19/11/2026) là **cùng hệ thống Vendor** với [Đơn đặt hàng Vendor](../03-DON-DAT-HANG-VENDOR/quy-trinh-nghiep-vu.md) nhưng chưa chắc chắn, xem BA-10 |
+| Vendor (vận chuyển) | Hệ thống trung gian kết nối ĐVVC: tạo vận đơn, tracking, đối soát. Theo bạn (19/11/2026) là **cùng hệ thống Vendor** với [Phiếu giao hàng NCC](../03-DON-DAT-HANG-VENDOR/quy-trinh-nghiep-vu.md) nhưng chưa chắc chắn, xem BA-10 |
 | Mã vận đơn | Mã giao dịch vận chuyển do hệ thống ĐVVC sinh ra |
 | Phát lại | ĐVVC đã lấy hàng chưa giao, hoặc giao không thành công đã hoàn về kho, nhưng khách vẫn cần ⇒ giao lại |
 | Hoàn hàng | ĐVVC đã lấy hàng nhưng không giao được, trả hàng về FTEL |
@@ -146,7 +146,7 @@ Số thứ tự lấy theo cách URD đánh số trong bảng quy trình. URD **
 | Giao thành công | INVOICE (Bill) | Xuất hóa đơn thiết bị theo tín hiệu giao hàng hoàn tất của phiếu giao tại quầy (URD XHD REQ-XHD-043) |
 | Giao thành công | Hạch toán chi phí (QLVT, FAF) | Thông tin giao dịch thiết bị |
 
-### 1.9 Thao tác trên STG (thông tin bạn cung cấp)
+### 1.9 Thao tác trên STG (thông tin QC cung cấp)
 
 Map với luồng chính ở §1.4:
 

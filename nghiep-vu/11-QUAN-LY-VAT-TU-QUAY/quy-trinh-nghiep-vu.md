@@ -30,7 +30,7 @@
 | 14 | Đối soát, báo cáo | FAF, FMD | Inside – Vật tư quầy |
 
 **Các khối trong sơ đồ quy trình:**
-- **Phiếu giao tại quầy của đơn SPF = phiếu bán thiết bị** (bạn xác nhận 19/11/2026), xem [Phiếu giao dịch thiết bị tại quầy](../05-GIAO-LAP-DAT/02-PHIEU-GIAO-DICH-THIET-BI-TAI-QUAY/quy-trinh-nghiep-vu.md).
+- **Phiếu giao tại quầy của đơn SPF = phiếu bán thiết bị** (QC xác nhận 19/11/2026), xem [Phiếu giao dịch thiết bị tại quầy](../05-GIAO-LAP-DAT/02-PHIEU-GIAO-DICH-THIET-BI-TAI-QUAY/quy-trinh-nghiep-vu.md).
 - **Giao dịch thiết bị** (giao dịch viên, theo nhu cầu sử dụng): kiểm tra thiết bị · bán thiết bị · thuê thiết bị có / không thu hồi thiết bị cũ · đổi bảo hành / đổi bảo hành 7 ngày (BGĐ phê duyệt) · xuất thiết bị theo confirm BGĐ · đổi thiết bị mới / đổi chênh lệch · xuất thiết bị HĐ khôi phục dịch vụ ⇒ cập nhật thông tin hóa đơn (Inside – Hóa đơn) ⇒ **hoàn tất phiếu**. Phiếu có thu hồi ⇒ cập nhật thông tin thu hồi.
 - **Thu hồi – vật tư thu hồi:** tạo phiếu thu hồi tại quầy ⇒ cập nhật kết quả thu hồi ⇒ nhập kho thu hồi.
 - **Khai báo & phân quyền:** khai báo vật tư · mã khoản thu · đối tác, tổ · kho kết nối FTELSCM · định mức vật tư · phân quyền đối tác – GDV, đối tác – kho.
@@ -41,7 +41,7 @@
 
 ### 5.5 Vật tư cho phiếu & kho SCM
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 **Luồng vật tư:** Kho SCM ⇒ (tạm ứng) ⇒ Tool vật tư ⇒ (load vật tư) ⇒ Giao & lắp đặt.
 

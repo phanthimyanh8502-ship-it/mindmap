@@ -16,19 +16,20 @@ Chỉ đọc file cần cho task, không đọc cả 3 file mindmap HTML (rất 
 | Đường dẫn | Vai trò |
 |---|---|
 | `nghiep-vu/<NN-CHU-THE>/` | 1 chủ thể = `input/` (nguồn + `README.md` liệt kê nguồn) + `quy-trinh-nghiep-vu.md` |
-| `nghiep-vu/01-DON-HANG/kenh-ban/` | Ngoại lệ: không có `input/` chung; `00-CHUNG.md` + 1 thư mục/kênh `<KÊNH>/<KÊNH>.md` + `input/` riêng. Desktop + Mobile chung `SOP/` |
+| `nghiep-vu/01-DON-HANG/kenh-ban/` | `01-DON-HANG/input/README.md` chỉ chứa nội dung nút 📄 Tài liệu của chủ thể Đơn hàng; nguồn rule kênh nằm ở `00-CHUNG.md` + 1 thư mục/kênh `<KÊNH>/<KÊNH>.md` + `input/` riêng. Desktop + Mobile chung `SOP/` |
 | `nghiep-vu/05-GIAO-LAP-DAT/` | 3 thư mục con theo loại triển khai (thi công / giao tại quầy / vendor), mỗi con có `input/` + `quy-trinh-nghiep-vu.md` |
 | `mindmap-don-hang-v2.html` | Mindmap bản chính (popup kênh bán, nút 📄 Tài liệu hiện `quy-trinh-nghiep-vu.md`) |
 | `mindmap-don-hang.html` | Mindmap v1 (vẫn được nhúng docs) |
 | `mindmap-don-hang-lite.html` | Bản rút gọn (owner, nơi thao tác) — **không** nhúng docs, sửa tay |
-| `scripts/embed-docs.py` | Nhúng mọi `quy-trinh-nghiep-vu.md` vào v1 + v2 (giữa `DOCS:BEGIN`/`DOCS:END`) |
+| `scripts/embed-docs.py` | Nhúng mọi `quy-trinh-nghiep-vu.md` + `input/README.md` cùng thư mục vào v1 + v2 (giữa `DOCS:BEGIN`/`DOCS:END`) |
 | `tools/*.zip` | Tool Node.js hỗ trợ **tạo data test nhanh** (vd `Don_SOP` lên đơn SOP, `Don_TMDT` đơn TMĐT, `Tao_DH`, `Thanh_toan`, `FPL`, `GH_quay`, `GH_Vendor`). Mindmap có link tải; chỉ thay khi user đưa bản mới |
 
 ## 3. Quy trình sửa nội dung
 
 1. Sửa đúng file `.md` của chủ thể/kênh (rule kênh → `kenh-ban/<KÊNH>/<KÊNH>.md`; rule chung mọi kênh → `00-CHUNG.md`).
 2. Thông tin mới từ user → ghi nguồn + ngày vào `input/README.md` tương ứng.
-3. Sửa bất kỳ `quy-trinh-nghiep-vu.md` nào → **bắt buộc chạy** `python3 scripts/embed-docs.py` rồi commit cả HTML.
+   `input/README.md` là nội dung nút 📄 Tài liệu trên mindmap v2: 3 mục `## Tool` · `## Thao tác` · `## Ý chính tài liệu` (ý chính + BR từng tài liệu, không mô tả UI/trường; không lặp lại rule đã có ở "Các case chi tiết") + `## Nguồn` (popup chỉ hiện tên tài liệu). Chủ thể chưa có tài liệu gốc thì thay `## Ý chính tài liệu` bằng `## Nghiệp vụ chính` (theo thông tin QC cung cấp); README không có tài liệu gốc lẫn `## Tool` thì không hiện nút.
+3. Sửa bất kỳ `quy-trinh-nghiep-vu.md` hoặc `input/README.md` nào → **bắt buộc chạy** `python3 scripts/embed-docs.py` rồi commit cả HTML.
 4. Thêm/đổi kênh hoặc chủ thể → cập nhật luôn mục lục (`RULE-CHINH-SACH-KENH-BAN.md`, `nghiep-vu/README.md`) và node tương ứng trong mindmap v2 (+ lite nếu liên quan).
 5. Không sửa HTML giữa `DOCS:BEGIN`/`DOCS:END` bằng tay.
 

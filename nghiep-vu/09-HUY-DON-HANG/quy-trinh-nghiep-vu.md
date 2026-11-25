@@ -7,7 +7,7 @@
 
 ## 6. Hủy đơn hàng
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 - **Tool hủy đơn hàng:** Inside › tool **Quản lý hợp đồng › Hợp đồng NOT OK V3 › tab Trước sử dụng**.
 

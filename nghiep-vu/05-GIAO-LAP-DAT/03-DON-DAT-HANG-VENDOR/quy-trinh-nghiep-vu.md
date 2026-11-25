@@ -1,7 +1,7 @@
-# RULE — ĐƠN ĐẶT HÀNG VENDOR (NCC)
+# RULE — PHIẾU GIAO HÀNG NCC
 
 > Loại triển khai: NCC Samsung / Sony / Casper — thiết bị lẻ mua từ nhà cung ứng (NCU) bán lại (TV…). Viết lại theo góc nhìn BA ngày 19/11/2026.
-> Nguồn ([`input/`](input/README.md)): URD INSIDE M-Vendor Cooperation V1.1 — **chỉ mục "Quản lý giao hàng"** (Iteration 2: workflow, diễn giải các bước, BR01–BR02, màn hình danh sách phiếu giao hàng) · List HT triển khai · URD Xuất hóa đơn REQ-XHD-043 · thông tin bạn cung cấp (BBĐT, tool GH Vendor). Quy tắc chung ở [tổng quan Giao & lắp đặt](../quy-trinh-nghiep-vu.md).
+> Nguồn ([`input/`](input/README.md)): URD INSIDE M-Vendor Cooperation V1.1 — **chỉ mục "Quản lý giao hàng"** (Iteration 2: workflow, diễn giải các bước, BR01–BR02, màn hình danh sách phiếu giao hàng) · List HT triển khai · URD Xuất hóa đơn REQ-XHD-043 · thông tin QC cung cấp (BBĐT, tool GH Vendor). Quy tắc chung ở [tổng quan Giao & lắp đặt](../quy-trinh-nghiep-vu.md).
 > **⚠ BA** = điểm cần xác nhận, xem §6.
 
 ---
@@ -14,7 +14,7 @@
 | Khi nào sinh | Chỉ sau khi đơn **đã thanh toán**, với mọi PTTT ([BR-PTK-03](../quy-trinh-nghiep-vu.md)) |
 | Đầu ra | Đơn đặt hàng với NCU (**PO**) + **phiếu giao hàng (PGH)** + mã vận đơn |
 | Người giao | Nhà cung ứng (NCU) |
-| Hệ thống | **Vendor** — màn hình Quản lý NCU › Giao hàng, triển khai NCU nằm ở **Fox ERP** (bạn xác nhận 19/11/2026; URD ghi Inside) — gọi tắt M-Vendor |
+| Hệ thống | **Vendor** — màn hình Quản lý NCU › Giao hàng, triển khai NCU nằm ở **Fox ERP** (QC xác nhận 19/11/2026; URD ghi Inside) — gọi tắt M-Vendor |
 | BBĐT | Tự động ký |
 | Hoàn tất | Vendor gửi tín hiệu giao hàng hoàn tất về INVOICE ⇒ xuất hóa đơn thiết bị (REQ-XHD-043) |
 
@@ -34,7 +34,7 @@ Menu **Quản lý NCU › Giao hàng, triển khai NCU** có 2 tab: *Quản lý 
 
 **Danh sách phiếu giao hàng** (có bộ lọc, phân trang) gồm các cột: STT · Nhà cung ứng · **Mã đơn hàng FTEL** (bấm để mở chi tiết) · Mã PO NCU · Mã PGH · Thông tin KH · Ngày tạo · **Tình trạng giao hàng** · Acc tạo.
 
-**Tình trạng giao hàng** (bạn xác nhận 19/11/2026 ✅ BA-11): **Chưa giao hàng** → **Đang giao hàng** → **Đã hoàn tất**, hoặc **Đã hủy** (khi chọn Hủy đơn hàng — **chỉ khi phiếu còn Chưa giao hàng**; đã sang Đang giao hàng thì không cập nhật được Đã hủy, bạn xác nhận 19/11/2026).
+**Tình trạng giao hàng** (QC xác nhận 19/11/2026 ✅ BA-11): **Chưa giao hàng** → **Đang giao hàng** → **Đã hoàn tất**, hoặc **Đã hủy** (khi chọn Hủy đơn hàng — **chỉ khi phiếu còn Chưa giao hàng**; đã sang Đang giao hàng thì không cập nhật được Đã hủy, QC xác nhận 19/11/2026).
 
 ## 4. Quy trình cập nhật tình trạng giao hàng
 
@@ -57,12 +57,12 @@ Menu **Quản lý NCU › Giao hàng, triển khai NCU** có 2 tab: *Quản lý 
 | BR01 | Danh sách phiếu giao hàng dùng chung cho phiếu của **FPL, SPF, SCM**; bổ sung **kết nối giao hàng đối tác SCM** | URD M-Vendor |
 | BR02 | Màn hình chi tiết phiếu giao hàng có **Hủy đơn hàng**: nút "Hủy đơn hàng" trên popup cập nhật tình trạng | URD M-Vendor |
 | BR-VD-01 | Chỉ user có quyền vào menu mới xem danh sách; chỉ user có quyền **cập nhật tình trạng đơn hàng** mới mở được chi tiết để cập nhật | URD M-Vendor (điều kiện bước 2, 3) |
-| BR-VD-02 | Đơn Vendor chỉ sinh sau khi đơn đã thanh toán; BBĐT tự động ký | Thông tin bạn cung cấp |
-| BR-VD-03 | Chuyển **Đang giao hàng**: bắt buộc user nhập **hóa đơn NCU** và **hóa đơn điện tử**; hệ thống **không kiểm tra tồn tại** của hóa đơn | Bạn xác nhận 19/11/2026 |
-| BR-VD-04 | Tình trạng giao hàng: Chưa giao hàng · Đang giao hàng · Đã hoàn tất · Đã hủy | Bạn xác nhận 19/11/2026 |
-| BR-VD-05 | Chỉ hủy được (→ **Đã hủy**) khi phiếu đang **Chưa giao hàng**; sau khi chuyển **Đang giao hàng** thì không cập nhật được Đã hủy | Bạn xác nhận 19/11/2026 |
+| BR-VD-02 | Phiếu giao hàng NCC chỉ sinh sau khi đơn đã thanh toán; BBĐT tự động ký | Thông tin QC cung cấp |
+| BR-VD-03 | Chuyển **Đang giao hàng**: bắt buộc user nhập **hóa đơn NCU** và **hóa đơn điện tử**; hệ thống **không kiểm tra tồn tại** của hóa đơn | QC xác nhận 19/11/2026 |
+| BR-VD-04 | Tình trạng giao hàng: Chưa giao hàng · Đang giao hàng · Đã hoàn tất · Đã hủy | QC xác nhận 19/11/2026 |
+| BR-VD-05 | Chỉ hủy được (→ **Đã hủy**) khi phiếu đang **Chưa giao hàng**; sau khi chuyển **Đang giao hàng** thì không cập nhật được Đã hủy | QC xác nhận 19/11/2026 |
 
-**Thao tác trên STG (thông tin bạn cung cấp):** tool QC **GH Vendor** chạy nhanh luồng cập nhật phiếu giao hàng NCU: nhập mã đơn hàng FTEL → tự chuyển **Đang giao hàng** (kèm hóa đơn NCU, hóa đơn điện tử) → **Đã hoàn tất**. Tool đăng nhập **Fox ERP** (đúng nơi có màn hình ✅ BA-14).
+**Thao tác trên STG (thông tin QC cung cấp):** tool QC **GH Vendor** chạy nhanh luồng cập nhật phiếu giao hàng NCU: nhập mã đơn hàng FTEL → tự chuyển **Đang giao hàng** (kèm hóa đơn NCU, hóa đơn điện tử) → **Đã hoàn tất**. Tool đăng nhập **Fox ERP** (đúng nơi có màn hình ✅ BA-14).
 
 ## 6. Điểm cần xác nhận với BA / PO
 

@@ -4,4 +4,4 @@ Tài liệu đầu vào của rule kênh ở [`../MOMO.md`](../MOMO.md). Thư m�
 
 ## Nguồn
 
-- Thông tin bạn cung cấp (ghi ở từng mục trong `MOMO.md`): 03/11/2026, 19/11/2026
+- Thông tin QC cung cấp (ghi ở từng mục trong `MOMO.md`): 03/11/2026, 19/11/2026, 25/11/2026 (có BBĐT)

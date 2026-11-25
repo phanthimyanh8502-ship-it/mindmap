@@ -4,4 +4,4 @@ Tài liệu đầu vào của rule kênh ở [`../SHOPEE.md`](../SHOPEE.md). Th�
 
 ## Nguồn
 
-- Thông tin bạn cung cấp (ghi ở từng mục trong `SHOPEE.md`): 03/11/2026, 04/11/2026
+- Thông tin QC cung cấp (ghi ở từng mục trong `SHOPEE.md`): 03/11/2026, 04/11/2026

@@ -115,13 +115,13 @@ Không hợp lệ ⇒ **không xuất hóa đơn** và ghi log; hệ thống kh�
 - **Chi nhánh xuất hóa đơn** = chi nhánh quản lý hợp đồng.
 - **Nội dung hóa đơn:** tên dịch vụ + số tháng sử dụng.
 - **Một đơn có thể có nhiều hóa đơn** (dịch vụ và thiết bị xuất ở các đợt khác nhau).
-- Sau khi phát hành, hệ thống gửi **Invoice Event** để chuyển sang **gạch nợ** và **hậu kỳ**.
+- Sau khi phát hành, INVOICE gửi bản tin báo hóa đơn đã phát hành (**Invoice Event**) để chuyển sang **gạch nợ** và **hậu kỳ**.
 
 ---
 
 ## 8. Hậu kỳ — đẩy hóa đơn điện tử & tiền trả trước (BR-HK)
 
-Sau khi nhận Invoice Event, **2 nhánh chạy song song**:
+Hóa đơn phát hành xong, INVOICE gửi bản tin báo hóa đơn đã phát hành (**Invoice Event**), rồi đẩy 2 nhánh hậu kỳ. Nhánh hóa đơn điện tử đẩy ngay. Nhánh tiền trả trước **chỉ đẩy khi hóa đơn đã gạch nợ xong** (nguồn: QC cung cấp 25/11/2026):
 
 ### 8.1 Nguyên tắc chung (BR-HK-01)
 - Phần nào trên đơn **đã xuất hóa đơn** thì đẩy hậu kỳ đúng phần đó (dịch vụ hay thiết bị đều đẩy).
@@ -137,6 +137,7 @@ Sau khi nhận Invoice Event, **2 nhánh chạy song song**:
   - Dòng EVC và các thông tin khác theo mẫu hóa đơn.
 
 ### 8.3 Nhánh 2 — Tiền trả trước (BR-HK-09)
+- **Chỉ đẩy khi hóa đơn đã gạch nợ xong** (trạng thái Đã gạch nợ). Chưa gạch nợ ⇒ chưa add tiền trả trước (nguồn: QC cung cấp 25/11/2026).
 - Add tiền gói dịch vụ trả trước vào hợp đồng của khách.
 - **Mỗi đơn chỉ add 1 lần**, kể cả khi đơn được xuất nhiều hóa đơn.
 - Hóa đơn chỉ có thiết bị ⇒ **không add** tiền trả trước.

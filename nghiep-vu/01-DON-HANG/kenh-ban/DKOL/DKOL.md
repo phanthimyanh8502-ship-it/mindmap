@@ -1,6 +1,6 @@
 # KÊNH DKOL (SaleChannelID 4)
 
-> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: user cung cấp 03/11/2026). Rule chung: [00-CHUNG.md](../00-CHUNG.md) · Rule XHD: [`../../../../RULE-XHD.md`](../../../../RULE-XHD.md).
+> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: QC cung cấp 03/11/2026). Rule chung: [00-CHUNG.md](../00-CHUNG.md) · Rule XHD: [`../../../../RULE-XHD.md`](../../../../RULE-XHD.md).
 
 ## Thông tin chung
 
@@ -43,7 +43,7 @@ Bán mới 2 nơi giống nhau. Nâng cấp mỗi nơi theo nguồn riêng: **Hi
 
 ### HiFPT
 
-> Nguồn: `input/ISC_NangCap_ Hifpt_V1.0_URD_v1.0.xlsx` (URD Nâng cấp All kênh v1.0, sheet Nâng cấp · mục 2 Mô tả quy trình, mục 3 Thông tin SR) · thông tin user cung cấp 23/11/2026.
+> Nguồn: `input/ISC_NangCap_ Hifpt_V1.0_URD_v1.0.xlsx` (URD Nâng cấp All kênh v1.0, sheet Nâng cấp · mục 2 Mô tả quy trình, mục 3 Thông tin SR) · thông tin QC cung cấp 23/11/2026.
 
 - **Vào:** đăng nhập App HiFPT, lấy HĐ billing Bình thường theo SĐT đăng nhập.
 - **Lõi Billing Hub:** chọn HĐ + dịch vụ (Internet / combo, FPT Play, Cloud, thiết bị) → Billing Hub lấy chính sách (mua thêm: CS bán thêm · nâng cấp: CS chuyển DV) → chọn gói, PTTT → tạo đơn (phân loại mua thêm / nâng cấp) → COD (chỉ khi chính sách có PTC, khoản thu COD đẩy vào PTC, TIN/PNC thu tại nhà) hoặc thanh toán online → hậu kỳ: mua thêm theo luồng bán thêm Selfservice; nâng cấp tạo SR chuyển DV.
@@ -61,7 +61,7 @@ Bán mới 2 nơi giống nhau. Nâng cấp mỗi nơi theo nguồn riêng: **Hi
 - **Sau khi tạo đơn:** PRD giữ nguyên logic tạo đơn và thanh toán hiện hữu (Out of Scope), không mô tả SR, ký PLHĐ hay xử lý hậu kỳ.
 
 ## Hình thức triển khai
-- **TIN/PNC (phiếu thi công):** dịch vụ cần triển khai, kích hoạt tại địa chỉ đăng ký. Phiếu thi công **không phải** dịch vụ Camera (nguồn: user cung cấp 17/11/2026).
+- **TIN/PNC (phiếu thi công):** dịch vụ cần triển khai, kích hoạt tại địa chỉ đăng ký. Phiếu thi công **không phải** dịch vụ Camera (nguồn: QC cung cấp 17/11/2026).
 - **Camera:** **Quầy** (có chính sách shipper giao hàng).
 - **TV:** đang đẩy qua **Vendor**.
 - **Ultra Fast SA, FPT Play SA, HyperFast SA:** **không cần giao & lắp đặt**, **BBĐT auto ký**.
@@ -72,7 +72,7 @@ Cách hoàn tất phiếu: [00-CHUNG.md §5](../00-CHUNG.md#5-cách-hoàn-tất-
 - **PTTT = Thanh toán khi triển khai:** gen đồng thời khoản thu, phiếu thi công, biên bản điện tử; đơn = **Chưa thanh toán**.
 - **PTTT Online:** khách hàng **phải thanh toán xong** mới tạo đơn ⇒ đơn tạo ra với tình trạng **Đã thanh toán**, khoản thu **Đã thanh toán** ⇒ sau đó mới gen **phiếu thi công** và **biên bản điện tử**.
 - Sau khi thanh toán: tiền **đẩy vào cọc**. Kiểm tra: Inside › Foxpay › Thanh toán online › Đối soát khoản thu online.
-- **Thanh toán → cọc → hóa đơn → gạch nợ** (nguồn: user cung cấp 17/11/2026): khách thanh toán ⇒ khoản thu **Đã thanh toán** ⇒ **nhập cọc** ⇒ nhận tín hiệu xuất hóa đơn thì xuất hóa đơn ⇒ có cọc thì **gạch nợ hóa đơn**, cập nhật hóa đơn **Đã thanh toán** ⇒ hóa đơn dịch vụ **trả trước** thì **add tiền trả trước**. Chi tiết: [00-CHUNG.md §4.3](../00-CHUNG.md#43-sau-khi-thanh-toán-khoản-thu).
+- **Thanh toán → cọc → hóa đơn → gạch nợ** (nguồn: QC cung cấp 17/11/2026): khách thanh toán ⇒ khoản thu **Đã thanh toán** ⇒ **nhập cọc** ⇒ nhận tín hiệu xuất hóa đơn thì xuất hóa đơn ⇒ có cọc thì **gạch nợ hóa đơn**, cập nhật hóa đơn **Đã thanh toán** ⇒ hóa đơn dịch vụ **trả trước** thì **add tiền trả trước**. Chi tiết: [00-CHUNG.md §4.3](../00-CHUNG.md#43-sau-khi-thanh-toán-khoản-thu).
 
 ## Phạm vi test XHD
 Bán mới 8 nhóm {1,4,5,6,7,9,10,21} · bán thêm 3 nhóm {1,4,7} — `RULE-XHD.md` §1.1.

@@ -4,4 +4,4 @@ Tài liệu đầu vào của rule kênh ở [`../VNTT.md`](../VNTT.md). Thư m�
 
 ## Nguồn
 
-- Thông tin bạn cung cấp (ghi ở từng mục trong `VNTT.md`): 03/11/2026
+- Thông tin QC cung cấp (ghi ở từng mục trong `VNTT.md`): 03/11/2026

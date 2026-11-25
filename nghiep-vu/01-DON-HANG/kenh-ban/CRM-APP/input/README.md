@@ -4,4 +4,4 @@ Tài liệu đầu vào của rule kênh ở [`../CRM-APP.md`](../CRM-APP.md). T
 
 ## Nguồn
 
-- Thông tin bạn cung cấp (ghi ở từng mục trong `CRM-APP.md`): 03/11/2026
+- Thông tin QC cung cấp (ghi ở từng mục trong `CRM-APP.md`): 03/11/2026

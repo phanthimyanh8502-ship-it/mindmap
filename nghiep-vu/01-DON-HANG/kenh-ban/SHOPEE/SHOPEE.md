@@ -1,6 +1,6 @@
 # KÊNH SHOPEE (SaleChannelID 20)
 
-> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: user cung cấp 03/11/2026). Rule chung: [00-CHUNG.md](../00-CHUNG.md) · Rule XHD: [`../../../../RULE-XHD.md`](../../../../RULE-XHD.md). Kênh cùng luồng: [TIKTOK.md](../TIKTOK/TIKTOK.md).
+> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: QC cung cấp 03/11/2026). Rule chung: [00-CHUNG.md](../00-CHUNG.md) · Rule XHD: [`../../../../RULE-XHD.md`](../../../../RULE-XHD.md). Kênh cùng luồng: [TIKTOK.md](../TIKTOK/TIKTOK.md).
 
 ## Thông tin chung
 
@@ -38,7 +38,7 @@ Internet, FPT Camera Only, FPT Play Stands Alone, FPT Play, Sản phẩm khác.
 **Lần 1 — Đơn ghi nhận khách hàng đã thanh toán cho sàn**
 1. Shopee gửi đơn.
 2. SPF tạo đơn với trạng thái **Chưa thanh toán**.
-   - **PTC và BBĐT được gen sau khi tạo đơn hàng thành công** (nguồn: user cung cấp 04/11/2026).
+   - **PTC và BBĐT được gen sau khi tạo đơn hàng thành công** (nguồn: QC cung cấp 04/11/2026).
 3. Tạo **Order Transaction** với trạng thái **Thanh toán tạm** (KH đã thanh toán cho sàn).
 4. Cập nhật đơn SPF sang **Đã thanh toán**.
 5. Phiếu thi công (PTC) hoàn tất.

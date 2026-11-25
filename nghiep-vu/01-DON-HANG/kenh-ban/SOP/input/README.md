@@ -4,6 +4,6 @@ Tài liệu đầu vào của 2 kênh SOP: [`../DESKTOP.md`](../DESKTOP.md) (Web
 
 ## Nguồn
 
-- Thông tin bạn cung cấp (ghi ở từng mục trong `DESKTOP.md`, `MOBILE.md`): 03/11/2026, 17/11/2026, 19/11/2026, 20/11/2026
+- Thông tin QC cung cấp (ghi ở từng mục trong `DESKTOP.md`, `MOBILE.md`): 03/11/2026, 17/11/2026, 19/11/2026, 20/11/2026
 - `URD_BaoGia_v1.0_22 Apr 2026_KieuPTP5.docx` — URD Báo giá & Thanh toán online (SOP App + fpt.vn), dùng mục B (Quy trình nghiệp vụ: tổng quan, Flow A–D, trạng thái báo giá) cho mục Báo giá SOP
-- Thông tin bạn cung cấp 19/11/2026: báo giá áp dụng cả App và Desktop; bấm Tạo báo giá là có mã đơn hàng; phải bấm Tạo hợp đồng mới có hợp đồng; SOP Online tạo hợp đồng xong mới có khoản thu; chưa thanh toán đã có BBĐT
+- Thông tin QC cung cấp 19/11/2026: báo giá áp dụng cả App và Desktop; bấm Tạo báo giá là có mã đơn hàng; phải bấm Tạo hợp đồng mới có hợp đồng; SOP Online tạo hợp đồng xong mới có khoản thu; chưa thanh toán đã có BBĐT

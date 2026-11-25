@@ -1,6 +1,6 @@
 # KÊNH W-SALE (SaleChannelID 9)
 
-> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: user cung cấp 03/11/2026). Rule chung: [00-CHUNG.md](../00-CHUNG.md) · Rule XHD: [`../../../../RULE-XHD.md`](../../../../RULE-XHD.md).
+> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: QC cung cấp 03/11/2026). Rule chung: [00-CHUNG.md](../00-CHUNG.md) · Rule XHD: [`../../../../RULE-XHD.md`](../../../../RULE-XHD.md).
 
 ## Thông tin chung
 
@@ -56,7 +56,7 @@ Tổng quan (sheet Tổng quan, bảng mapping): W-Sale là module tích hợp t
    - Swap box only: Dịch vụ "FPT Play", sự cố "KH cần thay/lắp đặt, kết nối BOX".
    - Swap box combo: Dịch vụ "FPT Play, Internet", sự cố "KH cần thay/lắp đặt, kết nối BOX và Truy cập mạng chậm hoặc chập chờn".
    - Swap wifi 5/6/7 (lần đầu trên SHD): Dịch vụ "Internet", sự cố "Truy cập mạng chậm hoặc chập chờn".
-8. Hoàn tất giao dịch xong mới **xuất hóa đơn** → gạch nợ. SR HTKT tạo kèm lúc hoàn tất, không phải điều kiện để xuất hóa đơn (user xác nhận 23/11/2026).
+8. Hoàn tất giao dịch xong mới **xuất hóa đơn** → gạch nợ. SR HTKT tạo kèm lúc hoàn tất, không phải điều kiện để xuất hóa đơn (QC xác nhận 23/11/2026).
 
 **URD FPT Swap Modem Wifi 6** (v3.1, 21/08/2023, LOCNDP) mô tả màn tư vấn Swap trên **Inside › Chăm sóc khách hàng › Quản lý Telesales** (tìm HĐ → màn Swap Modem Wifi 6): Modem (mặc định Swap Modem Wifi 6, gói Sky, chọn thiết bị, AP, thu hồi thiết bị), Box (Swap có phí / Swap không phí có hóa đơn / Swap không phí không hóa đơn), Hẹn triển khai (ngày, khung giờ, năng lực), Thanh toán (phí Swap bắt buộc, tăng cước Internet, số tháng TT còn lại, hình thức triển khai chỉ hiển thị, tổng tiền).
 
@@ -81,7 +81,7 @@ Tổng quan (sheet Tổng quan, bảng mapping): W-Sale là module tích hợp t
 Chỉ bán thêm {1,7} — `RULE-XHD.md` §1.1.
 
 ## Khoản thu
-Đơn W-Sale **có khoản thu** (nguồn: user xác nhận 19/11/2026).
+Đơn W-Sale **có khoản thu** (nguồn: QC xác nhận 19/11/2026).
 
 ## Chưa có thông tin
 Luồng thanh toán khoản thu chi tiết (tải QR ở tab Hẹn triển khai), use case Tích hẹn triển khai, BBĐT, đơn Swap có phiếu thi công / hình thức triển khai nào.

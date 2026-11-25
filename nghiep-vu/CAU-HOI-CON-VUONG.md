@@ -34,7 +34,7 @@ Tổng hợp từ việc đọc các tài liệu `input/`. **Phạm vi: chỉ wo
 | BA-9 | ✅ **trạng thái của đơn hàng** · (hỏi: "Đơn hàng BÌNH THƯỜNG" là tình trạng của đơn hay của hợp đồng?) |
 | B4 | ✅ đúng, là **phiếu bán thiết bị** · (hỏi: Retail-Counter có nhiều loại giao dịch thiết bị (bán, thuê, đổi bảo hành…). Phiếu giao tại quầy của đơn SPF ứng với loại nào, có phải "phiếu bán thiết bị" không?) |
 
-### Đơn đặt hàng Vendor (URD M-Vendor)
+### Phiếu giao hàng NCC (URD M-Vendor)
 | # | Câu hỏi |
 |---|---|
 | BA-10 | 🟡 Bạn: **là 1 hệ thống** nhưng chưa chắc chắn — cần xác nhận lại với BA |
@@ -63,7 +63,7 @@ Tổng hợp từ việc đọc các tài liệu `input/`. **Phạm vi: chỉ wo
 ### Mới sau khi đọc input cập nhật
 | # | Câu hỏi |
 |---|---|
-| C1 | ⚪ Không cần — chi tiết, ngoài phạm vi workflow tổng quan (bạn 19/11/2026) · (hỏi: Sơ đồ điều kiện hoàn tất PTC có "hoàn tất tất cả khoản thu hiển thị trên PTC", nhưng bạn cung cấp 17/11/2026 là đã **bỏ** rule khoản thu đã thanh toán mới hoàn tất PTC. Điều kiện nào đang đúng (hay chỉ bỏ trên STG)?) |
+| C1 | ⚪ Không cần — chi tiết, ngoài phạm vi workflow tổng quan (bạn 19/11/2026) · (hỏi: Sơ đồ điều kiện hoàn tất PTC có "hoàn tất tất cả khoản thu hiển thị trên PTC", nhưng QC cung cấp 17/11/2026 là đã **bỏ** rule khoản thu đã thanh toán mới hoàn tất PTC. Điều kiện nào đang đúng (hay chỉ bỏ trên STG)?) |
 | C2 | ✅ **Là 1**: Mobinet = MobiX · (hỏi: URD Resource Equipment V1.0 ghi Mobinet (MBN) cho NVKT/KTV. Mobinet có phải app MobiX dùng để hoàn tất PTC không?) |
 | C3 | ✅ Bạn chốt: quy trình tổng quan SCM chỉ cần phần **Tích hợp Inside** (5 quy trình + đối soát kho tạm). Còn chưa rõ: bồi thường được ghi thế nào trên SCM |
 | C4 | ✅ **Là 1**: Tool BP = Tool QLCS · (hỏi: URD Business Policy 2.1 ghi domain bp.fpt.net; mindmap đang dùng bp-stag (STG, cần host). Tool BP và Tool QLCS là một phải không?) |

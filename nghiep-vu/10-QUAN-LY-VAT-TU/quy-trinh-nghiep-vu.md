@@ -10,11 +10,11 @@
 
 > Nguồn: URD INSIDE Resource Equipment V1.0 (ReInvent M-Equipment, Milestone 1 — vật tư TIN/PNC), mục "Thông tin chung" và "Tổng quan › Quy trình nghiệp vụ" (sơ đồ *Tổng quan*, sơ đồ *Quản lý vật tư TIN/PNC* và bảng bước – người thực hiện). Không lấy đặc tả từng chức năng.
 
-**Hệ thống:** Inside – Vật tư TIN/PNC (khai báo, xác nhận, báo cáo) và **Mobinet** (= app **MobiX**, bạn xác nhận 19/11/2026) (NVKT/KTV đề nghị tạm ứng, chuyển vật tư, hoàn ứng, nhập vật tư); xác nhận tạm ứng trên **FTELSCM**; vật tư dùng khi **triển khai** (Inside/MBN – Triển khai, theo phiếu thi công) và **bảo trì** (Inside/MBN – Bảo trì).
+**Hệ thống:** Inside – Vật tư TIN/PNC (khai báo, xác nhận, báo cáo) và **Mobinet** (= app **MobiX**, QC xác nhận 19/11/2026) (NVKT/KTV đề nghị tạm ứng, chuyển vật tư, hoàn ứng, nhập vật tư); xác nhận tạm ứng trên **FTELSCM**; vật tư dùng khi **triển khai** (Inside/MBN – Triển khai, theo phiếu thi công) và **bảo trì** (Inside/MBN – Bảo trì).
 
 | # | Nghiệp vụ | Người thực hiện | Hệ thống |
 |---|---|---|---|
-| 1 | Khai báo thông tin vật tư. Với **loại hình bán thiết bị**: **QLCS lấy dữ liệu từ Quản lý vật tư rồi trả ra cho SPF** (bạn xác nhận 19/11/2026) | FTQ / INF | Inside |
+| 1 | Khai báo thông tin vật tư. Với **loại hình bán thiết bị**: **QLCS lấy dữ liệu từ Quản lý vật tư rồi trả ra cho SPF** (QC xác nhận 19/11/2026) | FTQ / INF | Inside |
 | 2 | Phân quyền kho – đối tác: điều hành, kế toán, thủ kho | FTQ / QLĐV | Inside |
 | 3 | Khai báo định mức vật tư | FAF / kế toán trưởng | Inside |
 | 4 | Khóa chuyển vật tư | FAF | Inside |
@@ -36,7 +36,7 @@
 
 ### 5.5 Vật tư cho phiếu & kho SCM
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 **Luồng vật tư:** Kho SCM ⇒ (tạm ứng) ⇒ Tool vật tư ⇒ (load vật tư) ⇒ Giao & lắp đặt.
 

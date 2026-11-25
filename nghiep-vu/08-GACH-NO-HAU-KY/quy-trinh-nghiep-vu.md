@@ -25,25 +25,25 @@
 | 1 | Đồng bộ Paid từ kênh thanh toán | INVOICE, kênh thanh toán | Luôn ghi nhận Paid, kể cả khi hóa đơn chưa phát hành |
 | 2 | Nhận điểm chạm xét gạch nợ | INVOICE | 3 điểm chạm ở trên |
 | 3 | Lấy nợ, chọn **Paid** hay **Cọc** | INVOICE, kênh thanh toán | Một đơn chỉ đi 1 luồng |
-| 4a | Nếu Paid: gạch tạm → gỡ tạm → gạch thật | INVOICE, đội EVC | Chỉ đơn kênh sàn mới gạch tạm; phần EVC do đội EVC gạch |
-| 4b | Nếu Cọc: kiểm tra đủ rồi trừ cọc | INVOICE, đội EVC | Cọc không có gạch nợ tạm |
+| 4a | Nếu Paid: gạch tạm → gỡ tạm → gạch thật | INVOICE, đội EVC | Chỉ đơn kênh sàn mới gạch tạm; phần EVC do đội EVC gạch. Kiểm tra gạch nợ tạm: Inside › **Bảng kê TT** (QC cung cấp 25/11/2026) |
+| 4b | Nếu Cọc: kiểm tra đủ rồi trừ cọc | INVOICE, đội EVC | Cọc không có gạch nợ tạm. Kiểm tra cọc: Inside › Quản lý kế toán › Tiền đặt cọc › Tra cứu (QC cung cấp 25/11/2026) |
 | 5 | Cập nhật trạng thái **Đã gạch nợ** | INVOICE | Gạch từng hóa đơn, theo số tiền từ cao xuống thấp |
 
 ### Đẩy hậu kỳ — HĐĐT và tiền trả trước (URD B.III)
 
 | Mục | Nội dung |
 |---|---|
-| Mô tả | Đẩy thông tin hậu kỳ (tạo hóa đơn điện tử, add tiền trả trước) khi một đơn có thể có nhiều hóa đơn. Sau khi nhận Invoice Event, **2 nhánh chạy song song** |
+| Mô tả | Đẩy thông tin hậu kỳ (tạo hóa đơn điện tử, add tiền trả trước) khi một đơn có thể có nhiều hóa đơn. Sau khi nhận bản tin báo hóa đơn đã phát hành (**Invoice Event**): nhánh HĐĐT đẩy ngay; nhánh tiền trả trước **chờ hóa đơn gạch nợ xong** mới đẩy (QC cung cấp 25/11/2026) |
 | Tác nhân | INVOICE, hệ thống HĐĐT, hệ thống Dịch vụ |
-| Trigger | Hóa đơn phát hành thành công (Invoice Event) |
+| Trigger | Hóa đơn phát hành thành công (Invoice Event). Riêng tiền trả trước: hóa đơn Đã gạch nợ |
 | Kết quả | Thông tin và tiền dịch vụ đẩy đúng theo từng đơn cấu thành hóa đơn; đã add tiền trả trước cho khách |
 
 | # | Bước | Hệ thống | Lưu ý |
 |---|---|---|---|
-| 1 | Nhận **Invoice Event** sau phát hành | INVOICE | Chỉ đẩy phần vừa xuất, tách theo đơn |
+| 1 | Nhận bản tin báo hóa đơn đã phát hành (**Invoice Event**) | INVOICE | Chỉ đẩy phần vừa xuất, tách theo đơn |
 | A1 | Nhánh HĐĐT: chuẩn bị thông tin | INVOICE | Ký hiệu, ID, nội dung, tổng tiền theo thuế suất |
 | A2 | Nhánh HĐĐT: đẩy sang hệ thống HĐĐT | INVOICE, HĐĐT | Đủ thông tin mới đẩy |
-| B1 | Nhánh tiền trả trước: đẩy dịch vụ | INVOICE, hệ thống Dịch vụ | Tách theo đơn |
+| B1 | Nhánh tiền trả trước: đẩy dịch vụ | INVOICE, hệ thống Dịch vụ | Chỉ khi hóa đơn Đã gạch nợ; tách theo đơn |
 | B2 | Nhánh tiền trả trước: đánh dấu đã đẩy hậu kỳ | INVOICE | Mỗi đơn chỉ add tiền trả trước 1 lần |
 
 ---
@@ -52,14 +52,14 @@
 - Khoản thu phải chuyển sang **Đã thanh toán**.
 - Tiền được **đẩy vào cọc**.
 
-**Luồng thanh toán → cọc → hóa đơn → gạch nợ** (SOP Desktop/Mobile, DKOL, FPL) (nguồn: user cung cấp 17/11/2026):
+**Luồng thanh toán → cọc → hóa đơn → gạch nợ** (SOP Desktop/Mobile, DKOL, FPL) (nguồn: QC cung cấp 17/11/2026):
 1. Khách thanh toán ⇒ hệ thống cập nhật khoản thu **Đã thanh toán**.
 2. Hệ thống **nhập cọc**.
 3. Nhận được **tín hiệu xuất hóa đơn** ⇒ hệ thống xuất hóa đơn.
 4. **Có cọc** ⇒ hệ thống **gạch nợ hóa đơn** theo cọc và cập nhật hóa đơn **Đã thanh toán**.
-5. Hóa đơn **dịch vụ trả trước** ⇒ hệ thống **add tiền trả trước**.
+5. Gạch nợ xong, hóa đơn **dịch vụ trả trước** ⇒ hệ thống **add tiền trả trước** (chưa gạch nợ thì chưa add).
 
-**Cách gạch nợ theo loại đơn** (nguồn: user cung cấp 17/11/2026):
+**Cách gạch nợ theo loại đơn** (nguồn: QC cung cấp 17/11/2026):
 - Đơn **TMĐT** (Shopee, TikTok) ⇒ hệ thống **gạch nợ theo Paid**.
 - Đơn **khác TMĐT** ⇒ hệ thống **gạch nợ bằng cọc**.
 - Hóa đơn có **dịch vụ trả trước** ⇒ hệ thống **add tiền trả trước**.
@@ -69,7 +69,7 @@
 
 ## 8. Hậu kỳ — đẩy hóa đơn điện tử & tiền trả trước (BR-HK)
 
-Sau khi nhận Invoice Event, **2 nhánh chạy song song**:
+Hóa đơn phát hành xong, INVOICE gửi bản tin báo hóa đơn đã phát hành (**Invoice Event**), rồi đẩy 2 nhánh hậu kỳ. Nhánh hóa đơn điện tử đẩy ngay. Nhánh tiền trả trước **chỉ đẩy khi hóa đơn đã gạch nợ xong** (nguồn: QC cung cấp 25/11/2026):
 
 ### 8.1 Nguyên tắc chung (BR-HK-01)
 - Phần nào trên đơn **đã xuất hóa đơn** thì đẩy hậu kỳ đúng phần đó (dịch vụ hay thiết bị đều đẩy).
@@ -85,6 +85,8 @@ Sau khi nhận Invoice Event, **2 nhánh chạy song song**:
   - Dòng EVC và các thông tin khác theo mẫu hóa đơn.
 
 ### 8.3 Nhánh 2 — Tiền trả trước (BR-HK-09)
+- **Kiểm tra:** tool **Tra cứu new** (QC cung cấp 25/11/2026).
+- **Chỉ đẩy khi hóa đơn đã gạch nợ xong** (trạng thái Đã gạch nợ). Chưa gạch nợ ⇒ chưa add tiền trả trước (nguồn: QC cung cấp 25/11/2026).
 - Add tiền gói dịch vụ trả trước vào hợp đồng của khách.
 - **Mỗi đơn chỉ add 1 lần**, kể cả khi đơn được xuất nhiều hóa đơn.
 - Hóa đơn chỉ có thiết bị ⇒ **không add** tiền trả trước.

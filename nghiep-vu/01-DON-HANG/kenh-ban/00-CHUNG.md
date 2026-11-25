@@ -1,6 +1,6 @@
 # RULE CHUNG CHO MỌI KÊNH BÁN (STG)
 
-> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: thông tin user cung cấp ngày 03/11/2026). Dùng kèm [`../../../RULE-XHD.md`](../../../RULE-XHD.md).
+> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: thông tin QC cung cấp ngày 03/11/2026). Dùng kèm [`../../../RULE-XHD.md`](../../../RULE-XHD.md).
 > Rule riêng từng kênh: xem [mục lục](../../../RULE-CHINH-SACH-KENH-BAN.md).
 
 ---
@@ -22,7 +22,7 @@
 - **Phương thức thanh toán**.
 - **Loại khách hàng:** khách hàng mới hay khách hàng cũ.
 - **Hình thức triển khai** của thiết bị (xem §2).
-- **Phiếu mua hàng / voucher:** khách hàng hoặc nhân viên add vào lúc tạo đơn (nguồn: user cung cấp 04/11/2026).
+- **Phiếu mua hàng / voucher:** khách hàng hoặc nhân viên add vào lúc tạo đơn (nguồn: QC cung cấp 04/11/2026).
 
 ### Cách tạo chính sách bán hàng
 1. Tìm chính sách bán hàng có sẵn với dịch vụ muốn bán.
@@ -56,7 +56,7 @@ Thiết bị có nhiều hình thức triển khai tùy theo chính sách khai b
 | **TIN/PNC giao hàng** | **Chỉ Camera Offnet** và **Thiết bị lẻ** — giao hàng, không yêu cầu kích hoạt | TIN/PNC | Phiếu thi công theo đơn hàng, loại **Giao hàng** |
 | Quầy | Chỉ Camera Offnet, Thiết bị lẻ | DVKH CN | Phiếu giao dịch bán thiết bị tại quầy |
 | Sale | Chỉ Thiết bị lẻ (quản lý MAC) | Nhân viên bán hàng | Phiếu giao dịch bán thiết bị tại quầy |
-| NCC Samsung / Sony / Casper | Chỉ Thiết bị lẻ mua từ NCC bán lại (TV…) | Nhà cung cấp | Đơn đặt hàng Vendor + mã vận đơn |
+| NCC Samsung / Sony / Casper | Chỉ Thiết bị lẻ mua từ NCC bán lại (TV…) | Nhà cung cấp | Phiếu giao hàng NCC + mã vận đơn |
 | FTI | SPDV đặc thù, dự án: **OnCall, Camera B2B, ListLine**… (HN, HCM, CNx) | Đối tác FTI | Phiếu thi công, loại Triển khai |
 | Không / None | Dịch vụ không cần triển khai, vd **dịch vụ Code SA** (đẩy code qua SMS) | — | Không có phiếu |
 
@@ -79,14 +79,14 @@ Thiết bị có nhiều hình thức triển khai tùy theo chính sách khai b
 
 ## 3. Sau khi tạo đơn hàng (mọi kênh)
 
-- **Xem thông tin đơn hàng:** vào **SPF Web admin** — http://saleplatform-stag.fpt.net/web-admin/Account/Login (nguồn: user cung cấp 04/11/2026).
+- **Xem thông tin đơn hàng:** vào **SPF Web admin** — http://saleplatform-stag.fpt.net/web-admin/Account/Login (nguồn: QC cung cấp 04/11/2026).
 - Tạo đơn hàng xong sẽ có **thông tin hợp đồng**.
 - Kiểm tra thông tin hợp đồng ở **tool Tình trạng** trên **Inside** (vd: hợp đồng con có thông tin hợp đồng cha cũng xem ở đây).
 - Hợp đồng được dùng khi xuất hóa đơn: thông tin khách, hiệu lực hợp đồng, chi nhánh quản lý, mã tỉnh theo địa chỉ hợp đồng; các loại hợp đồng tổ chức / con / SST / nghiệp vụ có rule riêng (xem `RULE-XHD.md` §4, §6, §7).
 
 ### 3.1 Cập nhật thông tin hợp đồng
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 | Cách | Dùng để |
 |---|---|
@@ -107,12 +107,12 @@ Liên quan xuất hóa đơn (`RULE-XHD.md`): hợp đồng tạm ngưng / đã 
 
 > Tổng hợp từ §4.1, §4.2, §4.4 và rule từng kênh. BBĐT là **thực thể riêng**, không phụ thuộc phiếu thi công.
 >
-> **Loại BBĐT** (nguồn: user cung cấp 11/11/2026): **Không auto ký** (phải ký trên SPF Web admin) → Internet, FPT Camera B2B, FPT Camera Combo, Tổng đài Oncall, Ultra Fast, FPT Play · **Auto ký** → các dịch vụ còn lại: FPT Camera Only, FPT Play Stands Alone, Sản phẩm khác, FPT Smart Home, Ultra Fast Stand Alone, FPro, FSafe Go, VioEdu Stand Alone, VIP 247, SIM data, Pay Wifi, HyperFast, FPT AI Wi-Fi · Vendor → tự động ký · Shopee/TikTok → có BBĐT, gen sau khi tạo đơn thành công; loại BBĐT (auto ký / ký tay) theo dịch vụ như mọi kênh (user xác nhận 19/11/2026).
+> **Loại BBĐT** (nguồn: QC cung cấp 11/11/2026): **Không auto ký** (ký tay: trên SPF Web admin hoặc khách ký trên app HiFPT › Tài khoản › Hợp đồng/Phụ lục — QC cung cấp 25/11/2026) → Internet, FPT Camera B2B, FPT Camera Combo, Tổng đài Oncall, Ultra Fast, FPT Play · **Auto ký** → các dịch vụ còn lại: FPT Camera Only, FPT Play Stands Alone, Sản phẩm khác, FPT Smart Home, Ultra Fast Stand Alone, FPro, FSafe Go, VioEdu Stand Alone, VIP 247, SIM data, Pay Wifi, HyperFast, FPT AI Wi-Fi · Vendor → tự động ký · Shopee/TikTok → có BBĐT, gen sau khi tạo đơn thành công; loại BBĐT (auto ký / ký tay) theo dịch vụ như mọi kênh (QC xác nhận 19/11/2026).
 
 | Trường hợp | Áp dụng | Khoản thu | Giao & lắp đặt | BBĐT |
 |---|---|---|---|---|
 | 1. Cả 3 cùng lúc | PTTT = Thanh toán khi triển khai (mọi kênh có khoản thu) | Sau khi tạo đơn, Chưa thanh toán | **Phiếu thi công:** sau khi tạo đơn (không chờ thanh toán) | Sau khi tạo đơn |
-| 2. Khoản thu trước | Desktop / Mobile, PTTT Online | **Sau khi bấm Tạo hợp đồng** (user xác nhận 19/11/2026), Chưa thanh toán | Sau khi KH thanh toán khoản thu | **Sau khi bấm Tạo hợp đồng**, cùng lúc khoản thu (chưa thanh toán đã có BBĐT — user xác nhận 19/11/2026) |
+| 2. Khoản thu trước | Desktop / Mobile, PTTT Online | **Sau khi bấm Tạo hợp đồng** (QC xác nhận 19/11/2026), Chưa thanh toán | Sau khi KH thanh toán khoản thu | **Sau khi bấm Tạo hợp đồng**, cùng lúc khoản thu (chưa thanh toán đã có BBĐT — QC xác nhận 19/11/2026) |
 | 3. PTTT Online: KH thanh toán trước, rồi mới tạo đơn, khoản thu, phiếu thi công, BBĐT | DKOL, PTTT Online | Khi tạo đơn, trạng thái **Đã thanh toán** | Sau khi tạo đơn | Sau khi tạo đơn |
 | 4. Không có khoản thu | Shopee / TikTok | Không có — dùng Order Transaction | **PTC / phiếu giao tại quầy tạo sau khi tạo đơn hàng thành công** (hoàn tất trước khi xuất HĐ; phiếu giao xác nhận 19/11/2026) | **Sau khi tạo đơn hàng thành công** |
 | 5. Không tạo khoản thu | VNTT | Không tạo | **Chưa rõ** | **Chưa rõ** |
@@ -124,7 +124,7 @@ Liên quan xuất hóa đơn (`RULE-XHD.md`): hợp đồng tạm ngưng / đã 
 
 ### 4.0a Thông tin khoản thu
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 | Trường | Ý nghĩa |
 |---|---|
@@ -147,7 +147,7 @@ Ngay **sau khi tạo đơn** (không chờ thanh toán), hệ thống gen **đ�
 | Kênh | Luồng | Chi tiết |
 |---|---|---|
 | DKOL | KH thanh toán xong mới tạo đơn ⇒ đơn và khoản thu **Đã thanh toán** ⇒ gen phiếu thi công, biên bản điện tử | [DKOL.md](DKOL/DKOL.md) |
-| Desktop / Mobile | Tạo báo giá (có mã đơn) ⇒ bấm **Tạo hợp đồng** ⇒ khoản thu **Chưa thanh toán** và biên bản điện tử (chưa thanh toán đã có BBĐT — user xác nhận 19/11/2026) ⇒ KH thanh toán ⇒ gen phiếu thi công | [DESKTOP.md](SOP/DESKTOP.md), [MOBILE.md](SOP/MOBILE.md) |
+| Desktop / Mobile | Tạo báo giá (có mã đơn) ⇒ bấm **Tạo hợp đồng** ⇒ khoản thu **Chưa thanh toán** và biên bản điện tử (chưa thanh toán đã có BBĐT — QC xác nhận 19/11/2026) ⇒ KH thanh toán ⇒ gen phiếu thi công | [DESKTOP.md](SOP/DESKTOP.md), [MOBILE.md](SOP/MOBILE.md) |
 | Shopee / TikTok | **Không có khoản thu**, dùng Order Transaction (2 lần) | [SHOPEE.md](SHOPEE/SHOPEE.md), [TIKTOK.md](TIKTOK/TIKTOK.md) |
 | VNTT | Chỉ ghi nhận HĐ, **không tạo khoản thu** | [VNTT.md](VNTT/VNTT.md) |
 
@@ -155,14 +155,14 @@ Ngay **sau khi tạo đơn** (không chờ thanh toán), hệ thống gen **đ�
 - Khoản thu phải chuyển sang **Đã thanh toán**.
 - Tiền được **đẩy vào cọc**.
 
-**Luồng thanh toán → cọc → hóa đơn → gạch nợ** (SOP Desktop/Mobile, DKOL, FPL) (nguồn: user cung cấp 17/11/2026):
+**Luồng thanh toán → cọc → hóa đơn → gạch nợ** (SOP Desktop/Mobile, DKOL, FPL) (nguồn: QC cung cấp 17/11/2026):
 1. Khách thanh toán ⇒ hệ thống cập nhật khoản thu **Đã thanh toán**.
 2. Hệ thống **nhập cọc**.
 3. Nhận được **tín hiệu xuất hóa đơn** ⇒ hệ thống xuất hóa đơn.
 4. **Có cọc** ⇒ hệ thống **gạch nợ hóa đơn** theo cọc và cập nhật hóa đơn **Đã thanh toán**.
 5. Hóa đơn **dịch vụ trả trước** ⇒ hệ thống **add tiền trả trước**.
 
-**Cách gạch nợ theo loại đơn** (nguồn: user cung cấp 17/11/2026):
+**Cách gạch nợ theo loại đơn** (nguồn: QC cung cấp 17/11/2026):
 - Đơn **TMĐT** (Shopee, TikTok) ⇒ hệ thống **gạch nợ theo Paid**.
 - Đơn **khác TMĐT** ⇒ hệ thống **gạch nợ bằng cọc**.
 - Hóa đơn có **dịch vụ trả trước** ⇒ hệ thống **add tiền trả trước**.
@@ -170,23 +170,25 @@ Ngay **sau khi tạo đơn** (không chờ thanh toán), hệ thống gen **đ�
 
 ### 4.4 Kích hoạt dịch vụ sau thanh toán
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 - Sau khi thanh toán xong, hệ thống **active dịch vụ** của đơn hàng trong **hợp đồng**.
 - Riêng **tài khoản FPT Play**: được kích hoạt **sau khi ký biên bản (điện tử)** xong.
 - **FPT Play SA** (BBĐT auto ký) có 2 hình thức kích hoạt: **gửi code qua SMS** để khách hàng nhập kích hoạt, hoặc **auto kích hoạt**.
-- **Cách ký biên bản điện tử (BBĐT):** SPF Web admin › **chi tiết đơn hàng › Thông tin khác › Ký BBĐT**.
+- **Cách ký biên bản điện tử (BBĐT) ký tay** (2 cách):
+  1. SPF Web admin › **chi tiết đơn hàng › Thông tin khác › Ký BBĐT**.
+  2. Khách vào **app HiFPT › Tài khoản › Hợp đồng/Phụ lục** để ký (QC cung cấp 25/11/2026).
 
 ### 4.5 Cách thanh toán khoản thu (STG)
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 Có 3 cách:
 1. **App HiFPT:** menu **Thanh toán › Trả hộ ngay**.
 2. **Web:** https://staging.fpt.vn/pay
 3. **SPF Web admin** (http://saleplatform-stag.fpt.net/web-admin/Account/Login): vào **chi tiết đơn hàng › Receipt** › nhấn **Thanh toán online**.
 
-**Thẻ test thanh toán (STG)** — nguồn: user cung cấp 04/11/2026:
+**Thẻ test thanh toán (STG)** — nguồn: QC cung cấp 04/11/2026:
 
 | Loại thẻ | Thông tin |
 |---|---|
@@ -201,7 +203,7 @@ Có 3 cách:
 
 ### 5.0 Thông tin và xử lý phiếu thi công (PTC)
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 **Thông tin trên PTC:**
 - **Phân tuyến:** lấy từ tool **Quản lý đối tác**, dùng để phân công nhân sự TIN/PNC đi thi công.
@@ -215,8 +217,8 @@ Có 3 cách:
 
 ### 5.1 Hoàn tất phiếu thi công (PTC) — hình thức TIN/PNC
 
-> **Bỏ rule cũ** "phải ký BBĐT + khoản thu đã thanh toán mới được hoàn tất PTC" (nguồn: user cung cấp 17/11/2026).
-> **Mỗi loại phiếu hoàn tất trên tool của phiếu đó:** chỉ **phiếu thi công** hoàn tất trên **SPF Web admin / app MobiX**; phiếu giao hàng tại quầy hoàn tất trên **Tool quầy** (§5.2, §5.3), **không** hoàn tất PTC; đơn đặt hàng Vendor trên **M-Vendor**.
+> **Bỏ rule cũ** "phải ký BBĐT + khoản thu đã thanh toán mới được hoàn tất PTC" (nguồn: QC cung cấp 17/11/2026).
+> **Mỗi loại phiếu hoàn tất trên tool của phiếu đó:** chỉ **phiếu thi công** hoàn tất trên **SPF Web admin / app MobiX**; phiếu giao hàng tại quầy hoàn tất trên **Tool quầy** (§5.2, §5.3), **không** hoàn tất PTC; phiếu giao hàng NCC trên **M-Vendor**.
 
 **Cách 1 — Inside + partner portal:**
 1. Vào **Inside new v5 › Thông tin chung › Triển khai**.
@@ -268,7 +270,7 @@ Có 3 cách:
 
 ### 5.5 Vật tư cho phiếu & kho SCM
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 **Luồng vật tư:** Kho SCM ⇒ (tạm ứng) ⇒ Tool vật tư ⇒ (load vật tư) ⇒ Giao & lắp đặt.
 
@@ -296,7 +298,7 @@ Cả 2 tool, sau khi **đề nghị tạm ứng**, đều sang **tool kho SCM** 
 
 ## 6. Hủy đơn hàng
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 - **Tool hủy đơn hàng:** Inside › tool **Quản lý hợp đồng › Hợp đồng NOT OK V3 › tab Trước sử dụng**.
 

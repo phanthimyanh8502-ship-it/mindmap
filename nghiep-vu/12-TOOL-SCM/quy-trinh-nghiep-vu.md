@@ -8,8 +8,8 @@
 
 ## Quy trình tổng quan — Tích hợp Inside
 
-> Bạn chốt 19/11/2026: quy trình tổng quan của Tool SCM chỉ cần phần **Tích hợp Inside** (luồng vật tư giữa tool vật tư và kho FTELSCM). "Inside" là tên mục trong tài liệu; **Tool Quản lý vật tư và Quản lý vật tư quầy nằm ở Fox ERP** (bạn xác nhận 19/11/2026).
-> Nguồn: `Quy-trình-SCM.docx` (hướng dẫn sử dụng FTELSCM 1.5) — mục lục **IX. Tích hợp Inside** có 5 quy trình (tạm ứng, hoàn ứng, trả vật tư, bồi thường vật tư, thu hồi vật tư) nhưng không có nội dung; vai trò và bước lấy từ URD Resource Equipment V1.0 (vật tư TIN/PNC), URD Retail-Counter V1.0 (vật tư quầy) và thao tác STG bạn cung cấp. Chỗ đánh dấu *(chưa rõ)* là tài liệu không nói.
+> Bạn chốt 19/11/2026: quy trình tổng quan của Tool SCM chỉ cần phần **Tích hợp Inside** (luồng vật tư giữa tool vật tư và kho FTELSCM). "Inside" là tên mục trong tài liệu; **Tool Quản lý vật tư và Quản lý vật tư quầy nằm ở Fox ERP** (QC xác nhận 19/11/2026).
+> Nguồn: `Quy-trình-SCM.docx` (hướng dẫn sử dụng FTELSCM 1.5) — mục lục **IX. Tích hợp Inside** có 5 quy trình (tạm ứng, hoàn ứng, trả vật tư, bồi thường vật tư, thu hồi vật tư) nhưng không có nội dung; vai trò và bước lấy từ URD Resource Equipment V1.0 (vật tư TIN/PNC), URD Retail-Counter V1.0 (vật tư quầy) và thao tác STG QC cung cấp. Chỗ đánh dấu *(chưa rõ)* là tài liệu không nói.
 
 **Hai đầu:** tool vật tư trên **Fox ERP** (Quản lý vật tư — TIN/PNC — NVKT/KTV thao tác qua Mobinet = MobiX; Vật tư quầy — giao dịch viên) ⇄ kho **FTELSCM** (thủ kho FMD). Kế toán **FAF** xác nhận trên Fox ERP.
 
@@ -28,7 +28,7 @@
 
 ### 5.5 Vật tư cho phiếu & kho SCM
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
 
 **Luồng vật tư:** Kho SCM ⇒ (tạm ứng) ⇒ Tool vật tư ⇒ (load vật tư) ⇒ Giao & lắp đặt.
 

@@ -1,6 +1,6 @@
 # KÊNH CRM (SaleChannelID 13)
 
-> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: user cung cấp 03/11/2026). Rule chung: [00-CHUNG.md](../00-CHUNG.md) · Rule XHD: [`../../../../RULE-XHD.md`](../../../../RULE-XHD.md).
+> Tách từ `RULE-CHINH-SACH-KENH-BAN.md` (nguồn: QC cung cấp 03/11/2026). Rule chung: [00-CHUNG.md](../00-CHUNG.md) · Rule XHD: [`../../../../RULE-XHD.md`](../../../../RULE-XHD.md).
 
 ## Thông tin chung
 
@@ -9,7 +9,7 @@
 | Owner | HoangPHD |
 | Nơi tạo đơn | Web CRM — https://crm-stag.fpt.net/ |
 | Host | **Cần host** |
-| Dịch vụ | Hiện chỉ bán **FPT Play SME** (dịch vụ FPL) — user xác nhận 23/11/2026 |
+| Dịch vụ | Hiện chỉ bán **FPT Play SME** (dịch vụ FPL) — QC xác nhận 23/11/2026 |
 
 ## Cách tạo đơn
 1. Tạo đơn cơ hội
@@ -23,7 +23,7 @@
 > Nguồn: `input/ISC_FTEL_B2B CRM V1.6_URD Sprint 2.docx` (URD B2B CRM, khởi tạo 05/06/2026, ThaoLTT84 · review HoangPHD) — B.II mục 1) Cơ hội kinh doanh và mục 4) Đơn hàng - Hủy đơn hàng, Tích hợp tạo ID khoản thu Billing Hub.
 
 ### Dịch vụ (mục 1 · Tạo cơ hội, cụm Thông tin sản phẩm/dịch vụ đề xuất)
-- **Danh mục sản phẩm** (bắt buộc): URD có FPT Camera và FPT Play SME, nhưng **hiện chỉ bán FPT Play SME** (user xác nhận 23/11/2026).
+- **Danh mục sản phẩm** (bắt buộc): URD có FPT Camera và FPT Play SME, nhưng **hiện chỉ bán FPT Play SME** (QC xác nhận 23/11/2026).
 - **Sản phẩm**: nhóm dịch vụ theo Tenant, tối đa 10 dòng · **Dịch vụ quan tâm**: loại dịch vụ cụ thể, load theo Sản phẩm · phải có ≥1 dòng Sản phẩm - Dịch vụ.
 - Khi kết thúc thành công: tick **Dịch vụ/Sản phẩm đã chốt** (1 hoặc nhiều, dạng Sản phẩm - Dịch vụ). Đơn hàng lấy SPDV, đơn vị, số lượng, đơn giá, VAT, gói tính cước (Tháng/Lần) theo báo giá.
 - URD không liệt kê tên dịch vụ cụ thể trong từng sản phẩm.

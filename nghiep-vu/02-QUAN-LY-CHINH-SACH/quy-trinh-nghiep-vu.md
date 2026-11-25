@@ -10,7 +10,7 @@
 
 > Nguồn: URD Business Policy 2.1, mục "Thông tin chung" và "Tổng quan" (sơ đồ tổng quan + danh sách chức năng). Không lấy đặc tả, business rule chi tiết từng chức năng.
 
-**Tool QLCS** — cũng chính là **Tool BP** (bạn xác nhận 19/11/2026) — (Quản lý chính sách, http://bp.fpt.net/ — STG: bp-stag, cần host) quản lý chính sách từ lúc **tạo đề xuất ⇒ xem xét ⇒ phê duyệt ⇒ quyết định ⇒ ban hành**. Chính sách bán hàng, ưu đãi, chiết khấu tạo trên cùng hệ thống, tạo combo nhanh; các tool bán hàng lấy giá từ QLCS. Phạm vi: toàn quốc.
+**Tool QLCS** — cũng chính là **Tool BP** (QC xác nhận 19/11/2026) — (Quản lý chính sách, http://bp.fpt.net/ — STG: bp-stag, cần host) quản lý chính sách từ lúc **tạo đề xuất ⇒ xem xét ⇒ phê duyệt ⇒ quyết định ⇒ ban hành**. Chính sách bán hàng, ưu đãi, chiết khấu tạo trên cùng hệ thống, tạo combo nhanh; các tool bán hàng lấy giá từ QLCS. Phạm vi: toàn quốc.
 
 | # | Bước | Ghi chú |
 |---|---|---|
@@ -19,7 +19,7 @@
 | 3 | **Phê duyệt / ban hành nhiều cấp** | Đề xuất ⇒ xem xét ⇒ phê duyệt ⇒ quyết định ⇒ ban hành |
 | 4 | **Chính sách hiệu lực** | Từ đây: tra cứu chính sách · gia hạn chính sách bán hàng · package view · phân phối hạn mức chính sách EVC |
 | 5 | **Phân phối hạn mức**: hạn mức tổng ⇒ hạn mức bán hàng ⇒ hạn mức chính sách EVC | Hạn mức khách vãng lai: chỉ khai báo cấp Vùng cho từng chính sách |
-| 6 | **Áp dụng chính sách giá cho các tool bán hàng** | SPF và các kênh lấy giá, PTTT, hình thức triển khai, DV/TB từ chính sách. **Loại hình bán thiết bị:** QLCS lấy dữ liệu từ Quản lý vật tư rồi trả ra cho SPF (bạn xác nhận 19/11/2026) |
+| 6 | **Áp dụng chính sách giá cho các tool bán hàng** | SPF và các kênh lấy giá, PTTT, hình thức triển khai, DV/TB từ chính sách. **Loại hình bán thiết bị:** QLCS lấy dữ liệu từ Quản lý vật tư rồi trả ra cho SPF (QC xác nhận 19/11/2026) |
 | 7 | **Báo cáo sử dụng voucher / chính sách** | — |
 
 **Nhóm chức năng trong URD 2.1:** *Chính sách bán hàng* — nhập chính sách only / combo 1 dịch vụ nhiều phí, cập nhật nhanh PHM trong cùng chính sách, rule lấy giá FPT Play giống Net cho SPF · *Voucher* — lọc chính sách để phân phối theo quyền tài khoản HRIS (kể cả kiêm nhiệm), hạn mức khách vãng lai.
@@ -43,7 +43,7 @@
 - **Phương thức thanh toán**.
 - **Loại khách hàng:** khách hàng mới hay khách hàng cũ.
 - **Hình thức triển khai** của thiết bị (xem §2).
-- **Phiếu mua hàng / voucher:** khách hàng hoặc nhân viên add vào lúc tạo đơn (nguồn: user cung cấp 04/11/2026).
+- **Phiếu mua hàng / voucher:** khách hàng hoặc nhân viên add vào lúc tạo đơn (nguồn: QC cung cấp 04/11/2026).
 
 ### Cách tạo chính sách bán hàng
 1. Tìm chính sách bán hàng có sẵn với dịch vụ muốn bán.
@@ -77,7 +77,7 @@ Thiết bị có nhiều hình thức triển khai tùy theo chính sách khai b
 | **TIN/PNC giao hàng** | **Chỉ Camera Offnet** và **Thiết bị lẻ** — giao hàng, không yêu cầu kích hoạt | TIN/PNC | Phiếu thi công theo đơn hàng, loại **Giao hàng** |
 | Quầy | Chỉ Camera Offnet, Thiết bị lẻ | DVKH CN | Phiếu giao dịch bán thiết bị tại quầy |
 | Sale | Chỉ Thiết bị lẻ (quản lý MAC) | Nhân viên bán hàng | Phiếu giao dịch bán thiết bị tại quầy |
-| NCC Samsung / Sony / Casper | Chỉ Thiết bị lẻ mua từ NCC bán lại (TV…) | Nhà cung cấp | Đơn đặt hàng Vendor + mã vận đơn |
+| NCC Samsung / Sony / Casper | Chỉ Thiết bị lẻ mua từ NCC bán lại (TV…) | Nhà cung cấp | Phiếu giao hàng NCC + mã vận đơn |
 | FTI | SPDV đặc thù, dự án: **OnCall, Camera B2B, ListLine**… (HN, HCM, CNx) | Đối tác FTI | Phiếu thi công, loại Triển khai |
 | Không / None | Dịch vụ không cần triển khai, vd **dịch vụ Code SA** (đẩy code qua SMS) | — | Không có phiếu |
 

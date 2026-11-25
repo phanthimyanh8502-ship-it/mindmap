@@ -120,7 +120,8 @@ Không hợp lệ ⇒ **không xuất hóa đơn** và ghi log; hệ thống kh�
 - **Chi nhánh xuất hóa đơn** = chi nhánh quản lý hợp đồng.
 - **Nội dung hóa đơn:** tên dịch vụ + số tháng sử dụng.
 - **Một đơn có thể có nhiều hóa đơn** (dịch vụ và thiết bị xuất ở các đợt khác nhau).
-- Sau khi phát hành, hệ thống gửi **Invoice Event** để chuyển sang **gạch nợ** và **hậu kỳ**.
+- **Kiểm tra hóa đơn đã xuất:** Inside › **Quản lý kế toán › Liệt kê cước** (QC cung cấp 25/11/2026).
+- Sau khi phát hành, INVOICE gửi bản tin báo hóa đơn đã phát hành (**Invoice Event**) để chuyển sang **gạch nợ** và **hậu kỳ**.
 
 ---
 

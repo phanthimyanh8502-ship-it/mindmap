@@ -4,4 +4,4 @@ Tài liệu đầu vào của rule kênh ở [`../FPL.md`](../FPL.md). Thư mụ
 
 ## Nguồn
 
-- Thông tin bạn cung cấp (ghi ở từng mục trong `FPL.md`): 03/11/2026, 04/11/2026, 17/11/2026, 20/11/2026
+- Thông tin QC cung cấp (ghi ở từng mục trong `FPL.md`): 03/11/2026, 04/11/2026, 17/11/2026, 20/11/2026

@@ -67,16 +67,16 @@
 
 ---
 
-## 5. Báo cáo (menu mới **Master doanh thu**)
+## 5. Báo cáo (menu mới **Inside › Quản lý kế toán › Master doanh thu** — đường dẫn: QC cung cấp 25/11/2026)
 
-### 5.1 Báo cáo treo (module BCT · BR-13 → BR-17) — Master doanh thu › Báo cáo treo
+### 5.1 Báo cáo treo (module BCT · BR-13 → BR-17) — Inside › Quản lý kế toán › Master doanh thu › Báo cáo treo
 - **BR-13:** chỉ gồm dịch vụ chưa active của hóa đơn đi luồng mới (tính theo từng dịch vụ) và các hóa đơn điều chỉnh liên quan.
 - **BR-14:** tháng này xem đến hiện tại, tháng trước xem số đã chốt.
 - **BR-15:** báo cáo tổng hợp 4 nhóm **Còn lại · Phát sinh · Đã điều chỉnh · Đã thay thế**; mỗi chi nhánh 1 dòng, có dòng tổng khu vực và toàn quốc; mỗi nhóm gồm Số hóa đơn, Doanh thu (trước VAT), VAT, Tổng tiền.
 - **BR-16:** bấm số hóa đơn ở nhóm nào thì mở danh sách chi tiết của nhóm đó.
 - **BR-17:** dịch vụ đã online mà chưa chia ⇒ cột Cảnh báo ghi "Đã online, chưa phân bổ" (chữ, không tô màu, xuất Excel vẫn giữ).
 
-### 5.2 Báo cáo doanh thu phân bổ (module BCPB · BR-18 → BR-20) — Master doanh thu › Báo cáo doanh thu phân bổ
+### 5.2 Báo cáo doanh thu phân bổ (module BCPB · BR-18 → BR-20) — Inside › Quản lý kế toán › Master doanh thu › Báo cáo doanh thu phân bổ
 - **BR-18:** chuyển từ menu cũ *Báo cáo doanh thu › BC kế toán › PB Doanh thu*; giống báo cáo cũ (cùng bộ lọc, cột, cách trình bày), thêm 3 cột **DT chờ phân bổ · Đã phân bổ · DT phân bổ trong kỳ**.
 - **BR-19:** tiền treo ghi 1 lần ở tháng phát hành; xuất và chia trong cùng tháng thì chỉ hiện ở cột cũ.
 - **BR-20:** báo cáo treo và báo cáo kế toán phải khớp: tiền còn treo đến 1 tháng = tổng DT chờ phân bổ − tổng Đã phân bổ đến tháng đó = Doanh thu nhóm Còn lại trên báo cáo treo tổng hợp cùng kỳ.

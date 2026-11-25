@@ -4,4 +4,4 @@ Tài liệu đầu vào của rule kênh ở [`../TIKTOK.md`](../TIKTOK.md). Th�
 
 ## Nguồn
 
-- Thông tin bạn cung cấp (ghi ở từng mục trong `TIKTOK.md`): 03/11/2026, 04/11/2026
+- Thông tin QC cung cấp (ghi ở từng mục trong `TIKTOK.md`): 03/11/2026, 04/11/2026

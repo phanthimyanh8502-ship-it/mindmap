@@ -7,26 +7,32 @@
 
 ## 3. Sau khi tạo đơn hàng (mọi kênh)
 
-- **Xem thông tin đơn hàng:** vào **SPF Web admin** — http://saleplatform-stag.fpt.net/web-admin/Account/Login (nguồn: user cung cấp 04/11/2026).
+- **Xem thông tin đơn hàng:** vào **SPF Web admin** — http://saleplatform-stag.fpt.net/web-admin/Account/Login (nguồn: QC cung cấp 04/11/2026).
 - Tạo đơn hàng xong sẽ có **thông tin hợp đồng**.
 - Kiểm tra thông tin hợp đồng ở **tool Tình trạng** trên **Inside** (vd: hợp đồng con có thông tin hợp đồng cha cũng xem ở đây).
 - Hợp đồng được dùng khi xuất hóa đơn: thông tin khách, hiệu lực hợp đồng, chi nhánh quản lý, mã tỉnh theo địa chỉ hợp đồng; các loại hợp đồng tổ chức / con / SST / nghiệp vụ có rule riêng (xem `RULE-XHD.md` §4, §6, §7).
 
+- **Kiểm tra tiền trả trước đã add vào hợp đồng:** tool **Tra cứu new** (QC cung cấp 25/11/2026).
+
+- **Chốt cước:** menu **Quản lý hợp đồng › Chốt cước** (QC cung cấp 25/11/2026). Dùng khi SR chuyển chủ sở hữu: ngày chốt cước = ngày hiệu lực.
+
 ### 3.1 Cập nhật thông tin hợp đồng
 
-> Nguồn: thông tin user cung cấp ngày 04/11/2026.
+> Nguồn: thông tin QC cung cấp ngày 04/11/2026.
+
+Có **2 tool** (QC cung cấp 25/11/2026): **Inside chỉ cập nhật được thông tin khách hàng**; **SR cập nhật được nhiều hơn** (các loại SR bên dưới và ở [SR](../14-SR/quy-trinh-nghiep-vu.md)).
 
 | Cách | Dùng để |
 |---|---|
-| Inside › **Quản lý hợp đồng › Cập nhật hợp đồng (New)** | Cập nhật thông tin hợp đồng |
-| Tạo SR: **Fox ERP** (https://fox-erp-stag.fpt.net/) › menu **Service Request** | Nơi tạo 4 loại SR bên dưới |
+| Tool Inside: **Quản lý hợp đồng › Cập nhật hợp đồng (New)** | **Chỉ** cập nhật thông tin khách hàng |
+| Tool SR: **Fox ERP** (https://fox-erp-stag.fpt.net/) › menu **Service Request** | Nơi tạo các loại SR bên dưới |
 | **SR thay đổi thông tin khách hàng** | Thay đổi các thông tin của khách hàng |
 | **SR chuyển dịch vụ** | Chuyển các gói dịch vụ **trong cùng 1 nhóm** |
 | **SR thanh lý / tạm ngưng** | Cập nhật hợp đồng sang trạng thái **Đã chấm dứt / Tạm ngưng** |
 | **SR khôi phục dịch vụ** | Đưa hợp đồng từ **Đã chấm dứt / Tạm ngưng** về **Bình thường** |
-| **SR chuyển địa điểm** | Chuyển địa điểm sử dụng dịch vụ (bạn cung cấp 19/11/2026) |
+| **SR chuyển địa điểm** | Chuyển địa điểm sử dụng dịch vụ (QC cung cấp 19/11/2026) |
 
-**SR sinh phiếu thi công** (bạn xác nhận 19/11/2026): **SR chuyển dịch vụ**, **SR chuyển địa điểm**, **SR khôi phục dịch vụ** tạo PTC từ hợp đồng (xem [Phiếu thi công](../05-GIAO-LAP-DAT/01-PHIEU-THI-CONG/quy-trinh-nghiep-vu.md)).
+**SR sinh phiếu thi công** (QC xác nhận 19/11/2026): **SR chuyển dịch vụ**, **SR chuyển địa điểm**, **SR khôi phục dịch vụ** tạo PTC từ hợp đồng (xem [Phiếu thi công](../05-GIAO-LAP-DAT/01-PHIEU-THI-CONG/quy-trinh-nghiep-vu.md)).
 
 Liên quan xuất hóa đơn (`RULE-XHD.md`): hợp đồng tạm ngưng / đã chấm dứt ⇒ không xuất hóa đơn (BR-XHD-10); cập nhật thông tin khách không kích hoạt phát hành, lần phát hành sau dùng thông tin mới nhất (BR-DB-03).
 
