@@ -12,7 +12,7 @@
 - Kiểm tra thông tin hợp đồng ở **tool Tình trạng** trên **Inside** (vd: hợp đồng con có thông tin hợp đồng cha cũng xem ở đây).
 - Hợp đồng được dùng khi xuất hóa đơn: thông tin khách, hiệu lực hợp đồng, chi nhánh quản lý, mã tỉnh theo địa chỉ hợp đồng; các loại hợp đồng tổ chức / con / SST / nghiệp vụ có rule riêng (xem `RULE-XHD.md` §4, §6, §7).
 
-- **Kiểm tra tiền trả trước đã add vào hợp đồng:** tool **Tra cứu new** (QC cung cấp 25/11/2026).
+- **Kiểm tra tiền trả trước đã add vào hợp đồng:** Inside › **Quản lý kế toán › Cước trả trước › Tra cứu new** (QC cung cấp 25/11/2026).
 
 - **Chốt cước:** menu **Quản lý hợp đồng › Chốt cước** (QC cung cấp 25/11/2026). Dùng khi SR chuyển chủ sở hữu: ngày chốt cước = ngày hiệu lực.
 

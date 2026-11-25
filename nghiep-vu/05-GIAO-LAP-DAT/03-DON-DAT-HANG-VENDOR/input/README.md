@@ -4,6 +4,7 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **M-Vendor trên Fox ERP** — Quản lý NCU › Giao hàng, triển khai NCU › tab Quản lý phiếu giao hàng — cập nhật tình trạng phiếu giao hàng NCC. https://fox-erp-stag.fpt.net/
 - **Tool GH Vendor** (tool QC) — nhập mã đơn hàng FTEL — chạy nhanh tới Đã hoàn tất.
 - BBĐT tự động ký; tín hiệu giao hàng hoàn tất về INVOICE do Vendor gửi.

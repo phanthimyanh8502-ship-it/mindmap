@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool SR** — Fox ERP › Service Request — tạo và xử lý SR.
 - Hệ thống liên quan: Econtract (biên bản), FLI (khóa / mở FPT Play).
 

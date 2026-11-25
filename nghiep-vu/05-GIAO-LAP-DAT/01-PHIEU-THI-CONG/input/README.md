@@ -4,12 +4,16 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 
 ## Tool
 
-- **Inside new v5** — Thông tin chung › Triển khai — kiểm tra PTC theo hợp đồng, phân tuyến, chọn Đã xử lý hoàn tất (QC cung cấp 25/11/2026).
+### Tool thao tác, cập nhật
+- **Inside new v5** — Thông tin chung › Triển khai — phân tuyến, chọn Đã xử lý hoàn tất.
 - **Partner portal** — Bypass — bypass điều kiện hoàn tất PTC (tối đa 24 giờ). http://partner-stag.fpt.net/pt-portal/bypass
 - **SPF Web admin** — Chi tiết đơn hàng › PTC › Hoàn tất PTC — hoàn tất PTC của đơn hàng. http://saleplatform-stag.fpt.net/web-admin/Account/Login
 - **App MobiX** — nhân sự TIN/PNC xử lý phiếu thi công.
 - **Inside — Quản lý hợp đồng** — HĐ NOT OK V3 › PTC NOT OK — hủy PTC hoặc chuyển thi công lại.
 - **Fox ERP** — Quản lý đối tác › Quản lý Block › Quota PTC - TUT — phân công quota PTC. https://fox-erp-stag.fpt.net/
+
+### Tool kiểm tra
+- **Inside new v5** — Thông tin chung › Triển khai — kiểm tra PTC theo hợp đồng (QC cung cấp 25/11/2026).
 
 ## Thao tác
 

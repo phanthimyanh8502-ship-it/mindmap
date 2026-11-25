@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool SR** — Fox ERP › Service Request — tạo và xử lý SR.
 - **Inside – Xử lý giao dịch** — người xử lý nhập thông tin thanh lý / tạm ngưng trên màn xử lý giao dịch.
 - **Inside – Khoản thu** — khoản thu lớn hơn 0 thì tạo ticket thu tiền; trả xong thì Đã thanh toán.

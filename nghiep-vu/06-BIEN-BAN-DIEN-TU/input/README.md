@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **SPF Web admin** — Chi tiết đơn hàng › Thông tin khác › Ký BBĐT — ký tay BBĐT.
 - **App HiFPT** — Tài khoản › Hợp đồng/Phụ lục — khách ký BBĐT.
 

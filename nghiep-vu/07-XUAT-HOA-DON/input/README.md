@@ -4,7 +4,10 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **INVOICE + Billing System** — hệ thống tự chạy — tự đồng bộ đơn từ SPF và phát hành hóa đơn, người dùng không thao tác.
+
+### Tool kiểm tra
 - **SPF Web admin** — xem thời gian tạo đơn của đơn hàng (BR-DB-01).
 - **Inside – Liệt kê cước** — Quản lý kế toán › Liệt kê cước — kiểm tra hóa đơn đã xuất của hợp đồng (QC cung cấp 25/11/2026).
 

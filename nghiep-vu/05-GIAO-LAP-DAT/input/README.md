@@ -4,6 +4,7 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **SPF Web admin / app MobiX** — Chi tiết đơn hàng › PTC — hoàn tất phiếu thi công (TIN/PNC, TIN/PNC giao hàng, FTI). http://saleplatform-stag.fpt.net/web-admin/Account/Login
 - **Tool quầy (QLVT)** — Quản lý chuỗi cung ứng › Giao dịch thiết bị — hoàn tất phiếu giao dịch thiết bị tại quầy (Quầy, Sale).
 - **M-Vendor trên Fox ERP** — Quản lý NCU › Giao hàng, triển khai NCU — hoàn tất phiếu giao hàng NCC. https://fox-erp-stag.fpt.net/

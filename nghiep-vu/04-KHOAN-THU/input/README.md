@@ -4,11 +4,14 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
-- **Inside – Đối soát khoản thu online** — Foxpay › Thanh toán online › Đối soát khoản thu online — kiểm tra khoản thu.
-- **Inside – Tiền đặt cọc** — Quản lý kế toán › Tiền đặt cọc › Tra cứu — kiểm tra tiền đã đẩy vào cọc.
+### Tool thao tác, cập nhật
 - **SPF Web admin** — Chi tiết đơn hàng › Receipt › Thanh toán online — thanh toán khoản thu (STG).
 - **App HiFPT** — Thanh toán › Trả hộ ngay — thanh toán khoản thu (STG).
 - **Web thanh toán** — https://staging.fpt.vn/pay — thanh toán khoản thu (STG).
+
+### Tool kiểm tra
+- **Inside – Đối soát khoản thu online** — Foxpay › Thanh toán online › Đối soát khoản thu online — kiểm tra khoản thu.
+- **Inside – Tiền đặt cọc** — Quản lý kế toán › Tiền đặt cọc › Tra cứu — kiểm tra tiền đã đẩy vào cọc.
 
 ## Thao tác
 

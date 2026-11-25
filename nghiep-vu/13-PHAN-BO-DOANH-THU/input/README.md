@@ -4,7 +4,10 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Phân bổ doanh thu** — tự động — hệ thống tự treo, phân bổ dương, phân bổ âm sau khi phát hành hóa đơn.
+
+### Tool kiểm tra
 - **Báo cáo treo** — Inside › Quản lý kế toán › Master doanh thu › Báo cáo treo — theo dõi tiền đã xuất hóa đơn nhưng chưa phân bổ.
 - **Báo cáo doanh thu phân bổ** — Inside › Quản lý kế toán › Master doanh thu › Báo cáo doanh thu phân bổ — báo cáo kế toán, thay menu cũ Báo cáo doanh thu › BC kế toán › PB Doanh thu.
 

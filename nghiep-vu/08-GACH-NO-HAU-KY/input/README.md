@@ -4,11 +4,14 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **INVOICE** — hệ thống tự chạy — tự gạch nợ hóa đơn và đẩy hậu kỳ (hóa đơn điện tử, tiền trả trước).
+
+### Tool kiểm tra
 - **Inside** — Foxpay › Thanh toán online › Đối soát khoản thu online — kiểm tra khoản thu.
 - **Inside – Tiền đặt cọc** — Quản lý kế toán › Tiền đặt cọc › Tra cứu — kiểm tra tồn cọc dùng gạch nợ (QC cung cấp 25/11/2026).
-- **Inside – Bảng kê TT** — kiểm tra gạch nợ tạm (đơn sàn TMĐT) (QC cung cấp 25/11/2026).
-- **Tra cứu new** — kiểm tra tiền trả trước đã add vào hợp đồng (QC cung cấp 25/11/2026).
+- **Inside – Bảng kê TT** — Quản lý kế toán › Bảng kê TT — kiểm tra gạch nợ tạm (đơn sàn TMĐT) (QC cung cấp 25/11/2026).
+- **Inside – Tra cứu new** — Quản lý kế toán › Cước trả trước › Tra cứu new — kiểm tra tiền trả trước đã add vào hợp đồng (QC cung cấp 25/11/2026).
 
 ## Thao tác
 
@@ -30,10 +33,10 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 1. Vào Inside › Quản lý kế toán › Tiền đặt cọc › Tra cứu, tìm theo hợp đồng, xem tồn cọc.
 
 ### Kiểm tra gạch nợ tạm (người dùng)
-1. Vào tool Inside › Bảng kê TT, xem hóa đơn đơn sàn TMĐT đã gạch nợ tạm.
+1. Vào tool Inside › Quản lý kế toán › Bảng kê TT, xem hóa đơn đơn sàn TMĐT đã gạch nợ tạm.
 
 ### Kiểm tra tiền trả trước (người dùng)
-1. Vào tool Tra cứu new, tìm theo hợp đồng, xem tiền trả trước đã được add sau khi hóa đơn gạch nợ xong.
+1. Vào Inside › Quản lý kế toán › Cước trả trước › Tra cứu new, tìm theo hợp đồng, xem tiền trả trước đã được add sau khi hóa đơn gạch nợ xong.
 
 ## Ý chính tài liệu
 
@@ -56,6 +59,6 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 - Thông tin QC cung cấp (ghi ở đầu từng mục trong `quy-trinh-nghiep-vu.md`): 17/11/2026 (luồng cọc, gạch nợ); 25/11/2026 (tiền trả trước chỉ đẩy sau khi hóa đơn gạch nợ xong)
 - URD Xuất hóa đơn v2.2 (file ở [input của Xuất hóa đơn](../../07-XUAT-HOA-DON/input/)): quy trình tổng quan lấy từ phần **Mô tả + Flow** của mục B.II Gạch nợ hóa đơn và B.III Đẩy hậu kỳ
-- Thông tin QC cung cấp 25/11/2026: kiểm tra gạch nợ tạm trên Inside › Bảng kê TT.
-- Thông tin QC cung cấp 25/11/2026: kiểm tra tiền trả trước trên tool Tra cứu new.
+- Thông tin QC cung cấp 25/11/2026: kiểm tra gạch nợ tạm trên Inside › Quản lý kế toán › Bảng kê TT.
+- Thông tin QC cung cấp 25/11/2026: kiểm tra tiền trả trước trên Inside › Quản lý kế toán › Cước trả trước › Tra cứu new.
 - Thông tin QC cung cấp 25/11/2026: kiểm tra tiền đặt cọc ở Inside › Quản lý kế toán › Tiền đặt cọc › Tra cứu.

@@ -28,7 +28,7 @@ Chỉ đọc file cần cho task, không đọc cả 3 file mindmap HTML (rất 
 
 1. Sửa đúng file `.md` của chủ thể/kênh (rule kênh → `kenh-ban/<KÊNH>/<KÊNH>.md`; rule chung mọi kênh → `00-CHUNG.md`).
 2. Thông tin mới từ user → ghi nguồn + ngày vào `input/README.md` tương ứng.
-   `input/README.md` là nội dung nút 📄 Tài liệu trên mindmap v2: 3 mục `## Tool` · `## Thao tác` · `## Ý chính tài liệu` (ý chính + BR từng tài liệu, không mô tả UI/trường; không lặp lại rule đã có ở "Các case chi tiết") + `## Nguồn` (popup chỉ hiện tên tài liệu). Chủ thể chưa có tài liệu gốc thì thay `## Ý chính tài liệu` bằng `## Nghiệp vụ chính` (theo thông tin QC cung cấp); README không có tài liệu gốc lẫn `## Tool` thì không hiện nút.
+   `input/README.md` là nội dung nút 📄 Tài liệu trên mindmap v2: 3 mục `## Tool` (chia `### Tool thao tác, cập nhật` và `### Tool kiểm tra`) · `## Thao tác` · `## Ý chính tài liệu` (ý chính + BR từng tài liệu, không mô tả UI/trường; không lặp lại rule đã có ở "Các case chi tiết") + `## Nguồn` (popup chỉ hiện tên tài liệu). Chủ thể chưa có tài liệu gốc thì thay `## Ý chính tài liệu` bằng `## Nghiệp vụ chính` (theo thông tin QC cung cấp); README không có tài liệu gốc lẫn `## Tool` thì không hiện nút.
 3. Sửa bất kỳ `quy-trinh-nghiep-vu.md` hoặc `input/README.md` nào → **bắt buộc chạy** `python3 scripts/embed-docs.py` rồi commit cả HTML.
 4. Thêm/đổi kênh hoặc chủ thể → cập nhật luôn mục lục (`RULE-CHINH-SACH-KENH-BAN.md`, `nghiep-vu/README.md`) và node tương ứng trong mindmap v2 (+ lite nếu liên quan).
 5. Không sửa HTML giữa `DOCS:BEGIN`/`DOCS:END` bằng tay.

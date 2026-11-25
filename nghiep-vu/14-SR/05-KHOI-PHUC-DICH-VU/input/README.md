@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool SR** — Fox ERP › Service Request — tạo và xử lý SR.
 - Hệ thống liên quan: SPF (đơn hàng, thu tiền), Inside (phát hành hóa đơn).
 

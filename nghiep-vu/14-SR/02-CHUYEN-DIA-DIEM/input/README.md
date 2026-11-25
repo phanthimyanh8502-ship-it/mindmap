@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool SR** — Fox ERP › Service Request — tạo và xử lý SR.
 - **Inside – Khoản thu** — SR đẩy thông tin sang để tạo khoản thu; khách trả tiền xong thì khoản thu Đã thanh toán.
 - **Inside – Hóa đơn** — khoản thu Đã thanh toán thì Inside tự phát hành hóa đơn.

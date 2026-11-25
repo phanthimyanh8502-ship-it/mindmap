@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool Quản lý vật tư** — Inside – Vật tư TIN/PNC (trên Fox ERP) — khai báo, phân quyền, định mức, xác nhận hoàn ứng, nhập, bồi thường, Dataload ORC ERP, báo cáo.
 - **Mobinet (app MobiX)** — app của NVKT / KTV — đề nghị tạm ứng, chuyển vật tư, đề nghị hoàn ứng, đề nghị nhập vật tư.
 - **Tool SCM (FTELSCM)** — Quản lý kho › Nhập kho › Tạo phiếu nhập; Quản lý kho › Xác nhận tạm ứng từ Inside — FMD xác nhận tạm ứng. https://ftelscm-uat.fpt.net — **Cần host**.

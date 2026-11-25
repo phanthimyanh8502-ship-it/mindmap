@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Inside – Hợp đồng NOT OK V3** — Quản lý hợp đồng › Hợp đồng NOT OK V3 › tab Trước sử dụng — hủy đơn hàng.
 - **Tool SR** — Fox ERP › Service Request — SR thanh lý trước sử dụng, **chỉ đơn chưa thanh toán**.
 

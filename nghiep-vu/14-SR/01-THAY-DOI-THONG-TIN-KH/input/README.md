@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool SR** — Fox ERP › Service Request — tạo và xử lý SR.
 - **Econtract – Biên bản điện tử** — hệ thống tự gen biên bản (dạng thông báo hoặc cần ký).
 - **App HiFPT – Ký kết** — Tài khoản › Hợp đồng/Phụ lục — khách ký biên bản; chuyển chủ sở hữu thì cả chủ cũ và chủ mới ký (QC cung cấp 25/11/2026).

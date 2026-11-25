@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool SCM (FTELSCM)** — Quản lý kho › Nhập kho › Tạo phiếu nhập — nhập hàng hóa, tạo MAC vào kho (KTN test MAC). https://ftelscm-uat.fpt.net — **Cần host**.
 - **Tool SCM (FTELSCM)** — Quản lý kho › Xác nhận tạm ứng từ Inside — FMD xác nhận tạm ứng cho tool vật tư.
 - **Tool vật tư (Fox ERP)** — Quản lý vật tư, Quản lý vật tư quầy — đề nghị tạm ứng, hoàn ứng, nhập, bồi thường.

@@ -4,6 +4,7 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool quầy (QLVT)** — Quản lý chuỗi cung ứng › Giao dịch thiết bị — nhận xử lý, đề nghị xuất vật tư, đóng hàng, hoàn tất phiếu.
 - **Quản lý vật tư quầy** — Tạm ứng vật tư › Đề nghị tạm ứng — tạm ứng vật tư khi chưa có MAC.
 - **SCM (FTELSCM)** — Quản lý kho › Nhập kho / Xác nhận tạm ứng từ Inside — tạo tồn kho test, xác nhận xuất vật tư theo MAC. https://ftelscm-uat.fpt.net — Cần host.

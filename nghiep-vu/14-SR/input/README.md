@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool SR** — Fox ERP › Service Request — tạo và xử lý các loại SR cập nhật hợp đồng (8 loại) và SR thanh lý trước sử dụng. URD gọi là "hệ thống SR" chạy trên Inside Nextgen.
 - **Inside** — Quản lý hợp đồng › Cập nhật hợp đồng (New) — **chỉ** cập nhật thông tin khách hàng (QC cung cấp 25/11/2026).
 - **App HiFPT – Ký kết** — Tài khoản › Hợp đồng/Phụ lục — khách ký biên bản / phụ lục của SR (QC cung cấp 25/11/2026).

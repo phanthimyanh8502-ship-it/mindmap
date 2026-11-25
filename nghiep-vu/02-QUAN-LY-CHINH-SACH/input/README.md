@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool BP (QLCS)** — Bán hàng › tab Bán hàng — tạo, gửi đề xuất và ra quyết định chính sách bán hàng. STG: http://bp-stag.fpt.net/ (cần host).
 
 ## Thao tác

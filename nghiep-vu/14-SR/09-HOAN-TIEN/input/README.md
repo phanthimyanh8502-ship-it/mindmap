@@ -4,10 +4,13 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool SR** — Fox ERP › Service Request — tạo và xử lý SR.
 - **ePayment** — https://uat-epay.fpt.com — **Cần host** — nhận đề nghị hoàn tiền chuyển khoản từ SR, trả kết quả các bước duyệt (QC cung cấp 25/11/2026).
-- **Inside – Tiền đặt cọc** — Quản lý kế toán › Tiền đặt cọc › Tra cứu — kiểm tra tồn cọc trước và sau khi trừ cọc (QC cung cấp 25/11/2026).
 - **DVKH HO** — duyệt đề nghị hoàn tiền online, cập nhật kết quả hoàn từ đối tác.
+
+### Tool kiểm tra
+- **Inside – Tiền đặt cọc** — Quản lý kế toán › Tiền đặt cọc › Tra cứu — kiểm tra tồn cọc trước và sau khi trừ cọc (QC cung cấp 25/11/2026).
 
 ## Thao tác
 

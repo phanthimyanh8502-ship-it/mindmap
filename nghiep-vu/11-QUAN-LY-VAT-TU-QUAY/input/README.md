@@ -4,6 +4,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Tool Quản lý vật tư quầy** — Inside – Vật tư quầy (trên Fox ERP) › Tạm ứng vật tư › Đề nghị tạm ứng — tạm ứng, hoàn ứng, nhập, bồi thường, đối soát vật tư quầy.
 - **Tool SCM (FTELSCM)** — Quản lý kho › Nhập kho › Tạo phiếu nhập; Quản lý kho › Xác nhận tạm ứng từ Inside — tạo MAC và xác nhận tạm ứng. https://ftelscm-uat.fpt.net — **Cần host**.
 - **Quản lý chuỗi cung ứng** — Quản lý chuỗi cung ứng › Giao dịch thiết bị — gắn MAC, hoàn tất phiếu giao tại quầy.

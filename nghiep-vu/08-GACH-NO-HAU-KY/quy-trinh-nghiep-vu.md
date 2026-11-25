@@ -25,7 +25,7 @@
 | 1 | Đồng bộ Paid từ kênh thanh toán | INVOICE, kênh thanh toán | Luôn ghi nhận Paid, kể cả khi hóa đơn chưa phát hành |
 | 2 | Nhận điểm chạm xét gạch nợ | INVOICE | 3 điểm chạm ở trên |
 | 3 | Lấy nợ, chọn **Paid** hay **Cọc** | INVOICE, kênh thanh toán | Một đơn chỉ đi 1 luồng |
-| 4a | Nếu Paid: gạch tạm → gỡ tạm → gạch thật | INVOICE, đội EVC | Chỉ đơn kênh sàn mới gạch tạm; phần EVC do đội EVC gạch. Kiểm tra gạch nợ tạm: Inside › **Bảng kê TT** (QC cung cấp 25/11/2026) |
+| 4a | Nếu Paid: gạch tạm → gỡ tạm → gạch thật | INVOICE, đội EVC | Chỉ đơn kênh sàn mới gạch tạm; phần EVC do đội EVC gạch. Kiểm tra gạch nợ tạm: Inside › **Quản lý kế toán › Bảng kê TT** (QC cung cấp 25/11/2026) |
 | 4b | Nếu Cọc: kiểm tra đủ rồi trừ cọc | INVOICE, đội EVC | Cọc không có gạch nợ tạm. Kiểm tra cọc: Inside › Quản lý kế toán › Tiền đặt cọc › Tra cứu (QC cung cấp 25/11/2026) |
 | 5 | Cập nhật trạng thái **Đã gạch nợ** | INVOICE | Gạch từng hóa đơn, theo số tiền từ cao xuống thấp |
 
@@ -85,7 +85,7 @@ Hóa đơn phát hành xong, INVOICE gửi bản tin báo hóa đơn đã phát 
   - Dòng EVC và các thông tin khác theo mẫu hóa đơn.
 
 ### 8.3 Nhánh 2 — Tiền trả trước (BR-HK-09)
-- **Kiểm tra:** tool **Tra cứu new** (QC cung cấp 25/11/2026).
+- **Kiểm tra:** Inside › **Quản lý kế toán › Cước trả trước › Tra cứu new** (QC cung cấp 25/11/2026).
 - **Chỉ đẩy khi hóa đơn đã gạch nợ xong** (trạng thái Đã gạch nợ). Chưa gạch nợ ⇒ chưa add tiền trả trước (nguồn: QC cung cấp 25/11/2026).
 - Add tiền gói dịch vụ trả trước vào hợp đồng của khách.
 - **Mỗi đơn chỉ add 1 lần**, kể cả khi đơn được xuất nhiều hóa đơn.

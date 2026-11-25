@@ -4,11 +4,14 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
-- **SPF Web admin** — xem thông tin đơn hàng sau khi tạo đơn. STG: http://saleplatform-stag.fpt.net/web-admin/Account/Login
-- **Inside** — Tình trạng — kiểm tra thông tin hợp đồng (kể cả hợp đồng cha của hợp đồng con).
+### Tool thao tác, cập nhật
 - **Inside** — Quản lý hợp đồng › Cập nhật hợp đồng (New) — chỉ cập nhật thông tin khách hàng.
 - **Fox ERP** — Service Request — tạo các loại SR cập nhật hợp đồng. STG: https://fox-erp-stag.fpt.net/
 - **Chốt cước** — Quản lý hợp đồng › Chốt cước — chốt cước dịch vụ của hợp đồng tới một ngày (vd ngày hiệu lực khi chuyển chủ sở hữu) (QC cung cấp 25/11/2026).
+
+### Tool kiểm tra
+- **SPF Web admin** — xem thông tin đơn hàng sau khi tạo đơn. STG: http://saleplatform-stag.fpt.net/web-admin/Account/Login
+- **Inside** — Tình trạng — kiểm tra thông tin hợp đồng (kể cả hợp đồng cha của hợp đồng con).
 
 ## Thao tác
 

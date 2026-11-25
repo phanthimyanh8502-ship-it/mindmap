@@ -4,7 +4,10 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Tool
 
+### Tool thao tác, cập nhật
 - **Kênh bán** — Web/App SOP, HiFPT, FPT.vn, W-Sale, sàn TMĐT… — nơi tạo đơn (xem từng kênh trên mindmap).
+
+### Tool kiểm tra
 - **SPF Web admin** — http://saleplatform-stag.fpt.net/web-admin/Account/Login — xem thông tin đơn hàng sau khi tạo.
 - **Inside – Tình trạng** — kiểm tra hợp đồng của đơn (kể cả hợp đồng cha của hợp đồng con).
 
