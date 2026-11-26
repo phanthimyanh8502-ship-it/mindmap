@@ -890,7 +890,7 @@ const DATA = {
           { t: 'Điều kiện hoàn tất PTC', tag: '5 nhóm', n: 'Không đạt thì quay lại nhân sự thi công; đạt thì nghiệm thu vật tư', c: [
             { t: 'Tiên quyết', n: 'Hợp đồng tình trạng bình thường · PTC tình trạng khác Hoàn tất', see: ['contract'] },
             { t: 'Trên tác vụ', n: 'Tọa độ check-in – check-out trên MobiX lệch ≤ 50 m · đã phân công nhân sự chính cho PTC', see: ['mobix'] },
-            { t: 'Trên hợp đồng', n: 'Hoàn tất các khoản thu hiển thị trên PTC · cài đặt HiFPT · hợp đồng NET: tín hiệu online, suy hao lastmile, công suất · Wifi Marketing · online session', see: ['receipt-info'] },
+            { t: 'Trên hợp đồng', n: 'Thanh toán hoàn tất các khoản thu hiển thị trên PTC (thu trên MobiX, tab Thanh toán) · cài đặt HiFPT · hợp đồng NET: tín hiệu online, suy hao lastmile, công suất · Wifi Marketing · online session', see: ['mobix'], tab: { mobix: 'Thanh toán hóa đơn, khoản thu' } },
             { t: 'Trên đơn hàng', n: 'Upload ảnh hồ sơ khách hàng (bán mới, đơn vị bán DKOL) · biên bản nghiệm thu · biên bản điện tử · chiều dài cáp LastMile · vật tư khả dụng trong kho tạm nhân viên, MAC khớp chức năng, MAC triển khai khác MAC thu hồi', see: ['minutes', 'mat-ptc'] },
             { t: 'Trên dịch vụ', n: 'Dịch vụ active thành công (NET, FPT Play, Camera Bundle, Camera OTT) · MAC online / active trùng MAC trên PTC · SĐT active trùng SĐT trên đơn (Camera OTT) hoặc SĐT chính chủ (Camera Bundle)' }
           ]},
@@ -1507,10 +1507,12 @@ function makeLinks(node) {
     links.append(v);
   }
   (node.see || []).forEach(id => {
-    const b = el('button', 'link', '↗ ' + TITLES[id]);
+    // node.tab[id]: mở thẳng tab đó trong popup của id (vd MobiX › Thanh toán)
+    const tab = node.tab && node.tab[id];
+    const b = el('button', 'link', '↗ ' + TITLES[id] + (tab ? ' › ' + tab : ''));
     b.type = 'button';
     b.title = 'Đi tới ' + TITLES[id];
-    b.addEventListener('click', () => popupOpen() ? openPopup(id) : goTo(id));
+    b.addEventListener('click', () => (popupOpen() || tab) ? openPopup(id, tab) : goTo(id));
     links.append(b);
   });
   return links.childElementCount ? links : null;
@@ -2994,7 +2996,7 @@ function setDesc(box, text) {
     box.append(row);
   });
 }
-function showPopup(id) {
+function showPopup(id, tab) {
   const node = NODES[id]; if (!node) return false;
   const svg = document.getElementById('fcmSvg');
   const title = document.getElementById('fcmTitle'), desc = document.getElementById('fcmDesc');
@@ -3042,7 +3044,7 @@ function showPopup(id) {
       };
       sBar.replaceChildren(); sBar.hidden = false;
       stabs.forEach((x, i) => { const b = el('button', null, x.t); b.type = 'button'; b.setAttribute('role', 'tab'); b.addEventListener('click', () => pick(i)); sBar.append(b); });
-      pick(0);
+      pick(Math.max(0, stabs.findIndex(x => x.t === tab)));
     }
   }
   FCM_ID = id;
@@ -3347,6 +3349,7 @@ function fillSectionDetail(box, node, kids) {
       if (x.n) td2.append(el('div', null, x.n));
       if (x.steps) td2.append(olOf(x.steps));
       if (x.url) td2.append(urlOf(x.url));
+      if (x.tab) { const lk = makeLinks(x); if (lk) td2.append(lk); }  // mục trỏ thẳng tới 1 tab của popup khác
       tr.append(td1, td2); bd.append(tr);
     });
     tb.append(bd); return tb;
@@ -3444,14 +3447,14 @@ function linkSection(node, lk) {
   });
   return sec;
 }
-function openPopup(id) {
+function openPopup(id, tab) {
   if (!NODES[id]) return false;
   const m = document.getElementById('fcModal');
   if (m.hidden) { FCM_HIST = []; FCM_BACK = document.activeElement; }
   else if (FCM_ID && FCM_ID !== id) FCM_HIST.push(FCM_ID);
   const first = m.hidden;
   if (first) { m.hidden = false; document.body.style.overflow = 'hidden'; }
-  showPopup(id);
+  showPopup(id, tab);
   if (first) document.getElementById('fcmClose').focus();
   return true;
 }
