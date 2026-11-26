@@ -2081,8 +2081,8 @@ const SUBJECT_FLOW = {
       ['dk', 3.3, 2, 'Đủ điều kiện?', '', '', 'd'],
       ['tr', 3.3, 3.4, 'Tạo phiếu công trắng', '⚠ cần BA giải thích', 'Inside', 'na'],
       ['pc', 4.4, 2, 'PTC triển khai', 'Phân công đối tác, nhân sự', 'Inside', 'dep'],
-      ['mb', 5.5, 2, 'PTC hiện trên MobiX', 'Ca tồn của nhân sự được phân công', 'MobiX', 'o', 'mobix'],
-      ['tc', 6.6, 2, 'Nhân sự thi công', 'Check-in ≤ 50 m', 'MobiX', 'o', 'mobix'],
+      ['mb', 5.5, 2, 'PTC hiện trên MobiX', 'Ca tồn của nhân sự được phân công', 'MobiX', 'o', 'mobix#Hoàn tất PTC'],
+      ['tc', 6.6, 2, 'Nhân sự thi công', 'Check-in ≤ 50 m', 'MobiX', 'o', 'mobix#Hoàn tất PTC'],
       ['dt', 7.7, 2, 'Đủ ĐK thi công?', '', '', 'd'],
       ['nk', 7.7, 3.4, 'PTC NOT OK', 'Chuyển thi công lại / đề nghị hủy', 'Inside', 'A'],
       ['ht', 8.8, 2, 'Hoàn tất PTC', 'Đủ ĐK: tiên quyết, HĐ, đơn, DV', 'SPF Web admin · MobiX', 'done'],
@@ -2172,16 +2172,16 @@ const SUBJECT_FLOW = {
       ['kb', 0, 0, 'Khai báo, phân quyền', 'Vật tư · kho – đối tác · định mức', 'Inside · FTQ, FAF', 'st'],
       ['cs', 0, 1.3, 'Quản lý chính sách', 'Bán thiết bị: lấy dữ liệu vật tư', 'Tool QLCS (BP)', 'st', 'policy'],
       ['sp', 1.2, 1.3, 'SPF', 'QLCS trả dữ liệu thiết bị ra SPF', 'SPF Web admin', 'o', 'order'],
-      ['tu', 1.2, 0, 'Đề nghị tạm ứng', 'Đội trưởng, NVKT/KTV', 'MobiX · Inside', 'o', 'mobix'],
+      ['tu', 1.2, 0, 'Đề nghị tạm ứng', 'Đội trưởng, NVKT/KTV', 'MobiX · Inside', 'o', 'mobix#Vật tư'],
       ['xn', 2.4, 0, 'Xác nhận tạm ứng', 'FMD (thủ kho)', 'FTELSCM', 'o', 'scm'],
-      ['kt', 3.6, 0, 'Kho tạm của KTV', 'Vật tư đã xác nhận tạm ứng · MAC theo ngày nhận', 'MobiX', 'o', 'mobix'],
-      ['cv', 3.6, 1.3, 'Chuyển vật tư', 'Chỉ khi chuyển cho NV cùng chi nhánh', 'MobiX', 'o', 'mobix'],
+      ['kt', 3.6, 0, 'Kho tạm của KTV', 'Vật tư đã xác nhận tạm ứng · MAC theo ngày nhận', 'MobiX', 'o', 'mobix#Vật tư'],
+      ['cv', 3.6, 1.3, 'Chuyển vật tư', 'Chỉ khi chuyển cho NV cùng chi nhánh', 'MobiX', 'o', 'mobix#Vật tư'],
       ['tk', 4.8, 0, 'Triển khai / bảo trì', 'Phiếu chọn MAC từ kho tạm KTV', 'Inside/MobiX', 'dep', 'ptc'],
-      ['hu', 6, 0, 'Đề nghị hoàn ứng', 'Triển khai · bảo trì', 'MobiX · Inside', 'o', 'mobix'],
+      ['hu', 6, 0, 'Đề nghị hoàn ứng', 'Triển khai · bảo trì', 'MobiX · Inside', 'o', 'mobix#Vật tư'],
       ['xh', 7.2, 0, 'Xác nhận hoàn ứng', 'Tổng hợp phiếu xuất · FAF', 'Inside', 'done'],
       ['orc', 8.4, 0, 'Dataload ORC ERP', 'FAF xác nhận', 'ORC ERP', 'inv'],
       ['dc', 7.2, 1.2, 'Hoàn ứng điều chỉnh', 'TP/PP kỹ thuật duyệt', 'Inside', 'A'],
-      ['nh', 6, 1.2, 'Nhập vật tư', 'FMD xác nhận', 'MobiX · Inside', 'o', 'mobix'],
+      ['nh', 6, 1.2, 'Nhập vật tư', 'FMD xác nhận', 'MobiX · Inside', 'o', 'mobix#Vật tư'],
       ['bt', 6, 2.2, 'Bồi thường vật tư', 'FAF xác nhận', 'Inside', 'A'],
       ['ds', 8.4, 1.2, 'Đối soát, báo cáo', 'Kho tạm ↔ FTELSCM', 'Inside · FTELSCM', 'o', 'scm']
     ],
@@ -2831,9 +2831,11 @@ function fitText(g, el1, text, maxW, maxLines, mk) {
 function drawFlowChart(node, def, svg) {
   const CW = 228, BW = 182, RH = 112, BH = 88, X0 = 16, Y0 = 34, DW = 116, DH = 68;
   const N = {};
-  def.nodes.forEach(([id, c, r, t, s, sys, k, go]) => {
+  def.nodes.forEach(([id, c, r, t, s, sys, k, go0]) => {
     const d = k === 'd';
-    N[id] = { id, t, s, sys, k, go, d, x: X0 + c * CW + (d ? (BW - DW) / 2 : 0), y: Y0 + r * RH + (d ? (BH - DH) / 2 : 0), w: d ? DW : BW, h: d ? DH : BH };
+    // go 'mobix#Vật tư': mở popup mobix ở đúng tab "Vật tư"
+    const [go, gtab] = (go0 || '').split('#');
+    N[id] = { id, t, s, sys, k, go: go || undefined, gtab, d, x: X0 + c * CW + (d ? (BW - DW) / 2 : 0), y: Y0 + r * RH + (d ? (BH - DH) / 2 : 0), w: d ? DW : BW, h: d ? DH : BH };
   });
   const VW = Math.max(...Object.values(N).map(n => n.x + n.w)) + 24;
   const VH = Math.max(...Object.values(N).map(n => n.y + n.h)) + 18;
@@ -2866,7 +2868,7 @@ function drawFlowChart(node, def, svg) {
     n.start = !ES.some(e => e.b === n.id);
     n.end = !ES.some(e => e.a === n.id) && n.k !== 'na';
   });
-  drawLegend(def, ES, !FLOWCHART[node.id] && def.nodes.some(n => n[7] && NODES[n[7]] && n[7] !== node.id && n[7] !== 'nophieu'));
+  drawLegend(def, ES, !FLOWCHART[node.id] && def.nodes.some(n => { const g = n[7] && n[7].split('#')[0]; return g && NODES[g] && g !== node.id && g !== 'nophieu'; }));
   const spread = (key, list, n, side, other) => {
     if (n.d || list.length < 2) return;
     const vert = side === 'l' || side === 'r';
@@ -2946,8 +2948,8 @@ function drawFlowChart(node, def, svg) {
     g.addEventListener('mouseenter', () => on(true)); g.addEventListener('mouseleave', () => on(false));
     g.addEventListener('focus', () => on(true)); g.addEventListener('blur', () => on(false));
     if (canGo(n)) {
-      g.addEventListener('click', () => openPopup(n.go));
-      g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openPopup(n.go); } });
+      g.addEventListener('click', () => openPopup(n.go, n.gtab));
+      g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openPopup(n.go, n.gtab); } });
     } else if (howKey(n)) {
       const k = howKey(n);
       g.addEventListener('click', () => openHowKey(k));
