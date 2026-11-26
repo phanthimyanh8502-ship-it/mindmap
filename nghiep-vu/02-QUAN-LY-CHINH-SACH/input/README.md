@@ -7,6 +7,9 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 ### Tool thao tác, cập nhật
 - **Tool BP (QLCS)** — Bán hàng › tab Bán hàng — tạo, gửi đề xuất và ra quyết định chính sách bán hàng. STG: http://bp-stag.fpt.net/ (cần host).
 
+### Tool kiểm tra
+- **Tool BP (QLCS)** — Bán hàng › tab Bán hàng — kiểm tra chính sách ngay trên tool chính sách (tìm theo mã chính sách).
+
 ## Thao tác
 
 ### Tạo chính sách bán hàng mới (Tool BP)
@@ -55,6 +58,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Nguồn
 
+- QC xác nhận 26/11/2026: kiểm tra chính sách ngay trên tool chính sách (Tool BP).
 - `ISC_Business-Policy_2.1-URD-v1.1.docx`: chỉ dùng mục **Thông tin chung** và **Tổng quan** (sơ đồ tổng quan, danh sách chức năng)
 - Thông tin QC cung cấp (ghi ở đầu từng mục trong `quy-trinh-nghiep-vu.md`): 03/11/2026, 04/11/2026 (voucher)
 - Danh sách hình thức triển khai: [`AnhNQ75-List HT Triển khai.xlsx`](../../05-GIAO-LAP-DAT/input/) (nằm ở input của Giao & lắp đặt)

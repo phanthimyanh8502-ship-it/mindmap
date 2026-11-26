@@ -12,6 +12,9 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 - **Vendor vận chuyển** — tự động: tạo vận đơn, kết nối ĐVVC, tracking, đối soát.
 - **Tool GH Quầy** (tool QC, đang thử nghiệm) — chạy nhanh luồng phiếu có shipper theo số hợp đồng.
 
+### Tool kiểm tra
+- **Tool quầy (QLVT)** — Quản lý chuỗi cung ứng › Giao dịch thiết bị — tìm hợp đồng, kiểm tra trạng thái ngay trên phiếu.
+
 ## Thao tác
 
 ### Hoàn tất phiếu giao tại quầy có shipper
@@ -45,5 +48,6 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 
 ## Nguồn
 
+- QC xác nhận 26/11/2026: kiểm tra trạng thái phiếu giao tại quầy ngay trên phiếu (Giao dịch thiết bị).
 - `QC-ISC_Resource-Equipment_v2.2_URD_v1.0.docx`: **chỉ dùng mục "Quy trình giao hàng qua đơn vị vận chuyển"** (bảng B1–B11 + sơ đồ quy trình)
 - Thông tin QC cung cấp: 04/11/2026 (thao tác STG: phiếu có shipper, không shipper, GHTK webhook)
