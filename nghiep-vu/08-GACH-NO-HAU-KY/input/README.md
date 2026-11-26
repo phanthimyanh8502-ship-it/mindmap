@@ -6,6 +6,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ### Tool thao tác, cập nhật
 - **INVOICE** — hệ thống tự chạy — tự gạch nợ hóa đơn và đẩy hậu kỳ (hóa đơn điện tử, tiền trả trước).
+- **Fox ERP – Quản lý công nợ** — Quản lý công nợ › Quản lý gạch nợ — DVKH HO gạch nợ online / gạch nợ tạm (QC cung cấp 26/11/2026).
 - **Inside – Quản lý thu cước** — Quản lý thu cước › Gạch nợ bổ sung — DVKH HO gạch nợ bổ sung cho giao dịch tiền mặt tạm sau khi KTV nộp tiền (QC xác nhận 26/11/2026).
 
 ### Tool kiểm tra
@@ -58,6 +59,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ## Nguồn
 
+- QC cung cấp 26/11/2026: DVKH HO gạch nợ trên Fox ERP › Quản lý công nợ › Quản lý gạch nợ; tool Quản lý thu cước / Gạch nợ bổ sung nằm trên Inside.
 - Thông tin QC cung cấp (ghi ở đầu từng mục trong `quy-trinh-nghiep-vu.md`): 17/11/2026 (luồng cọc, gạch nợ); 25/11/2026 (tiền trả trước chỉ đẩy sau khi hóa đơn gạch nợ xong)
 - URD Xuất hóa đơn v2.2 (file ở [input của Xuất hóa đơn](../../07-XUAT-HOA-DON/input/)): quy trình tổng quan lấy từ phần **Mô tả + Flow** của mục B.II Gạch nợ hóa đơn và B.III Đẩy hậu kỳ
 - Thông tin QC cung cấp 25/11/2026: kiểm tra gạch nợ tạm trên Inside › Quản lý kế toán › Bảng kê TT.

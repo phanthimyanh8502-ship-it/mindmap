@@ -80,7 +80,7 @@
 - Hợp đồng còn **HĐĐT / PLHĐ / BBĐT chưa ký** thì không xác nhận thu tiền được. Khách ký trên HiFPT / fpt.vn / member trước.
 - Hạn mức tiền mặt: tổng tiền không vượt hạn mức còn lại. Có cấp hạn mức bổ sung theo điều kiện.
 - **Tồn tạm:** tiền mặt tạm phải nộp về công ty trước 10 giờ ngày làm việc kế tiếp (thu sau 16 giờ thứ 6 thì nộp vào thứ 2). Quá hạn ⇒ MobiX **khóa thu tiền tạm và online** đến khi nộp đủ. Tồn tạm quá 48 giờ ⇒ **không cho xuất vật tư**.
-- Thanh toán tạm và gạch nợ đi qua **Billing Hub (BLH)**, không qua Payment Gate (v2.9). DVKH HO gạch nợ online / gạch nợ tạm trên Fox ERP — xem [Gạch nợ & hậu kỳ](../../../08-GACH-NO-HAU-KY/quy-trinh-nghiep-vu.md).
+- Thanh toán tạm và gạch nợ đi qua **Billing Hub (BLH)**, không qua Payment Gate (v2.9). DVKH HO gạch nợ online / gạch nợ tạm trên Fox ERP › Quản lý công nợ › Quản lý gạch nợ — xem [Gạch nợ & hậu kỳ](../../../08-GACH-NO-HAU-KY/quy-trinh-nghiep-vu.md).
 - Xác nhận thanh toán gửi khách qua HiFPT hoặc Zalo / SMS (1 số điện thoại tối đa 10 lần / tháng).
 
 ## Vật tư trên MobiX
