@@ -916,8 +916,8 @@ const DATA = {
         ]},
         { id: 'counter', t: '2. Phiếu giao dịch thiết bị tại quầy', tag: 'Tool quầy', n: 'Chỉ gen sau khi đơn đã thanh toán', see: ['invoice', 'mat-counter'], c: [
           { t: 'Hình thức triển khai', tag: '2 hình thức', c: [
-            { t: 'Quầy', n: 'Chủ thể: DVKH CN. Chỉ Camera Offnet, thiết bị lẻ' },
-            { t: 'Sale', n: 'Chủ thể: nhân viên bán hàng. Chỉ thiết bị lẻ quản lý MAC' }
+            { t: 'Quầy', n: 'DVKH CN. Chỉ Camera Offnet, thiết bị lẻ' },
+            { t: 'Sale', n: 'Nhân viên bán hàng. Chỉ thiết bị lẻ quản lý MAC' }
           ]},
           { t: 'Có shipper giao hàng', steps: ['Quản lý chuỗi cung ứng › Giao dịch thiết bị → tìm HĐ', 'Nhận xử lý phiếu', 'Chọn kho xuất KTN test', 'Đề nghị xuất vật tư', 'SCM: Quản lý kho › Nhập kho › Tạo phiếu nhập hàng cần giao, kho KTN test MAC', 'SCM: Xác nhận tạm ứng từ Inside', 'Phiếu giao dịch thiết bị → Lưu và đóng hàng', 'GHTK: Thông tin tài khoản › Cấu hình API', 'Webhook → Test → nhập mã vận đơn', 'Cập nhật trạng thái 5'], c: [
             { t: 'Tool GH Quầy', tag: 'Tool QC · đang thử nghiệm', n: 'Nhập số HĐ → nhận xử lý phiếu, tạm ứng vật tư (Fox ERP) → phiếu nhập MAC, xác nhận tạm ứng (SCM) → GHTK, đóng hàng → đẩy trạng thái vận đơn (GHTK lab)', zip: 'GH_quay', steps: ['Bấm Tải file zip, giải nén', 'Cần Node.js ≥ 20.12 (Ubuntu / Linux)', 'cp .env.example .env, điền SĐT kho (STOCK_PHONE)', 'bash install.sh (hoặc npm install && npm run ui)', 'Mở http://localhost:3004'] }
