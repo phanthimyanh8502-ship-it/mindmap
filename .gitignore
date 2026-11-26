@@ -1,5 +1,5 @@
-# Tài liệu gốc nội bộ: không đưa lên repo công khai
-nghiep-vu/**/input/*.docx
-nghiep-vu/**/input/*.xlsx
-nghiep-vu/**/input/*.pdf
+# Tài liệu gốc nội bộ: không đưa lên repo công khai (kể cả thư mục con trong input/)
+nghiep-vu/**/input/**/*.docx
+nghiep-vu/**/input/**/*.xlsx
+nghiep-vu/**/input/**/*.pdf
 nghiep-vu/**/*.png
