@@ -20,8 +20,8 @@
 | 4 | Khóa chuyển vật tư | FAF | Inside |
 | 5 | Đề nghị tạm ứng | Đội trưởng, NVKT / KTV (điều hành) | MobiX, Inside |
 | 6 | Xác nhận tạm ứng | FMD (thủ kho) | FTELSCM |
-| 7 | Chuyển vật tư | NVKT / KTV | MobiX |
-| 8 | Dùng vật tư khi thực hiện **triển khai** hoặc **bảo trì** | NVKT / KTV | Inside/MobiX – Triển khai, Bảo trì |
+| 7 | Vật tư đã xác nhận tạm ứng **lưu vào kho tạm của KTV** (QC cung cấp 26/11/2026) | — | MobiX |
+| 8 | Dùng vật tư khi thực hiện **triển khai** hoặc **bảo trì**: phiếu chọn MAC từ **kho tạm của KTV** | NVKT / KTV | Inside/MobiX – Triển khai, Bảo trì |
 | 9 | Đề nghị hoàn ứng (hoàn ứng triển khai / hoàn ứng bảo trì) | Đội trưởng, NVKT / KTV | MobiX, Inside |
 | 10 | Xác nhận hoàn ứng, xác nhận tổng hợp (phiếu xuất tổng hợp) | FAF | Inside |
 | 11 | Đề nghị / xác nhận hoàn ứng điều chỉnh | Đội trưởng / TP, PP kỹ thuật | Inside |
@@ -31,6 +31,8 @@
 | 15 | Xác nhận Dataload ORC ERP | FAF | Inside ⇒ ORC ERP |
 | 16 | Lịch sử vật tư – điều chỉnh vật tư | CUS HO, CS, TIN/PNC | Inside |
 | 17 | Báo cáo, đối soát vật tư (đối soát kho tạm với FTELSCM) | TIN/PNC, FAF, FMD | Inside, FTELSCM |
+
+> **Kho tạm của KTV (QC cung cấp 26/11/2026):** sau khi FMD xác nhận tạm ứng, vật tư vào thẳng kho tạm của KTV; phiếu triển khai / bảo trì lấy MAC từ kho tạm này, **không qua bước chuyển vật tư**. **Chuyển vật tư** (MobiX) là nhánh phụ: chỉ dùng khi KTV chuyển vật tư cho nhân sự khác cùng chi nhánh (bên nhận xác nhận nhận vật tư).
 
 ---
 

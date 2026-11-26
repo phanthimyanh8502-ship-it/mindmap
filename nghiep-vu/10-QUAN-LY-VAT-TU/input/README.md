@@ -18,7 +18,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 ### Tạm ứng vật tư cho kỹ thuật
 1. Đội trưởng / NVKT đề nghị tạm ứng (MobiX, Inside).
 2. Trên SCM: tạo phiếu nhập hàng hóa (kho KTN test MAC), rồi xác nhận tạm ứng từ Inside.
-3. NVKT / KTV chuyển vật tư; phiếu thi công load vật tư khi triển khai hoặc bảo trì.
+3. Vật tư đã xác nhận tạm ứng lưu vào kho tạm của KTV; phiếu triển khai / bảo trì chọn MAC từ kho tạm (chuyển vật tư chỉ khi chuyển cho nhân sự cùng chi nhánh).
 
 ### Hoàn ứng, quyết toán vật tư
 1. Đề nghị hoàn ứng ⇒ FAF xác nhận hoàn ứng, xác nhận tổng hợp.
@@ -56,3 +56,4 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 - `ISC_INSIDE-Resource-Equipment V1.0_URD_V1.0.docx`: chỉ dùng mục **Thông tin chung** và **Tổng quan › Quy trình nghiệp vụ**
 - Thông tin QC cung cấp (ghi ở đầu từng mục trong `quy-trinh-nghiep-vu.md`): 04/11/2026
 - Thông tin QC cung cấp 25/11/2026: thu hồi thiết bị xử lý / kiểm tra ở tool Quản lý chuỗi cung ứng › Quản lý vật tư thu hồi.
+- Thông tin QC cung cấp 26/11/2026: sau khi xác nhận tạm ứng, vật tư lưu vào kho tạm của KTV; phiếu triển khai / bảo trì lấy vật tư từ kho tạm, không qua bước chuyển vật tư.
