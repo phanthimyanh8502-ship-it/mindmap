@@ -15,7 +15,7 @@ Riêng **Đơn hàng** (`01-DON-HANG`): `input/README.md` chỉ chứa nội dun
 | `02-QUAN-LY-CHINH-SACH` | Quản lý chính sách (Tool BP) | — (dùng file Excel ở `05`) |
 | `03-HOP-DONG` | Hợp đồng | — (dùng URD ở `07`) |
 | `04-KHOAN-THU` | Khoản thu | — |
-| `05-GIAO-LAP-DAT` | Giao & lắp đặt (tổng quan) + 3 thư mục con, mỗi thư mục 1 loại triển khai: `01-PHIEU-THI-CONG`, `02-PHIEU-GIAO-DICH-THIET-BI-TAI-QUAY`, `03-DON-DAT-HANG-VENDOR` | `AnhNQ75-List HT Triển khai.xlsx` · 02: `QC-ISC_Resource-Equipment_v2.2_URD_v1.0.docx` · 03: `ISC_INSIDE-M-VendorCooperation_V1.1_URD_V1.0.docx` |
+| `05-GIAO-LAP-DAT` | Giao & lắp đặt (tổng quan) + 3 thư mục con, mỗi thư mục 1 loại triển khai: `01-PHIEU-THI-CONG` (có thư mục con `MOBIX/` — app MobiX), `02-PHIEU-GIAO-DICH-THIET-BI-TAI-QUAY`, `03-DON-DAT-HANG-VENDOR` | `AnhNQ75-List HT Triển khai.xlsx` · 02: `QC-ISC_Resource-Equipment_v2.2_URD_v1.0.docx` · 03: `ISC_INSIDE-M-VendorCooperation_V1.1_URD_V1.0.docx` |
 | `06-BIEN-BAN-DIEN-TU` | Biên bản điện tử | — |
 | `07-XUAT-HOA-DON` | Xuất hóa đơn | `Invoice_Issuance_Architecture_v2_2_URD_v2_0.docx` |
 | `08-GACH-NO-HAU-KY` | Gạch nợ & hậu kỳ | — (dùng URD ở `07`) |
