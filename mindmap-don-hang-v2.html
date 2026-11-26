@@ -2107,8 +2107,8 @@ const SUBJECT_FLOW = {
       ['nt', 3.3, 0, 'Nhả tuyến', 'Chọn nguyên nhân · phiếu rời Ca tồn', 'MobiX', 'A'],
       ['dc', 4.4, 1.3, 'Đang di chuyển', 'Xác nhận đi (tạm thời không bắt buộc)', 'MobiX', 'o'],
       ['ci', 5.5, 1.3, 'Check-in · Đang xử lý', 'Thu tiền, ký BBĐT, triển khai', 'MobiX', 'o'],
-      ['tt', 5.5, 2.7, 'Thanh toán', 'Tiền mặt tạm · Ví FPT Pay · QR VNPay', 'MobiX', 'o', 'receipt'],
-      ['vt', 4.4, 2.7, 'Vật tư', 'MAC bàn giao từ kho tạm KTV', 'MobiX', 'o', 'mat-ptc'],
+      ['tt', 5.5, 2.7, 'Thanh toán', 'Tiền mặt tạm · Ví FPT Pay · QR VNPay', 'MobiX', 'o', 'mobix#Thanh toán hóa đơn, khoản thu'],
+      ['vt', 4.4, 2.7, 'Vật tư', 'MAC bàn giao từ kho tạm KTV', 'MobiX', 'o', 'mobix#Vật tư'],
       ['dk', 6.6, 1.3, 'Triển khai được?', '', '', 'd'],
       ['cx', 6.6, 2.7, 'Chờ xác minh', 'Nguyên nhân trả về · xử lý trong 24 giờ', 'MobiX · Inside', 'A'],
       ['gg', 7.7, 1.3, 'Qua gông hoàn tất', 'Check trùng HĐ · CCCD · ≤ 50 m · MAC · khoản thu · SR', 'MobiX', 'o'],
@@ -2868,7 +2868,7 @@ function drawFlowChart(node, def, svg) {
     n.start = !ES.some(e => e.b === n.id);
     n.end = !ES.some(e => e.a === n.id) && n.k !== 'na';
   });
-  drawLegend(def, ES, !FLOWCHART[node.id] && def.nodes.some(n => { const g = n[7] && n[7].split('#')[0]; return g && NODES[g] && g !== node.id && g !== 'nophieu'; }));
+  drawLegend(def, ES, !FLOWCHART[node.id] && def.nodes.some(n => { const g = n[7] && n[7].split('#')[0]; return g && NODES[g] && (g !== node.id || n[7].includes('#')) && g !== 'nophieu'; }));
   const spread = (key, list, n, side, other) => {
     if (n.d || list.length < 2) return;
     const vert = side === 'l' || side === 'r';
@@ -2915,7 +2915,7 @@ function drawFlowChart(node, def, svg) {
   // Sơ đồ luồng bán hàng (kênh): ô không bấm mở chủ thể khác; sơ đồ của chủ thể (vd Khoản thu) thì bấm được
   // Không có phiếu: không có chi tiết riêng nên ô không bấm được
   const NO_DETAIL = new Set(['nophieu']);
-  const canGo = n => !FLOWCHART[node.id] && n.go && NODES[n.go] && n.go !== node.id && !NO_DETAIL.has(n.go);
+  const canGo = n => !FLOWCHART[node.id] && n.go && NODES[n.go] && (n.go !== node.id || n.gtab) && !NO_DETAIL.has(n.go);  // gtab: chuyển sang tab khác của chính popup
   // Ô có hướng dẫn thao tác + tool (vd Hoàn tất phiếu quầy, Hoàn tất đơn Vendor): bấm được ở mọi sơ đồ
   const howKey = n => n.go && n.go.startsWith('how:') && HOW[n.go.slice(4)] ? n.go.slice(4) : null;
   const wrap = (t, n) => { const out = []; let cur = ''; (t || '').split(' ').forEach(w => { if ((cur + ' ' + w).trim().length > n && cur) { out.push(cur); cur = w; } else cur = (cur + ' ' + w).trim(); }); if (cur) out.push(cur); return out; };
