@@ -2080,7 +2080,7 @@ const SUBJECT_FLOW = {
       ['ht', 'nt', {}], ['nt', 'it', { dash: 1, l: '⚡', c: 'inv' }]
     ]
   },
-  'mobix-ptc': {
+  mobix: {
     desc: 'Tổng quan: Hoàn tất phiếu thi công trên MobiX; trạng thái ticket đồng bộ với Inside new v5.\nMục đích: KTV nhận và xử lý phiếu thi công, thu tiền, dùng vật tư, hoàn tất PTC ngay tại nhà khách.\nLuồng chính: Phân công → PTC hiện ở Ca tồn trên MobiX của nhân sự được phân công → nhận ca → di chuyển → check-in, thu tiền, ký BBĐT, triển khai → qua gông → Đã xử lý hoàn tất → tín hiệu giao hàng về INVOICE.',
     nodes: [
       ['tk', 0, 1.3, 'Ticket triển khai', 'Đơn bán mới, bán thêm, SR', 'SPF · SR', 'st', 'ptc'],
@@ -2434,29 +2434,8 @@ Object.assign(SUBJECT_FLOW, {
     ]
   }
 });
-/* App MobiX — tổng quan chức năng + 1 tab / chức năng (nghiep-vu/05-GIAO-LAP-DAT/01-PHIEU-THI-CONG/MOBIX) */
+/* App MobiX — 1 tab / chức năng (nghiep-vu/05-GIAO-LAP-DAT/01-PHIEU-THI-CONG/MOBIX) */
 Object.assign(SUBJECT_FLOW, {
-  mobix: {
-    desc: 'Tổng quan: App MobiX (tên cũ Mobinet) của kỹ thuật TIN/PNC, đội trưởng; lấy dữ liệu từ Inside, trạng thái đồng bộ với Inside new v5.\nMục đích: Làm mọi việc của kỹ thuật ngay tại nhà khách: hoàn tất PTC, hoàn tất bảo trì, tạo SR, thanh toán hóa đơn và khoản thu, quản lý vật tư.\nLuồng chính: Phân công → ca vụ hiện ở Ca tồn trên MobiX của nhân sự được phân công → chọn chức năng (mỗi chức năng 1 tab).',
-    nodes: [
-      ['ap', 0, 3, 'App MobiX', 'KTV, đội trưởng TIN/PNC', 'MobiX', 'st'],
-      ['f1', 1.4, 0, 'Ca tồn · Triển khai', 'Nhận ca, check-in, xử lý PTC', 'MobiX', 'o'],
-      ['f2', 1.4, 1.2, 'Ca tồn · Bảo trì', 'Xử lý checklist bảo trì', 'MobiX', 'o'],
-      ['f3', 1.4, 2.4, 'Tạo SR', 'Tạo và xem SR ngay trên app', 'MobiX', 'o'],
-      ['f4', 1.4, 3.6, 'Thanh toán', 'Hóa đơn, khoản thu của hợp đồng', 'MobiX', 'o'],
-      ['f5', 1.4, 4.8, 'Vật tư', 'Tạm ứng, chuyển, nhận, nhập trả', 'MobiX', 'o'],
-      ['f6', 1.4, 6, 'Đội trưởng', 'Phân tuyến lại, báo cáo, xem tọa độ', 'MobiX', 'o'],
-      ['r1', 2.8, 0, 'Hoàn tất PTC', 'Tín hiệu giao hàng về INVOICE', 'MobiX · Inside', 'done', 'ptc'],
-      ['r2', 2.8, 1.2, 'Hoàn tất bảo trì', 'Đóng ticket bảo trì', 'MobiX · Inside', 'done'],
-      ['r3', 2.8, 2.4, 'SR', 'Có SR mới hoàn tất được phiếu', 'Hệ thống SR', 'o', 'contract-sr'],
-      ['r4', 2.8, 3.6, 'Gạch nợ', 'Qua Billing Hub', 'Billing Hub · Fox ERP', 'gn', 'postproc'],
-      ['r5', 2.8, 4.8, 'Tool Quản lý vật tư', 'Kho tạm KTV, hoàn ứng', 'Fox ERP', 'o', 'mat-ptc']
-    ],
-    edges: [
-      ['ap', 'f1', {}], ['ap', 'f2', {}], ['ap', 'f3', {}], ['ap', 'f4', {}], ['ap', 'f5', {}], ['ap', 'f6', {}],
-      ['f1', 'r1', {}], ['f2', 'r2', {}], ['f3', 'r3', {}], ['f4', 'r4', { dash: 1, l: '⚡', c: 'inv' }], ['f5', 'r5', { dash: 1 }]
-    ]
-  },
   'mobix-bt': {
     desc: 'Tổng quan: Hoàn tất bảo trì trên MobiX (ticket bảo trì tạo theo quy trình SR hỗ trợ kỹ thuật).\nMục đích: KTV xử lý sự cố, đổi thiết bị cho khách đang dùng dịch vụ.\nLuồng chính: Ticket bảo trì → phân công → Ca tồn tab Bảo trì → nhận ca → check-in (trừ ca xử lý từ xa) → xử lý checklist → hoàn tất hoặc Chờ xác minh.',
     nodes: [
@@ -2532,8 +2511,7 @@ Object.assign(SUBJECT_FLOW, {
 });
 const MOBIX_TAB = re => k => re.test(k.t || '');
 SUBJECT_TABS.mobix = [
-  { t: 'Tổng quan chức năng', def: SUBJECT_FLOW.mobix },
-  { t: 'Hoàn tất PTC', def: SUBJECT_FLOW['mobix-ptc'], keep: MOBIX_TAB(/PTC|ticket triển khai/), links: 1 },
+  { t: 'Hoàn tất PTC', def: SUBJECT_FLOW.mobix, keep: MOBIX_TAB(/PTC|ticket triển khai/), links: 1 },
   { t: 'Hoàn tất bảo trì', def: SUBJECT_FLOW['mobix-bt'], keep: MOBIX_TAB(/bảo trì/), links: 1 },
   { t: 'Tạo SR', def: SUBJECT_FLOW['mobix-sr'], keep: MOBIX_TAB(/SR/), links: 1 },
   { t: 'Thanh toán hóa đơn, khoản thu', def: SUBJECT_FLOW['mobix-tt'], keep: MOBIX_TAB(/Thanh toán/), links: 1 },
