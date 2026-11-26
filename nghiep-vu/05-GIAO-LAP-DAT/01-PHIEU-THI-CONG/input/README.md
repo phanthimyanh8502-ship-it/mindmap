@@ -25,11 +25,15 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 2. Phân tuyến, phân công nhân sự TIN/PNC; nhân sự xử lý phiếu trên app MobiX.
 
 ### Hoàn tất phiếu thi công (để có tín hiệu giao hàng gửi INVOICE)
+Phiếu thi công hoàn tất trên Inside new v5, SPF Web admin hoặc app MobiX; phiếu giao tại quầy hoàn tất trên Tool quầy, đơn Vendor trên M-Vendor.
 1. Cách 1: partner portal › Bypass (tích tất cả, nhập hợp đồng, thời hạn ≤ 24 giờ, nguyên nhân) → quay lại PTC chọn Đã xử lý hoàn tất.
 2. Cách 2: SPF Web admin › Chi tiết đơn hàng › PTC › Hoàn tất PTC.
 
 ### Hủy PTC hoặc chuyển thi công lại
 1. Inside › Quản lý hợp đồng › HĐ NOT OK V3 › PTC NOT OK.
+
+### Phân công quota PTC
+1. Fox ERP › Quản lý đối tác › Quản lý Block › Quota PTC - TUT.
 
 ## Ý chính tài liệu
 
