@@ -3389,7 +3389,8 @@ function fillSectionDetail(box, node, kids) {
 }
 /* Các case chi tiết của chủ thể trong popup: mỗi nhánh con là 1 mục mở/thu, mục cấp 1 mở sẵn */
 /* Mục đã có ở sơ đồ hoặc ở nút 📄 Tài liệu thì không lặp lại ở "Các case chi tiết" (dữ liệu vẫn giữ cho các kiểu xem khác) */
-const DETAIL_HIDE = { policy: ['Quy trình tổng quan', 'Tool chính sách STG', 'Cách tạo chính sách'] };
+// ptc: App MobiX là luồng riêng, chi tiết chỉ hiện ở popup App MobiX
+const DETAIL_HIDE = { policy: ['Quy trình tổng quan', 'Tool chính sách STG', 'Cách tạo chính sách'], ptc: ['App MobiX'] };
 function fillPopupDetail(node) {
   const box = document.getElementById('fcmDetail');
   box.replaceChildren(); box.style.removeProperty('--mc');
