@@ -881,11 +881,11 @@ const DATA = {
           ]},
           { t: 'Thông tin trên PTC', tag: '6 nhóm', c: [
             { t: 'Phân tuyến', n: 'Lấy từ tool Quản lý đối tác, dùng để phân công nhân sự TIN/PNC đi thi công' },
-            { t: 'Thông tin hợp đồng', see: ['contract'] },
-            { t: 'Thông tin đơn hàng', see: ['order-info'] },
+            { t: 'Thông tin hợp đồng', n: 'Lấy từ hợp đồng', see: ['contract'] },
+            { t: 'Thông tin đơn hàng', n: 'Lấy từ thông tin đơn hàng đã mua', see: ['order-info'] },
             { t: 'Vật tư triển khai', n: 'Thiết bị khách hàng mua', see: ['mat-ptc'] },
             { t: 'Vật tư thu hồi', n: 'Kiểm tra ở Quản lý chuỗi cung ứng › Quản lý vật tư thu hồi', see: ['mat-ptc'] },
-            { t: 'Khoản thu', see: ['receipt-info'] }
+            { t: 'Khoản thu', n: 'Lấy từ khoản thu của đơn hàng', see: ['receipt-info'] }
           ]},
           { t: 'Điều kiện hoàn tất PTC', tag: '5 nhóm', n: 'Không đạt thì quay lại nhân sự thi công; đạt thì nghiệm thu vật tư', c: [
             { t: 'Tiên quyết', n: 'Hợp đồng tình trạng bình thường · PTC tình trạng khác Hoàn tất', see: ['contract'] },
@@ -1009,8 +1009,8 @@ const DATA = {
       { t: 'Nhập kho và xác nhận tạm ứng', steps: ['Quản lý kho › Nhập kho › Tạo phiếu nhập hàng hóa (kho KTN test MAC)', 'Quản lý kho › Xác nhận tạm ứng từ Inside'] }
     ]},
 
-    { id: 'invoice', col: 7, t: 'Xuất hóa đơn', tag: 'BR-XHD', c: [
-      { t: 'Điều kiện xuất', tag: 'BR-XHD-03', c: [
+    { id: 'invoice', col: 7, t: 'Xuất hóa đơn', c: [
+      { t: 'Điều kiện xuất', c: [
         { t: 'Dịch vụ', n: 'Có tín hiệu "đã thanh toán" từ SPF', see: ['receipt'] },
         { t: 'Thiết bị', n: 'Có tín hiệu giao hàng hoàn tất của phương thức tương ứng; chỉ TB có trong tín hiệu', see: ['deploy'] },
         { t: 'DV và TB xét độc lập', n: 'Dùng chung mọi kênh' },
@@ -1018,13 +1018,13 @@ const DATA = {
         { t: 'Hợp đồng tổ chức', n: 'Phải duyệt PĐK (trừ 2 ngày lịch cuối tháng). Chưa duyệt → chặn, xuất tay. Bán thêm phải duyệt PĐK mới', see: ['contract'] },
         { t: 'Không tự xuất', n: 'Hợp đồng con (gắn HĐ cha) · hợp đồng SST · hợp đồng nghiệp vụ', see: ['contract'] }
       ]},
-      { t: 'Đơn hợp lệ', tag: 'BR-XHD-10', c: [
+      { t: 'Đơn hợp lệ', c: [
         { t: 'Trạng thái', n: 'Không bị hủy, không đang cập nhật; hợp đồng còn hiệu lực', see: ['cancel'] },
         { t: 'Thông tin chung', n: 'Sale team, kênh bán, tên KH, loại hình KH, địa chỉ xuất hóa đơn, LocationID' },
         { t: 'Thông tin dịch vụ', n: 'Dịch vụ, nhóm, gói, chính sách, câu lệnh giá, CTKM > 0', see: ['policy'] },
         { t: 'Không hợp lệ', n: 'Không xuất hóa đơn, ghi log, không giữ lại để xuất sau' }
       ]},
-      { t: 'Lịch xuất & gộp', tag: 'BR-XHD-01, 02, 05, 06', c: [
+      { t: 'Lịch xuất & gộp', c: [
         { t: 'Kênh thường', n: 'Đợt 1 chốt 12:00 chạy 12:05 · đợt 2 chốt 18:00 chạy 18:05 (tham số)' },
         { t: 'Kênh FPL', n: 'Worker 2h/lần (0h–2h, 2h–4h…) + mốc 22:05 chốt 0h–22h' },
         { t: 'Phạm vi quét', n: 'Dòng chưa xuất, mốc nghiệp vụ trong ngày, trước giờ chốt' },
@@ -1034,7 +1034,7 @@ const DATA = {
       ]},
       { t: 'Thay thế / điều chỉnh giảm hóa đơn', tag: 'Fox ERP · Quản lý hóa đơn', n: 'Tạo đề nghị thay thế hoặc điều chỉnh giảm, sau đó duyệt đề nghị (QC cung cấp 26/11/2026)', steps: ['Fox ERP › Quản lý hóa đơn › Hóa đơn & khoản thu › Tạo đề nghị', 'Fox ERP › Quản lý hóa đơn › Hóa đơn & khoản thu › Duyệt đề nghị'], menus: ['Fox ERP › Quản lý hóa đơn › Hóa đơn & khoản thu'], url: 'https://fox-erp-stag.fpt.net/', see: ['revenue'] },
       { t: 'Kiểm tra hóa đơn đã xuất', tag: 'Inside', n: 'Vào Inside › Quản lý kế toán › Liệt kê cước để xem hóa đơn đã xuất của hợp đồng (QC cung cấp 25/11/2026)', menus: ['Inside › Quản lý kế toán › Liệt kê cước'] },
-      { t: 'Thông tin trên hóa đơn', tag: 'BR-XHD-12, 13, 14', c: [
+      { t: 'Thông tin trên hóa đơn', c: [
         { t: 'Billing System', n: 'Ghi BillNumber và BillDate (= ngày phát hành thực tế)' },
         { t: 'Chi nhánh', n: 'Chi nhánh quản lý hợp đồng', see: ['contract'] },
         { t: 'Nội dung', n: 'Tên dịch vụ + số tháng sử dụng' },
@@ -1043,13 +1043,13 @@ const DATA = {
       ]}
     ]},
 
-    { id: 'postproc', col: 8, t: 'Gạch nợ & hậu kỳ', tag: 'GN · BR-HK', c: [
+    { id: 'postproc', col: 8, t: 'Gạch nợ & hậu kỳ', tag: 'GN', c: [
       { t: 'Quy trình tổng quan', tag: 'URD XHD v2.2 · B.II, B.III', steps: ['Đồng bộ Paid từ kênh thanh toán (luôn ghi nhận)', '3 điểm chạm xét gạch nợ: đồng bộ Paid xong · sau khi xuất hóa đơn · worker 30 phút', 'Lấy nợ, chọn luồng Paid hoặc Cọc (1 đơn 1 luồng)', 'Paid: đơn sàn gạch nợ tạm, Paid hoàn tất thì gỡ tạm rồi gạch thật · Cọc: đủ cọc mới trừ', 'Hóa đơn Đã gạch nợ khi tổng Payment = tổng tiền', 'Hậu kỳ: hóa đơn phát hành xong → đẩy hóa đơn điện tử ngay · tiền trả trước chờ hóa đơn Đã gạch nợ mới add (mỗi đơn 1 lần)'], see: ['invoice', 'contract'] },
       { t: 'Cách gạch nợ', tag: 'Theo loại đơn', steps: ['Đơn TMĐT (Shopee, TikTok): hệ thống gạch nợ theo Paid', 'Đơn khác TMĐT: hệ thống gạch nợ bằng cọc, cập nhật hóa đơn Đã thanh toán', 'Gạch nợ xong, hóa đơn có dịch vụ trả trước: hệ thống add tiền trả trước'], see: ['tmdt', 'receipt'] },
       { t: 'Gạch nợ TMĐT', n: 'Lần 1: gạch nợ hóa đơn tạm khi đơn đã thanh toán cho sàn · Lần 2: gạch nợ hóa đơn thật sau quyết toán', see: ['tmdt'] },
       { t: 'Kiểm tra tiền đặt cọc', tag: 'Inside', n: 'Vào Inside › Quản lý kế toán › Tiền đặt cọc › Tra cứu để xem tồn cọc dùng gạch nợ (QC cung cấp 25/11/2026)', menus: ['Inside › Quản lý kế toán › Tiền đặt cọc › Tra cứu'], see: ['receipt'] },
       { t: 'Kiểm tra gạch nợ tạm', tag: 'Inside', n: 'Vào tool Inside › Quản lý kế toán › Bảng kê TT để xem hóa đơn đơn sàn TMĐT đã gạch nợ tạm (QC cung cấp 25/11/2026)', menus: ['Inside › Quản lý kế toán › Bảng kê TT'], see: ['tmdt'] },
-      { t: 'Nguyên tắc hậu kỳ', tag: 'BR-HK-01', n: 'Đẩy đúng phần đã xuất; mỗi lần phát hành chỉ đẩy phần vừa xuất, tách theo đơn' },
+      { t: 'Nguyên tắc hậu kỳ', n: 'Đẩy đúng phần đã xuất; mỗi lần phát hành chỉ đẩy phần vừa xuất, tách theo đơn' },
       { t: 'Hóa đơn điện tử', c: [
         { t: 'Đủ thông tin mới đẩy', n: 'Chưa đủ thì chưa đẩy' },
         { t: 'Ký hiệu', n: 'Theo quy định thuế, vùng miền. Sai = sai kê khai' },
@@ -1058,26 +1058,26 @@ const DATA = {
         { t: 'Tổng tiền', n: 'Gom theo KCT, 0%, 5%, 8%, 10% + dòng tổng cộng' }
       ]},
       { t: 'Kiểm tra tiền trả trước', tag: 'Inside', n: 'Vào Inside › Quản lý kế toán › Cước trả trước › Tra cứu new để xem tiền trả trước đã add vào hợp đồng (QC cung cấp 25/11/2026)', menus: ['Inside › Quản lý kế toán › Cước trả trước › Tra cứu new'], see: ['contract'] },
-      { t: 'Tiền trả trước', tag: 'BR-HK-09', n: 'Chỉ đẩy khi hóa đơn Đã gạch nợ. Add vào hợp đồng, mỗi đơn 1 lần. Hóa đơn chỉ thiết bị không add. Áp cả bán mới, bán thêm', see: ['contract'] }
+      { t: 'Tiền trả trước', n: 'Chỉ đẩy khi hóa đơn Đã gạch nợ. Add vào hợp đồng, mỗi đơn 1 lần. Hóa đơn chỉ thiết bị không add. Áp cả bán mới, bán thêm', see: ['contract'] }
     ]},
 
     { id: 'revenue', col: 14, t: 'Phân bổ doanh thu', tag: 'PRD v1.1 · Master doanh thu', n: 'Sau khi xuất hóa đơn, hệ thống chia doanh thu vào các tháng khách dùng dịch vụ. Hóa đơn chưa có kỳ hạn lúc xuất: chia từ ngày active, chưa active thì treo. Hóa đơn đã có kỳ hạn: chia như cũ', see: ['invoice'], c: [
       { t: 'Flow phân bổ dương', tag: 'S-01 → S-06', steps: ['Xuất hóa đơn (giao hàng hoặc thanh toán hoàn tất)', 'Xét dịch vụ: không có trong danh mục cần phân bổ (hoặc hợp đồng FTI, chi nhánh 90) thì không chia', 'Kiểm tra kỳ hạn: lúc xuất đã có từ ngày – đến ngày (vd hóa đơn gia hạn) thì chia như hiện nay', 'Kiểm tra active: đã active thì chia luôn', 'Chưa active: treo vào danh sách chờ (báo cáo treo)', 'Active: phân bổ dương từ ngày active, đủ số tháng, đánh dấu Đã phân bổ'], see: ['invoice'] },
-      { t: 'Phân bổ dương', tag: 'PBD · BR-01 → BR-07', c: [
-        { t: 'Danh mục phân bổ', tag: 'BR-01', n: 'Chỉ chia dịch vụ trong danh mục cần phân bổ. Hợp đồng FTI (chi nhánh 90) không phân bổ. B2B, B2C chung cơ chế', see: ['contract'] },
-        { t: 'Dịch vụ hóa đơn', tag: 'BR-02', n: 'Các dòng cùng dịch vụ trên 1 hóa đơn là 1 nhóm: 1 dòng active thì cả nhóm chia từ ngày đó. Gói con khác số tháng: chung ngày bắt đầu, kết thúc riêng' },
-        { t: 'Đã có kỳ hạn lúc xuất', tag: 'BR-03', n: 'Chia theo kỳ hạn như cũ, không tra active, không treo. Thứ tự theo workflow: xét dịch vụ → kỳ hạn → active (chốt 19/11/2026)' },
-        { t: 'Treo khi chưa active', tag: 'BR-04', n: 'Chưa active: treo, chưa tính doanh thu. Active mới chia, ngày bắt đầu = ngày active (Internet: FirstAccess)' },
-        { t: 'Khóa sổ', tag: 'BR-05', n: 'Kế toán chốt tháng T ngày 02/T+1. Active tháng T về trễ đến hết 01/T+1 vẫn vào tháng T; về từ 02/T+1: vẫn treo, cảnh báo, phân bổ thủ công vào tháng đang mở' },
-        { t: 'Kỳ chia', tag: 'BR-06', n: 'Tháng dương lịch: ngày active + số tháng − 1 ngày · Tháng 30 ngày: ngày active + số tháng × 30 − 1 ngày' },
-        { t: 'Chia theo số ngày', tag: 'BR-07', n: 'Trên tiền trước VAT. Tiền 1 ngày = tổng ÷ số ngày (làm tròn đồng). Tháng lẻ = số ngày × tiền 1 ngày, tháng trọn chia đều phần còn lại' }
+      { t: 'Phân bổ dương', tag: 'PBD', c: [
+        { t: 'Danh mục phân bổ', n: 'Chỉ chia dịch vụ trong danh mục cần phân bổ. Hợp đồng FTI (chi nhánh 90) không phân bổ. B2B, B2C chung cơ chế', see: ['contract'] },
+        { t: 'Dịch vụ hóa đơn', n: 'Các dòng cùng dịch vụ trên 1 hóa đơn là 1 nhóm: 1 dòng active thì cả nhóm chia từ ngày đó. Gói con khác số tháng: chung ngày bắt đầu, kết thúc riêng' },
+        { t: 'Đã có kỳ hạn lúc xuất', n: 'Chia theo kỳ hạn như cũ, không tra active, không treo. Thứ tự theo workflow: xét dịch vụ → kỳ hạn → active (chốt 19/11/2026)' },
+        { t: 'Treo khi chưa active', n: 'Chưa active: treo, chưa tính doanh thu. Active mới chia, ngày bắt đầu = ngày active (Internet: FirstAccess)' },
+        { t: 'Khóa sổ', n: 'Kế toán chốt tháng T ngày 02/T+1. Active tháng T về trễ đến hết 01/T+1 vẫn vào tháng T; về từ 02/T+1: vẫn treo, cảnh báo, phân bổ thủ công vào tháng đang mở' },
+        { t: 'Kỳ chia', n: 'Tháng dương lịch: ngày active + số tháng − 1 ngày · Tháng 30 ngày: ngày active + số tháng × 30 − 1 ngày' },
+        { t: 'Chia theo số ngày', n: 'Trên tiền trước VAT. Tiền 1 ngày = tổng ÷ số ngày (làm tròn đồng). Tháng lẻ = số ngày × tiền 1 ngày, tháng trọn chia đều phần còn lại' }
       ]},
-      { t: 'Phân bổ âm', tag: 'PBA · BR-08 → BR-12', c: [
-        { t: 'Trừ từ tháng xa nhất', tag: 'BR-08', n: 'Khoản giảm (ĐCG) tính trên tổng tiền dịch vụ, ghi riêng, trừ từ tháng xa nhất lùi về' },
-        { t: 'Gốc treo thì giảm treo', tag: 'BR-09', n: 'Hóa đơn gốc còn treo thì khoản giảm cũng treo; gốc chia xong mới trừ' },
-        { t: 'Tối đa 3 lần', tag: 'BR-10', n: 'Lần sau trừ trên phần còn lại; tổng giảm không vượt tổng đã chia' },
-        { t: 'Hóa đơn bị thay thế', tag: 'BR-11', n: 'Hóa đơn cũ → Đã hủy, ghi âm toàn bộ: đã chia → phân bổ âm; còn treo → treo âm. ⚠ Chờ chốt phần tháng đã qua' },
-        { t: 'Ngoài phạm vi', tag: 'BR-12', n: 'Không làm điều chỉnh 0đ đổi kỳ hạn' }
+      { t: 'Phân bổ âm', tag: 'PBA', c: [
+        { t: 'Trừ từ tháng xa nhất', n: 'Khoản giảm (ĐCG) tính trên tổng tiền dịch vụ, ghi riêng, trừ từ tháng xa nhất lùi về' },
+        { t: 'Gốc treo thì giảm treo', n: 'Hóa đơn gốc còn treo thì khoản giảm cũng treo; gốc chia xong mới trừ' },
+        { t: 'Tối đa 3 lần', n: 'Lần sau trừ trên phần còn lại; tổng giảm không vượt tổng đã chia' },
+        { t: 'Hóa đơn bị thay thế', n: 'Hóa đơn cũ → Đã hủy, ghi âm toàn bộ: đã chia → phân bổ âm; còn treo → treo âm. ⚠ Chờ chốt phần tháng đã qua' },
+        { t: 'Ngoài phạm vi', n: 'Không làm điều chỉnh 0đ đổi kỳ hạn' }
       ]},
       { t: 'Báo cáo treo', tag: 'BCT · Master doanh thu', n: 'Menu Inside › Quản lý kế toán › Master doanh thu › Báo cáo treo (QC cung cấp 25/11/2026). Chỉ gồm dịch vụ chưa active của hóa đơn luồng mới và hóa đơn điều chỉnh liên quan. Tổng hợp 4 nhóm Còn lại · Phát sinh · Đã điều chỉnh · Đã thay thế theo chi nhánh, khu vực, toàn quốc; bấm số hóa đơn mở danh sách chi tiết. Đã online chưa chia → cảnh báo "Đã online, chưa phân bổ"' },
       { t: 'Báo cáo doanh thu phân bổ', tag: 'BCPB · Master doanh thu', n: 'Menu Inside › Quản lý kế toán › Master doanh thu › Báo cáo doanh thu phân bổ (QC cung cấp 25/11/2026). Chuyển từ menu cũ Báo cáo doanh thu › BC kế toán › PB Doanh thu; giống báo cáo cũ, thêm 3 cột DT chờ phân bổ · Đã phân bổ · DT phân bổ trong kỳ. Tiền còn treo phải khớp nhóm Còn lại của báo cáo treo cùng kỳ' }
@@ -2169,18 +2169,18 @@ const SUBJECT_FLOW = {
   'mat-ptc': {
     desc: 'Tổng quan: Tool Quản lý vật tư trên Fox ERP; nhân sự thao tác trên app MobiX.\nMục đích: Cấp vật tư cho TIN/PNC triển khai, bảo trì.\nLuồng chính: Khai báo, định mức → đề nghị tạm ứng → FMD xác nhận trên SCM → vật tư vào kho tạm của KTV → phiếu triển khai / bảo trì chọn MAC từ kho tạm → hoàn ứng (FAF xác nhận) → Dataload ORC ERP.',
     nodes: [
-      ['kb', 0, 0, 'Khai báo, phân quyền', 'Vật tư · kho – đối tác · định mức', 'Inside · FTQ, FAF', 'st'],
+      ['kb', 0, 0, 'Khai báo, phân quyền', 'Vật tư · kho – đối tác · định mức · khóa chuyển vật tư', 'Inside · FTQ, FAF', 'st'],
       ['cs', 0, 1.3, 'Quản lý chính sách', 'Bán thiết bị: lấy dữ liệu vật tư', 'Tool QLCS (BP)', 'st', 'policy'],
       ['sp', 1.2, 1.3, 'SPF', 'QLCS trả dữ liệu thiết bị ra SPF', 'SPF Web admin', 'o', 'order'],
       ['tu', 1.2, 0, 'Đề nghị tạm ứng', 'Đội trưởng, NVKT/KTV', 'MobiX · Inside', 'o', 'mobix#Vật tư'],
-      ['xn', 2.4, 0, 'Xác nhận tạm ứng', 'FMD (thủ kho)', 'FTELSCM', 'o', 'scm'],
+      ['xn', 2.4, 0, 'Xác nhận tạm ứng', 'FMD tạo phiếu nhập hàng hóa, xác nhận tạm ứng', 'FTELSCM', 'o', 'scm'],
       ['kt', 3.6, 0, 'Kho tạm của KTV', 'Vật tư đã xác nhận tạm ứng · MAC theo ngày nhận', 'MobiX', 'o', 'mobix#Vật tư'],
       ['cv', 3.6, 1.3, 'Chuyển vật tư', 'Chỉ khi chuyển cho NV cùng chi nhánh', 'MobiX', 'o', 'mobix#Vật tư'],
       ['tk', 4.8, 0, 'Triển khai / bảo trì', 'Phiếu chọn MAC từ kho tạm KTV', 'Inside/MobiX', 'dep', 'ptc'],
       ['hu', 6, 0, 'Đề nghị hoàn ứng', 'Triển khai · bảo trì', 'MobiX · Inside', 'o', 'mobix#Vật tư'],
       ['xh', 7.2, 0, 'Xác nhận hoàn ứng', 'Tổng hợp phiếu xuất · FAF', 'Inside', 'done'],
       ['orc', 8.4, 0, 'Dataload ORC ERP', 'FAF xác nhận', 'ORC ERP', 'inv'],
-      ['dc', 7.2, 1.2, 'Hoàn ứng điều chỉnh', 'TP/PP kỹ thuật duyệt', 'Inside', 'A'],
+      ['dc', 7.2, 1.2, 'Hoàn ứng điều chỉnh', 'TP/PP kỹ thuật duyệt · BGĐ CN xác nhận sử dụng vật tư', 'Inside', 'A'],
       ['nh', 6, 1.2, 'Nhập vật tư', 'FMD xác nhận', 'MobiX · Inside', 'o', 'mobix#Vật tư'],
       ['bt', 6, 2.2, 'Bồi thường vật tư', 'FAF xác nhận', 'Inside', 'A'],
       ['ds', 8.4, 1.2, 'Đối soát, báo cáo', 'Kho tạm ↔ FTELSCM', 'Inside · FTELSCM', 'o', 'scm']
@@ -2191,23 +2191,24 @@ const SUBJECT_FLOW = {
     ]
   },
   'mat-counter': {
-    desc: 'Tổng quan: Tool Quản lý vật tư quầy trên Fox ERP.\nMục đích: Cấp vật tư cho giao dịch thiết bị tại quầy.\nLuồng chính: Đề nghị tạm ứng → FMD xác nhận trên SCM → bàn giao → giao dịch thiết bị → hoàn tất phiếu → hoàn ứng (FAF xác nhận).',
+    desc: 'Tổng quan: Tool Quản lý vật tư quầy trên Fox ERP (Inside – Vật tư quầy); xác nhận tạm ứng trên FTELSCM.\nMục đích: Cấp vật tư cho giao dịch thiết bị tại quầy.\nLuồng chính: Khai báo, phân quyền, định mức → giao dịch viên đề nghị tạm ứng → FMD tạo phiếu nhập, xác nhận tạm ứng trên SCM → vật tư về tool vật tư quầy → trưởng đơn vị bàn giao → phiếu giao dịch thiết bị load vật tư → hóa đơn, hoàn tất phiếu → hoàn ứng (FAF xác nhận) → ORC ERP, đối soát.',
     nodes: [
-      ['kb', 0, 0, 'Khai báo, phân quyền', 'Vật tư · đối tác – kho · định mức', 'Inside · FTQ, FAF', 'st'],
-      ['tu', 1.2, 0, 'Đề nghị tạm ứng', 'Giao dịch viên', 'Vật tư quầy', 'o'],
-      ['xn', 2.4, 0, 'Xác nhận tạm ứng', 'FMD · STG: nhập MAC, Xác nhận V2', 'FTELSCM', 'o', 'scm'],
-      ['bg', 3.6, 0, 'Bàn giao vật tư', 'Trưởng đơn vị', 'Vật tư quầy', 'o'],
-      ['od', 3.6, 1.2, 'Đơn hàng', 'Saleclub, đại lý, kênh chuỗi, SPF', 'Kênh bán', 'st', 'order'],
-      ['gd', 4.8, 0, 'Giao dịch thiết bị', 'Bán, thuê, đổi bảo hành…', 'Tool quầy', 'dep', 'counter'],
-      ['hd', 6, 0, 'Hóa đơn, hoàn tất phiếu', 'Cập nhật thông tin hóa đơn', 'Inside – Hóa đơn', 'inv', 'invoice'],
-      ['hu', 7.2, 0, 'Hoàn ứng', 'CS, KDPP đề nghị · FAF xác nhận', 'Vật tư quầy', 'done'],
-      ['orc', 8.4, 0, 'Xác nhận ORC ERP', 'FAF · tổng hợp phiếu xuất', 'ORC ERP', 'inv'],
-      ['nh', 6, 1.2, 'Nhập vật tư · bồi thường', 'FMD / FAF xác nhận', 'Vật tư quầy', 'A'],
-      ['ds', 8.4, 1.2, 'Đối soát kho tạm, báo cáo', 'FAF, FMD', 'Vật tư quầy · FTELSCM', 'o', 'scm']
+      ['kb', 0, 0, 'Khai báo, phân quyền', 'Vật tư · đối tác – kho (giao dịch viên, kế toán, thủ kho) · định mức', 'Inside · FTQ, FAF', 'st'],
+      ['tu', 1.2, 0, 'Đề nghị tạm ứng', 'Giao dịch viên · chọn đối tác, tổ, vật tư, số lượng', 'Vật tư quầy', 'o'],
+      ['xn', 2.4, 0, 'Xác nhận tạm ứng', 'FMD tạo phiếu nhập hàng hóa, xác nhận tạm ứng', 'FTELSCM', 'o', 'scm'],
+      ['kt', 3.6, 0, 'Vật tư về tool vật tư quầy', 'Tạm ứng xong · có MAC', 'Vật tư quầy', 'o'],
+      ['bg', 4.8, 0, 'Bàn giao vật tư', 'Trưởng đơn vị', 'Vật tư quầy', 'o'],
+      ['od', 6, 1.3, 'Đơn hàng', 'Saleclub, đại lý, kênh chuỗi, SPF', 'Kênh bán', 'st', 'order'],
+      ['gd', 6, 0, 'Giao dịch thiết bị', 'Phiếu load vật tư · bán, thuê có / không thu hồi, đổi bảo hành…', 'Tool quầy', 'dep', 'counter'],
+      ['hd', 7.2, 0, 'Hóa đơn, hoàn tất phiếu', 'Cập nhật thông tin hóa đơn', 'Inside – Hóa đơn', 'inv', 'invoice'],
+      ['hu', 8.4, 0, 'Hoàn ứng', 'Đề nghị hoàn ứng · FAF xác nhận, tổng hợp phiếu xuất', 'Vật tư quầy', 'done'],
+      ['orc', 9.6, 0, 'Xác nhận ORC ERP', 'FAF', 'ORC ERP', 'inv'],
+      ['nh', 8.4, 1.3, 'Hoàn ứng điều chỉnh · nhập · bồi thường', 'FMD / FAF xác nhận', 'Vật tư quầy', 'A'],
+      ['ds', 9.6, 1.3, 'Đối soát kho tạm, báo cáo', 'FAF, FMD', 'Vật tư quầy · FTELSCM', 'o', 'scm']
     ],
     edges: [
-      ['kb', 'tu', {}], ['tu', 'xn', {}], ['xn', 'bg', {}], ['bg', 'gd', { c: 'dep' }], ['od', 'gd', { f: 'r', t: 'b', c: 'st' }], ['gd', 'hd', { c: 'inv' }], ['hd', 'hu', {}], ['hu', 'orc', { c: 'inv' }],
-      ['gd', 'nh', { f: 'b', t: 'l', c: 'A' }], ['orc', 'ds', { f: 'b', t: 't' }]
+      ['kb', 'tu', {}], ['tu', 'xn', {}], ['xn', 'kt', {}], ['kt', 'bg', {}], ['bg', 'gd', { c: 'dep' }], ['od', 'gd', { f: 't', t: 'b', c: 'st' }], ['gd', 'hd', { c: 'inv' }], ['hd', 'hu', {}], ['hu', 'orc', { c: 'inv' }],
+      ['hd', 'nh', { f: 'b', t: 'l', dash: 1, l: 'Khi cần', c: 'A' }], ['orc', 'ds', { f: 'b', t: 't' }]
     ]
   },
   cancel: {
@@ -3410,8 +3411,25 @@ function fillSectionDetail(box, node, kids) {
 }
 /* Các case chi tiết của chủ thể trong popup: mỗi nhánh con là 1 mục mở/thu, mục cấp 1 mở sẵn */
 /* Mục đã có ở sơ đồ hoặc ở nút 📄 Tài liệu thì không lặp lại ở "Các case chi tiết" (dữ liệu vẫn giữ cho các kiểu xem khác) */
-// ptc: App MobiX là luồng riêng (chi tiết ở popup App MobiX); Xử lý PTC đã có trên sơ đồ; Hủy PTC khi hủy đơn thuộc chủ thể Hủy đơn hàng; mục thao tác tool nằm trong 📄 Tài liệu, không lặp ở Các case chi tiết
-const DETAIL_HIDE = { policy: ['Quy trình tổng quan', 'Tool chính sách STG', 'Cách tạo chính sách'], ptc: ['App MobiX', 'Xử lý PTC', 'Kiểm tra phiếu thi công', 'Hoàn tất PTC', 'Hủy PTC / chuyển thi công lại', 'Phân công quota PTC', 'Hủy PTC khi hủy đơn'] };
+// Các case chi tiết không lặp: mục thao tác / tool / menu (nằm trong 📄 Tài liệu), Quy trình tổng quan / luồng (đã vẽ trên sơ đồ),
+// sub-entity có popup riêng (App MobiX). Cây mindmap vẫn giữ đủ các mục.
+const DETAIL_HIDE = {
+  policy: ['Quy trình tổng quan', 'Tool chính sách STG', 'Cách tạo chính sách', 'Luồng dữ liệu QLCS'],
+  'order-entity': ['Xem thông tin đơn hàng'],
+  contract: ['Chốt cước', 'Cập nhật hợp đồng'],
+  receipt: ['Cách thanh toán (STG)', 'Kiểm tra & hủy khoản thu'],
+  ptc: ['Quy trình tổng quan', 'App MobiX', 'Xử lý PTC', 'Kiểm tra phiếu thi công', 'Hoàn tất PTC', 'Hủy PTC / chuyển thi công lại', 'Phân công quota PTC', 'Hủy PTC khi hủy đơn'],
+  counter: ['Có shipper giao hàng', 'Không có shipper'],
+  vendor: ['Hoàn tất đơn Vendor'],
+  minutes: ['Cách ký tay'],
+  cancel: ['Tool hủy đơn hàng'],
+  'mat-ptc': ['Quy trình tổng quan', 'Luồng vật tư', 'Tạm ứng vật tư', 'Vật tư thu hồi'],
+  'mat-counter': ['Quy trình tổng quan', 'Luồng vật tư', 'Tạm ứng vật tư', 'Vật tư thu hồi'],
+  scm: ['Quy trình tổng quan', 'Web SCM', 'Nhập kho và xác nhận tạm ứng'],
+  invoice: ['Thay thế / điều chỉnh giảm hóa đơn', 'Kiểm tra hóa đơn đã xuất'],
+  postproc: ['Quy trình tổng quan', 'Kiểm tra tiền đặt cọc', 'Kiểm tra gạch nợ tạm', 'Kiểm tra tiền trả trước'],
+  revenue: ['Flow phân bổ dương']
+};
 function fillPopupDetail(node) {
   const box = document.getElementById('fcmDetail');
   box.replaceChildren(); box.style.removeProperty('--mc');
