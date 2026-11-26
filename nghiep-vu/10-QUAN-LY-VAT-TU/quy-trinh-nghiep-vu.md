@@ -10,7 +10,7 @@
 
 > Nguồn: URD INSIDE Resource Equipment V1.0 (ReInvent M-Equipment, Milestone 1 — vật tư TIN/PNC), mục "Thông tin chung" và "Tổng quan › Quy trình nghiệp vụ" (sơ đồ *Tổng quan*, sơ đồ *Quản lý vật tư TIN/PNC* và bảng bước – người thực hiện). Không lấy đặc tả từng chức năng.
 
-**Hệ thống:** Inside – Vật tư TIN/PNC (khai báo, xác nhận, báo cáo) và **Mobinet** (= app **MobiX**, QC xác nhận 19/11/2026) (NVKT/KTV đề nghị tạm ứng, chuyển vật tư, hoàn ứng, nhập vật tư); xác nhận tạm ứng trên **FTELSCM**; vật tư dùng khi **triển khai** (Inside/MBN – Triển khai, theo phiếu thi công) và **bảo trì** (Inside/MBN – Bảo trì).
+**Hệ thống:** Inside – Vật tư TIN/PNC (khai báo, xác nhận, báo cáo) và app **MobiX** (NVKT/KTV đề nghị tạm ứng, chuyển vật tư, hoàn ứng, nhập vật tư); xác nhận tạm ứng trên **FTELSCM**; vật tư dùng khi **triển khai** (Inside/MobiX – Triển khai, theo phiếu thi công) và **bảo trì** (Inside/MobiX – Bảo trì).
 
 | # | Nghiệp vụ | Người thực hiện | Hệ thống |
 |---|---|---|---|
@@ -18,15 +18,15 @@
 | 2 | Phân quyền kho – đối tác: điều hành, kế toán, thủ kho | FTQ / QLĐV | Inside |
 | 3 | Khai báo định mức vật tư | FAF / kế toán trưởng | Inside |
 | 4 | Khóa chuyển vật tư | FAF | Inside |
-| 5 | Đề nghị tạm ứng | Đội trưởng, NVKT / KTV (điều hành) | Mobinet, Inside |
+| 5 | Đề nghị tạm ứng | Đội trưởng, NVKT / KTV (điều hành) | MobiX, Inside |
 | 6 | Xác nhận tạm ứng | FMD (thủ kho) | FTELSCM |
-| 7 | Chuyển vật tư | NVKT / KTV | Mobinet |
-| 8 | Dùng vật tư khi thực hiện **triển khai** hoặc **bảo trì** | NVKT / KTV | Inside/MBN – Triển khai, Bảo trì |
-| 9 | Đề nghị hoàn ứng (hoàn ứng triển khai / hoàn ứng bảo trì) | Đội trưởng, NVKT / KTV | Mobinet, Inside |
+| 7 | Chuyển vật tư | NVKT / KTV | MobiX |
+| 8 | Dùng vật tư khi thực hiện **triển khai** hoặc **bảo trì** | NVKT / KTV | Inside/MobiX – Triển khai, Bảo trì |
+| 9 | Đề nghị hoàn ứng (hoàn ứng triển khai / hoàn ứng bảo trì) | Đội trưởng, NVKT / KTV | MobiX, Inside |
 | 10 | Xác nhận hoàn ứng, xác nhận tổng hợp (phiếu xuất tổng hợp) | FAF | Inside |
 | 11 | Đề nghị / xác nhận hoàn ứng điều chỉnh | Đội trưởng / TP, PP kỹ thuật | Inside |
 | 12 | Gửi / xác nhận / phê duyệt yêu cầu BGĐ CN xác nhận sử dụng vật tư | Đội trưởng, NVKT / TP, PP / BGĐ CN | Inside |
-| 13 | Đề nghị / xác nhận nhập vật tư | Đội trưởng, NVKT / FMD | Mobinet, Inside |
+| 13 | Đề nghị / xác nhận nhập vật tư | Đội trưởng, NVKT / FMD | MobiX, Inside |
 | 14 | Đề nghị / xác nhận bồi thường vật tư | Đội trưởng / FAF | Inside |
 | 15 | Xác nhận Dataload ORC ERP | FAF | Inside ⇒ ORC ERP |
 | 16 | Lịch sử vật tư – điều chỉnh vật tư | CUS HO, CS, TIN/PNC | Inside |

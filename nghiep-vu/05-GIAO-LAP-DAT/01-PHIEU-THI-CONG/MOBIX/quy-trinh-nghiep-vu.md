@@ -1,6 +1,6 @@
 # MOBIX — App xử lý phiếu thi công của kỹ thuật TIN/PNC
 
-> Thư mục con của [Phiếu thi công](../quy-trinh-nghiep-vu.md). MobiX = Mobinet (Mobinet Nextgen), QC xác nhận 19/11/2026.
+> Thư mục con của [Phiếu thi công](../quy-trinh-nghiep-vu.md). Tài liệu gốc cũ gọi là Mobinet / Mobinet Nextgen (MBN); thống nhất gọi **MobiX** (QC xác nhận là 1 app, 19/11/2026).
 > Nguồn: tài liệu QC cung cấp 26/11/2026 trong [`input/`](input/README.md) — chỉ lấy quy trình tổng quan, không lấy đặc tả màn hình.
 
 ---

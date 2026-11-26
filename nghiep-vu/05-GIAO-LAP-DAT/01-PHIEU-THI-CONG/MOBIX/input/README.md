@@ -5,7 +5,7 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 ## Tool
 
 ### Tool thao tác, cập nhật
-- **App MobiX** (Mobinet) — Ca tồn › tab Triển khai — nhận ca, check-in, xử lý và hoàn tất PTC; Thanh toán; Vật tư.
+- **App MobiX** — Ca tồn › tab Triển khai — nhận ca, check-in, xử lý và hoàn tất PTC; Thanh toán; Vật tư.
 - **Inside new v5** — Thông tin chung › Triển khai — phân tuyến, phân công PTC.
 
 ### Tool kiểm tra
@@ -70,4 +70,4 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 ## Nguồn
 
 - QC cung cấp 26/11/2026: bộ tài liệu MobiX theo phiên bản app (V1.0 → v2.9). Chỉ lấy quy trình tổng quan và các rule gông liên quan PTC, thanh toán, vật tư.
-- QC xác nhận 19/11/2026: Mobinet = MobiX.
+- QC xác nhận 19/11/2026: Mobinet và MobiX là 1 app, thống nhất gọi MobiX.

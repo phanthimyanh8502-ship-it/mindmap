@@ -27,7 +27,7 @@
 | Nhóm | Điều kiện chính |
 |---|---|
 | Tiên quyết | Hợp đồng tình trạng **bình thường** · PTC tình trạng **khác Hoàn tất** |
-| Trên tác vụ | [MobiNet = MobiX] gông tọa độ chênh lệch check-in – check-out **≤ 50 m** · đã phân công nhân sự chính cho PTC |
+| Trên tác vụ | [MobiX] gông tọa độ chênh lệch check-in – check-out **≤ 50 m** · đã phân công nhân sự chính cho PTC |
 | Trên hợp đồng | Thanh toán (hoàn tất các khoản thu hiển thị trên PTC) ⚠ · cài đặt HiFPT · hợp đồng NET (tín hiệu online, suy hao lastmile, công suất) · Wifi Marketing · online session |
 | Trên đơn hàng | Upload ảnh hồ sơ khách hàng (bán mới, đơn vị bán DKOL) · biên bản nghiệm thu · biên bản điện tử · chiều dài cáp LastMile · vật tư (khả dụng trong kho tạm NV, MAC khớp chức năng, MAC triển khai khác MAC thu hồi…) |
 | Trên dịch vụ | Dịch vụ active thành công (NET, FPT Play, Camera Bundle, Camera OTT) · MAC online / active = MAC trên PTC (nghiệm thu) · SĐT active trùng SĐT trên đơn (Camera OTT) / SĐT chính chủ (Camera Bundle) |
