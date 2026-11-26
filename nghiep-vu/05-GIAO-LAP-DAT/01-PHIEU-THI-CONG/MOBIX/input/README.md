@@ -28,6 +28,15 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 ### Tạo SR
 1. MobiX › Quản lý SR › Tạo SR (hoặc từ ca có hướng xử lý cần SR); xem lại ở danh sách SR đã tạo.
 
+### Thu hồi thiết bị
+1. MobiX › Ca tồn › Thu hồi: tab Cần thu hồi, chọn phiếu.
+2. Cập nhật tình trạng từng thiết bị; không thu hồi được thì chọn Thu hồi không thành công + nguyên nhân.
+3. Phiếu đã thu hồi nằm ở tab Đã thu hồi – chưa nhập kho đến khi kho xác nhận nhập trả.
+
+### CCDC
+1. Vào chức năng Công cụ dụng cụ: xem danh sách CCDC, lọc sắp hết hạn / hết hạn.
+2. Tab Yêu cầu của tôi › Tạo yêu cầu: chọn cấp mới hoặc cấp đổi; theo dõi trạng thái Mới → Đang xử lý → Hoàn thành / Từ chối.
+
 ### Thanh toán hóa đơn, khoản thu
 1. MobiX › chi tiết hợp đồng › Thanh toán: chọn hóa đơn / khoản thu (bắt buộc khoản thu PTC).
 2. Chọn hình thức: Tiền mặt tạm · Ví FPT Pay · QR Pay – VNPay; với QR bấm Kiểm tra thanh toán.
@@ -47,6 +56,7 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 
 ### `FTP_MobinetNextgen_v1.0_URD_Caton` (V1.0)
 - Danh sách ca tồn; trên ca triển khai / bảo trì: nhận ca, check-in, ghép cặp, tích hẹn lại, liên hệ, lịch sử phiếu.
+- Ca vụ Thu hồi: 2 tab Cần thu hồi (phiếu từ Inside: bùng cước, thanh lý HĐ) và Đã thu hồi – chưa nhập kho (gồm phiếu tự tạo từ phiếu triển khai / bảo trì có vật tư thu hồi).
 
 ### `ĐTYC Check trùng HĐ MBX` (v2.4)
 - PTC triển khai mới: check trùng khách hàng / địa chỉ với hợp đồng cũ ⇒ tiếp tục triển khai (thu hồi thiết bị cũ nếu chưa thu) hoặc ngưng (khách trả trước / đóng nợ, hoặc tạo SR khôi phục dịch vụ).
@@ -72,11 +82,15 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 - Kho tạm KTV: tạm ứng, nhập trả, chuyển, nhận vật tư.
 - MAC giữ quá 15 ngày ⇒ cảnh báo; từ 30 ngày ⇒ khóa, chỉ nhập trả.
 
+### `MBN_NEXTGEN_v1.0_URD_Quản lý danh sách CCDC`, `MBN_NEXTGEN_v1.0_URD_Tạo yêu cầu hỗ trợ CCDC` (V1.0)
+- Nhân viên xem CCDC được cấp phát (dữ liệu SCM), CCDC sắp hết hạn / hết hạn, không phải nhờ quản lý, đội trưởng tra SCM.
+- Yêu cầu hỗ trợ CCDC: cấp mới / cấp đổi ⇒ Mới ⇒ đội trưởng xử lý trên HO My PT ⇒ Đang xử lý ⇒ Hoàn thành / Từ chối; có thông báo khi đổi trạng thái.
+
 ### `FTP_MobiX_v1.3_URD_Tool Đội trưởng` (V1.2)
 - Đội trưởng: báo cáo ca vụ, quản lý ca tồn của KTV, phân tuyến lại, cập nhật port, xem tọa độ nhân sự.
 
 ## Nguồn
 
-- QC cung cấp 26/11/2026: MobiX có nhiều chức năng (hoàn tất PTC, hoàn tất bảo trì, tạo SR, thanh toán hóa đơn), tách luồng riêng, không gộp vào Phiếu thi công.
+- QC cung cấp 26/11/2026: MobiX có nhiều chức năng (hoàn tất PTC, hoàn tất bảo trì, tạo SR, thanh toán hóa đơn), tách luồng riêng, không gộp vào Phiếu thi công. Bổ sung chức năng thu hồi thiết bị và CCDC (QC thêm lại 2 URD CCDC).
 - QC cung cấp 26/11/2026: bộ tài liệu MobiX theo phiên bản app (V1.0 → v2.9). Chỉ lấy quy trình tổng quan và các rule gông liên quan PTC, thanh toán, vật tư.
 - QC xác nhận 19/11/2026: Mobinet và MobiX là 1 app, thống nhất gọi MobiX.

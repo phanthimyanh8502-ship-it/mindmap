@@ -22,9 +22,15 @@
 | **Tạo SR** (Quản lý SR) | NVKT, KTV, đội trưởng, tổ trưởng | Tạo và xem SR ngay trên app; ca cần SR phải tạo SR thành công mới hoàn tất phiếu |
 | **Thanh toán hóa đơn, khoản thu** | KTV TIN/PNC | Thu tiền mặt tạm / Ví FPT Pay / QR VNPay ⇒ gạch nợ qua Billing Hub |
 | **Vật tư** | KTV TIN/PNC | Tạm ứng, chuyển, nhận, nhập trả; hoàn ứng tự động khi hoàn tất phiếu |
+| **Thu hồi thiết bị** (Ca tồn › Thu hồi) | KTV TIN/PNC | Thu hồi thiết bị của khách ⇒ nhập trả về kho |
+| **CCDC** (công cụ dụng cụ) | NVKT, KTV | Xem CCDC được cấp, hạn dùng; yêu cầu cấp mới / cấp đổi |
 | **Chức năng đội trưởng** | Đội trưởng, TPKT | Báo cáo ca vụ, quản lý ca tồn của KTV, phân tuyến lại, cập nhật port, xem tọa độ nhân sự |
 
 **Hoàn tất bảo trì (tổng quan):** ticket bảo trì ⇒ phân công trên Inside new v5 ⇒ ca hiện ở Ca tồn tab Bảo trì trên MobiX của nhân sự được phân công ⇒ nhận ca, check-in (ca xử lý từ xa không cần check-in) ⇒ xử lý checklist bảo trì (đổi thiết bị: MAC thu hồi lấy từ thiết bị đã hoàn ứng cho hợp đồng) ⇒ Đã xử lý hoàn tất, hoặc Chờ xác minh.
+
+**Thu hồi thiết bị (tổng quan):** nguồn tạo phiếu thu hồi: (1) Inside tạo khi bùng cước, thanh lý hợp đồng tại nhà / tại quầy ⇒ tab **Cần thu hồi**; (2) phiếu triển khai / bảo trì có khai báo vật tư thu hồi ⇒ hoàn tất phiếu thì tự tạo phiếu thu hồi ở tab **Đã thu hồi – chưa nhập kho**. KTV cập nhật tình trạng từng thiết bị (Chưa thu hồi · Đã thu hồi – chưa nhập kho · Đã thu hồi – đã nhập kho · Thu hồi không thành công kèm nguyên nhân) ⇒ kho xác nhận nhập trả ⇒ Đã thu hồi – đã nhập kho. Có tra cứu thiết bị theo MAC / số HĐ / mã QR để thu hồi, nhập kho.
+
+**CCDC (tổng quan):** tài liệu gốc ghi app My PT, dữ liệu CCDC lấy từ SCM. Nhân viên xem danh sách CCDC (tổng, sắp hết hạn, hết hạn) ⇒ tạo yêu cầu **cấp mới** (CCDC chưa có) hoặc **cấp đổi** (CCDC đang có) ⇒ Mới (chờ tiếp nhận) ⇒ đội trưởng cập nhật trên **HO My PT**: Đang xử lý ⇒ Hoàn thành hoặc Từ chối; mỗi lần đổi trạng thái có thông báo về app.
 
 ## Hoàn tất PTC — quy trình xử lý ticket triển khai
 
