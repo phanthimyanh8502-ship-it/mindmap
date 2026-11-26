@@ -18,7 +18,7 @@
 | # | Bước | Ai / ở đâu | Trạng thái ticket |
 |---|---|---|---|
 | 1 | Tạo ticket triển khai: đơn bán mới, bán thêm, SR; đã thanh toán nếu hình thức khác COD | SPF, SR | Chưa phân công |
-| 2 | Phân tuyến: hệ thống phân công cho nhân viên chuyên trách; không phân cho người off ngày hẹn. Đội trưởng chỉnh phân công được trên MobiX | Inside new v5 · MobiX (đội trưởng) | Đã phân công |
+| 2 | Phân tuyến: hệ thống phân công cho nhân viên chuyên trách; không phân cho người off ngày hẹn. Đội trưởng chỉnh phân công được trên MobiX. **Phân công cho nhân sự nào thì PTC hiện ở Ca tồn trên app MobiX của nhân sự đó** | Inside new v5 · MobiX (đội trưởng) | Đã phân công |
 | 3 | **Nhận ca:** KTV nhận tuyến, gọi khách chốt lịch hẹn; khách đổi lịch thì tích hẹn lại | MobiX | Đã nhận ca |
 | 4 | **Xác nhận di chuyển** tới nhà khách (tạm thời không bắt buộc; hủy được khi chưa check-in) | MobiX | Đang di chuyển |
 | 5 | **Check-in** tại nhà khách ⇒ thu tiền, ký BBĐT, up hồ sơ (nếu có) ⇒ triển khai | MobiX | Đang xử lý |
