@@ -206,6 +206,8 @@ h2 { margin: 10px 0 0; font-size: 1.05rem; font-weight: 600; }
 .fcb rect.fc-end { stroke-width: 2.6; }
 .fc-endflag { font-size: 10px; }
 .fc-tool { font-size: 11px; }
+.fc-sub { font-size: 17px; font-weight: 700; }
+.lg-sub { font-weight: 700; color: var(--b3); }
 .gsearch { margin: 4px 0 10px; }
 .gs-box { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; padding: 8px 14px; font-size: 15px; color: var(--muted); }
 .gs-box:focus-within { border-color: var(--focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 18%, transparent); }
@@ -2808,7 +2810,7 @@ function drawFlowChart(node, def, svg) {
     n.start = !ES.some(e => e.b === n.id);
     n.end = !ES.some(e => e.a === n.id) && n.k !== 'na';
   });
-  drawLegend(def, ES);
+  drawLegend(def, ES, !FLOWCHART[node.id] && def.nodes.some(n => n[7] && NODES[n[7]] && n[7] !== node.id && n[7] !== 'nophieu'));
   const spread = (key, list, n, side, other) => {
     if (n.d || list.length < 2) return;
     const vert = side === 'l' || side === 'r';
@@ -2872,6 +2874,8 @@ function drawFlowChart(node, def, svg) {
       svg.append(g);
       if (n.end) g.append(sv('text', { class: 'fc-endflag', x: n.x + n.w - 6, y: n.y + 13, 'text-anchor': 'end', style: `fill: ${col}` }, '⏹'));
       if (howKey(n)) g.append(sv('text', { class: 'fc-tool', x: n.x + n.w - (n.end ? 18 : 6), y: n.y + 14, 'text-anchor': 'end' }, '🛠'));
+      // Ô mở được sơ đồ con: icon ↗ ở góc dưới phải
+      else if (canGo(n)) g.append(sv('text', { class: 'fc-sub', x: n.x + n.w - 6, y: n.y + n.h - 5, 'text-anchor': 'end', style: `fill: ${col}` }, '↗'));
 
       const maxW = n.w - 16;
       // Tiêu đề tối đa 2 dòng; mô tả dùng phần còn lại (3 dòng nếu tiêu đề 1 dòng, 2 dòng nếu tiêu đề 2 dòng)
@@ -2899,7 +2903,7 @@ function drawFlowChart(node, def, svg) {
 }
 
 /* Chú giải dưới phần mô tả popup: hình dạng ô và kiểu đường có trong sơ đồ đang xem */
-function drawLegend(def, ES) {
+function drawLegend(def, ES, hasSub) {
   const box = document.getElementById('fcmLegend'); if (!box) return;
   box.replaceChildren();
   const ic = (svgInner, w = 26) => { const x = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); x.setAttribute('viewBox', `0 0 ${w} 16`); x.setAttribute('width', w); x.setAttribute('height', 16); x.innerHTML = svgInner; return x; };
@@ -2920,6 +2924,7 @@ function drawLegend(def, ES) {
   if (def.nodes.some(naStop)) item(ic('<rect x="1" y="2" width="24" height="12" rx="2.5" class="lg-box lg-na"/>'), 'Kết thúc không thành công / dừng');
   if (def.nodes.some(n => n[6] === 'na' && !naStop(n))) item(ic('<rect x="1" y="2" width="24" height="12" rx="2.5" class="lg-box lg-na"/>'), 'Chưa có thông tin');
   item(el('span', 'lg-sys', '◉'), 'Hệ thống / tool thực hiện');
+  if (hasSub) item(el('span', 'lg-sub', '↗'), 'Bấm để mở sơ đồ con');
   if (def.notes && def.notes.length) item(ic('<rect x="1" y="2" width="24" height="12" rx="4" class="lg-band"/>'), 'Dải nhánh nghiệp vụ');
   box.hidden = false;
 }
