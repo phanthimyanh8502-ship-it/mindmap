@@ -876,8 +876,8 @@ const DATA = {
           { t: 'Kiểm tra phiếu thi công', tag: 'Inside new v5', n: 'Vào Inside new v5 › Thông tin chung › Triển khai, nhập số hợp đồng để xem PTC và trạng thái (QC cung cấp 25/11/2026)', menus: ['Inside new v5 › Thông tin chung › Triển khai'] },
           { t: 'Quy trình tổng quan', tag: 'URD Triển khai v2.0', n: 'PTC tạo từ đơn hàng, hoặc từ hợp đồng khi có SR chuyển dịch vụ, SR chuyển địa điểm, SR khôi phục dịch vụ. Đơn bán thêm mà hợp đồng đang có PTC thì đẩy thông tin đơn vào PTC hiện có', steps: ['Đơn bán thêm và hợp đồng đang có PTC: hệ thống đẩy thông tin đơn hàng vào PTC hiện có (không tạo PTC mới)', 'Còn lại: hợp đồng / đơn hàng cần triển khai → request tạo PTC', 'Đủ điều kiện: PTC triển khai · không: tạo phiếu công trắng', 'Phân công đối tác và nhân sự', 'Nhân sự thi công (MobiX); không đủ điều kiện thi công → PTC NOT OK → chuyển thi công lại hoặc đề nghị hủy PTC', 'Hoàn tất PTC khi đủ điều kiện: tiên quyết (HĐ bình thường, PTC chưa hoàn tất), tác vụ, hợp đồng, đơn hàng, dịch vụ', 'Nghiệm thu vật tư → cập nhật vật tư, thu hồi, hoàn ứng tự động trên Tool Quản lý vật tư'], see: ['contract', 'mat-ptc'] },
           { t: 'Hình thức triển khai', tag: '2 hình thức', c: [
-            { t: 'TIN/PNC', tag: 'Triển khai · Giao hàng', n: 'Chủ thể: TIN/PNC. Loại Triển khai: thiết bị cần triển khai, kích hoạt tại địa chỉ đăng ký (vd Internet kèm modem). Loại Giao hàng: chỉ Camera Offnet, thiết bị lẻ; giao hàng, không kích hoạt' },
-            { t: 'FTI', tag: 'Triển khai', n: 'Chủ thể: đối tác FTI. SPDV đặc thù, dự án: OnCall, Camera B2B, ListLine… (HN, HCM, CNx)' }
+            { t: 'TIN/PNC', tag: 'Triển khai · Giao hàng', n: 'Đội TIN/PNC. Loại Triển khai: thiết bị cần triển khai, kích hoạt tại địa chỉ đăng ký (vd Internet kèm modem). Loại Giao hàng: chỉ Camera Offnet, thiết bị lẻ; giao hàng, không kích hoạt' },
+            { t: 'FTI', tag: 'Triển khai', n: 'Đối tác FTI. SPDV đặc thù, dự án: OnCall, Camera B2B, ListLine… (HN, HCM, CNx)' }
           ]},
           { t: 'Thông tin trên PTC', tag: '6 nhóm', c: [
             { t: 'Phân tuyến', n: 'Lấy từ tool Quản lý đối tác, dùng để phân công nhân sự TIN/PNC đi thi công' },
