@@ -6,6 +6,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ### Tool thao tác, cập nhật
 - **INVOICE** — hệ thống tự chạy — tự gạch nợ hóa đơn và đẩy hậu kỳ (hóa đơn điện tử, tiền trả trước).
+- **Inside – Quản lý thu cước** — Quản lý thu cước › Gạch nợ bổ sung — DVKH HO gạch nợ bổ sung cho giao dịch tiền mặt tạm sau khi KTV nộp tiền (QC xác nhận 26/11/2026).
 
 ### Tool kiểm tra
 - **Inside** — Foxpay › Thanh toán online › Đối soát khoản thu online — kiểm tra khoản thu.
