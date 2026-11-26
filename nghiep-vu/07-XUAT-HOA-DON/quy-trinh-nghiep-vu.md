@@ -123,6 +123,15 @@ Không hợp lệ ⇒ **không xuất hóa đơn** và ghi log; hệ thống kh�
 - **Kiểm tra hóa đơn đã xuất:** Inside › **Quản lý kế toán › Liệt kê cước** (QC cung cấp 25/11/2026).
 - Sau khi phát hành, INVOICE gửi bản tin báo hóa đơn đã phát hành (**Invoice Event**) để chuyển sang **gạch nợ** và **hậu kỳ**.
 
+## 8. Thay thế / điều chỉnh giảm hóa đơn (thao tác tay)
+
+> QC cung cấp 26/11/2026.
+
+1. **Tạo đề nghị:** Fox ERP › Quản lý hóa đơn › Hóa đơn & khoản thu › **Tạo đề nghị** — đề nghị thay thế hoặc điều chỉnh giảm hóa đơn đã phát hành.
+2. **Duyệt đề nghị:** Fox ERP › Quản lý hóa đơn › Hóa đơn & khoản thu › **Duyệt đề nghị** — duyệt xong thì hóa đơn thay thế / điều chỉnh giảm có hiệu lực.
+
+Hóa đơn bị thay thế hoặc điều chỉnh giảm ⇒ hệ thống ghi âm doanh thu, xem [Phân bổ doanh thu](../13-PHAN-BO-DOANH-THU/quy-trinh-nghiep-vu.md) (BR-08 → BR-11).
+
 ---
 
 **Sau khi phát hành:** hệ thống phân bổ doanh thu của hóa đơn, xem [Phân bổ doanh thu](../13-PHAN-BO-DOANH-THU/quy-trinh-nghiep-vu.md).

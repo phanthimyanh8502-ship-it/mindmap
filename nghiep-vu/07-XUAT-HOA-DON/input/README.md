@@ -6,6 +6,7 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 
 ### Tool thao tác, cập nhật
 - **INVOICE + Billing System** — hệ thống tự chạy — tự đồng bộ đơn từ SPF và phát hành hóa đơn, người dùng không thao tác.
+- **Fox ERP – Quản lý hóa đơn** — Hóa đơn & khoản thu › Tạo đề nghị / Duyệt đề nghị — thay thế hóa đơn, điều chỉnh giảm hóa đơn (QC cung cấp 26/11/2026).
 
 ### Tool kiểm tra
 - **SPF Web admin** — xem thời gian tạo đơn của đơn hàng (BR-DB-01).
@@ -21,6 +22,10 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 5. Worker gộp DV/TB đủ điều kiện của cùng đơn vào 1 hóa đơn; realtime không gộp.
 6. Phát hành qua Billing System, ghi BillNumber, BillDate.
 7. Báo hóa đơn đã phát hành (Invoice Event) để chuyển sang gạch nợ và hậu kỳ.
+
+### Thay thế / điều chỉnh giảm hóa đơn (người dùng)
+1. Fox ERP › Quản lý hóa đơn › Hóa đơn & khoản thu › **Tạo đề nghị**: tạo đề nghị thay thế hoặc điều chỉnh giảm cho hóa đơn đã phát hành.
+2. Fox ERP › Quản lý hóa đơn › Hóa đơn & khoản thu › **Duyệt đề nghị**: duyệt đề nghị vừa tạo.
 
 ### Kiểm tra hóa đơn đã xuất (người dùng)
 1. Vào Inside › Quản lý kế toán › Liệt kê cước.
@@ -58,3 +63,4 @@ Tài liệu đầu vào của quy trình nghiệp vụ ở [`../quy-trinh-nghiep
 - Phân tích `qc-iia/02_analyze-requirements/v2.0/XHD/` và các clarification chốt đến 23/10/2026
 - Yêu cầu BA 23/10/2026 về hợp đồng SST / nghiệp vụ không tự xuất: bản gốc ở `qc-iia/00_input/v2.0/Doc/`
 - Thông tin QC cung cấp 25/11/2026: kiểm tra hóa đơn trên Inside › Quản lý kế toán › Liệt kê cước.
+- Thông tin QC cung cấp 26/11/2026: thay thế hóa đơn, điều chỉnh giảm hóa đơn làm trên Fox ERP › Quản lý hóa đơn › Hóa đơn & khoản thu › Tạo đề nghị, sau đó duyệt ở Duyệt đề nghị.
