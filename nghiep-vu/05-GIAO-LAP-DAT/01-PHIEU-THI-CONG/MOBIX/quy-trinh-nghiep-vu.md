@@ -70,6 +70,11 @@
 - **Online từ tài khoản nhân viên:** Ví FPT Pay đã liên kết.
 - **Online từ khách hàng:** QR Pay – VNPay. KTV đưa mã QR cho khách tự quét.
 
+**Sau khi thanh toán thành công (QC cung cấp 26/11/2026):**
+- **Hóa đơn:** gạch nợ hóa đơn qua Billing Hub.
+- **Khoản thu:** không có bước gạch nợ khoản thu. Khoản thu chuyển **Đã thanh toán**, tiền vào **cọc** của hợp đồng ⇒ INVOICE xuất hóa đơn dịch vụ ⇒ **gạch nợ hóa đơn theo cọc** (xem [Khoản thu](../../../04-KHOAN-THU/quy-trinh-nghiep-vu.md)).
+- **Tiền mặt tạm:** gạch nợ tạm qua Billing Hub, đẩy thông tin lên tool **Quản lý thu cước / Gạch nợ bổ sung** (Chưa nộp tiền) ⇒ KTV nộp tiền về công ty ⇒ **gạch nợ bổ sung** (Đã nộp tiền).
+
 **Rule chính:**
 - Thanh toán hóa đơn xa nhất trước. Tối đa 6 hóa đơn / khoản thu mỗi lần.
 - Hợp đồng còn **HĐĐT / PLHĐ / BBĐT chưa ký** thì không xác nhận thu tiền được. Khách ký trên HiFPT / fpt.vn / member trước.

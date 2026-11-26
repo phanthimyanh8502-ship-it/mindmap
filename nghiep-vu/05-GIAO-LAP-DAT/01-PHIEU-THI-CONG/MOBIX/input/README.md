@@ -40,6 +40,8 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 ### Thanh toán hóa đơn, khoản thu
 1. MobiX › chi tiết hợp đồng › Thanh toán: chọn hóa đơn / khoản thu (bắt buộc khoản thu PTC).
 2. Chọn hình thức: Tiền mặt tạm · Ví FPT Pay · QR Pay – VNPay; với QR bấm Kiểm tra thanh toán.
+3. Hóa đơn: gạch nợ hóa đơn. Khoản thu: Đã thanh toán, tiền vào cọc ⇒ xuất hóa đơn ⇒ gạch nợ theo cọc.
+4. Tiền mặt tạm: gạch nợ tạm, thông tin lên tool Quản lý thu cước / Gạch nợ bổ sung ⇒ KTV nộp tiền ⇒ gạch nợ bổ sung.
 
 ### Nhả tuyến
 1. Chi tiết phiếu › Nhả tuyến › chọn nguyên nhân › Cập nhật.
@@ -93,4 +95,5 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 
 - QC cung cấp 26/11/2026: MobiX có nhiều chức năng (hoàn tất PTC, hoàn tất bảo trì, tạo SR, thanh toán hóa đơn), tách luồng riêng, không gộp vào Phiếu thi công. Bổ sung chức năng thu hồi thiết bị và CCDC (QC thêm lại 2 URD CCDC).
 - QC cung cấp 26/11/2026: bộ tài liệu MobiX theo phiên bản app (V1.0 → v2.9). Chỉ lấy quy trình tổng quan và các rule gông liên quan PTC, thanh toán, vật tư.
+- QC cung cấp 26/11/2026: thanh toán hóa đơn mới gạch nợ hóa đơn; khoản thu đi qua cọc. Gạch nợ tạm đẩy thông tin lên tool Quản lý thu cước / Gạch nợ bổ sung.
 - QC xác nhận 19/11/2026: Mobinet và MobiX là 1 app, thống nhất gọi MobiX.
