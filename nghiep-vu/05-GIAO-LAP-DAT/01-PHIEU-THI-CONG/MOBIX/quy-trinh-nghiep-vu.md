@@ -11,7 +11,22 @@
 - **Vai trò trong luồng bán hàng:** đơn hàng có triển khai ⇒ tạo PTC ⇒ phân tuyến trên Inside new v5 ⇒ **KTV nhận ca và xử lý trên MobiX** ⇒ hoàn tất PTC ⇒ tín hiệu giao hàng về INVOICE.
 - **Đồng bộ trạng thái:** MobiX và Inside new v5 dùng chung trạng thái ticket. Trạng thái được truyền sang SR, SPF, HiFPT.
 
-## Quy trình xử lý ticket triển khai trên MobiX
+## Chức năng chính
+
+> MobiX là luồng riêng, không gộp vào luồng Phiếu thi công: hoàn tất PTC chỉ là 1 chức năng (QC cung cấp 26/11/2026).
+
+| Chức năng | Ai dùng | Kết quả |
+|---|---|---|
+| **Hoàn tất PTC** (Ca tồn › Triển khai) | KTV TIN/PNC | PTC Đã xử lý hoàn tất ⇒ tín hiệu giao hàng về INVOICE |
+| **Hoàn tất bảo trì** (Ca tồn › Bảo trì) | KTV TIN/PNC | Ticket bảo trì (tạo theo quy trình SR hỗ trợ kỹ thuật) hoàn tất |
+| **Tạo SR** (Quản lý SR) | NVKT, KTV, đội trưởng, tổ trưởng | Tạo và xem SR ngay trên app; ca cần SR phải tạo SR thành công mới hoàn tất phiếu |
+| **Thanh toán hóa đơn, khoản thu** | KTV TIN/PNC | Thu tiền mặt tạm / Ví FPT Pay / QR VNPay ⇒ gạch nợ qua Billing Hub |
+| **Vật tư** | KTV TIN/PNC | Tạm ứng, chuyển, nhận, nhập trả; hoàn ứng tự động khi hoàn tất phiếu |
+| **Chức năng đội trưởng** | Đội trưởng, TPKT | Báo cáo ca vụ, quản lý ca tồn của KTV, phân tuyến lại, cập nhật port, xem tọa độ nhân sự |
+
+**Hoàn tất bảo trì (tổng quan):** ticket bảo trì ⇒ phân công trên Inside new v5 ⇒ ca hiện ở Ca tồn tab Bảo trì trên MobiX của nhân sự được phân công ⇒ nhận ca, check-in (ca xử lý từ xa không cần check-in) ⇒ xử lý checklist bảo trì (đổi thiết bị: MAC thu hồi lấy từ thiết bị đã hoàn ứng cho hợp đồng) ⇒ Đã xử lý hoàn tất, hoặc Chờ xác minh.
+
+## Hoàn tất PTC — quy trình xử lý ticket triển khai
 
 > Nguồn: `MBX - V2.3 - FTQ - Mô tả thay đổi tình trạng ticket TKBT` (bảng quy trình mục 1).
 

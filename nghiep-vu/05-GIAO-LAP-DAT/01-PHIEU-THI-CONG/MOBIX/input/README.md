@@ -20,7 +20,15 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 4. Chọn MAC bàn giao (từ kho tạm) và MAC thu hồi (nếu có).
 5. Chụp ảnh thi công, nghiệm thu dịch vụ, chọn Đã xử lý hoàn tất. Không triển khai được thì chọn kết quả Không thành công + nguyên nhân trả về.
 
-### Thanh toán khoản thu PTC
+### Hoàn tất bảo trì
+1. MobiX › Ca tồn › tab Bảo trì: chọn phiếu, nhận ca, check-in (ca xử lý từ xa không cần).
+2. Xử lý checklist bảo trì; đổi thiết bị thì chọn MAC thu hồi từ danh sách thiết bị đã hoàn ứng cho hợp đồng.
+3. Chọn Đã xử lý hoàn tất; không xử lý được thì Chờ xác minh.
+
+### Tạo SR
+1. MobiX › Quản lý SR › Tạo SR (hoặc từ ca có hướng xử lý cần SR); xem lại ở danh sách SR đã tạo.
+
+### Thanh toán hóa đơn, khoản thu
 1. MobiX › chi tiết hợp đồng › Thanh toán: chọn hóa đơn / khoản thu (bắt buộc khoản thu PTC).
 2. Chọn hình thức: Tiền mặt tạm · Ví FPT Pay · QR Pay – VNPay; với QR bấm Kiểm tra thanh toán.
 
@@ -69,5 +77,6 @@ Tài liệu đầu vào của [`../quy-trinh-nghiep-vu.md`](../quy-trinh-nghiep-
 
 ## Nguồn
 
+- QC cung cấp 26/11/2026: MobiX có nhiều chức năng (hoàn tất PTC, hoàn tất bảo trì, tạo SR, thanh toán hóa đơn), tách luồng riêng, không gộp vào Phiếu thi công.
 - QC cung cấp 26/11/2026: bộ tài liệu MobiX theo phiên bản app (V1.0 → v2.9). Chỉ lấy quy trình tổng quan và các rule gông liên quan PTC, thanh toán, vật tư.
 - QC xác nhận 19/11/2026: Mobinet và MobiX là 1 app, thống nhất gọi MobiX.
