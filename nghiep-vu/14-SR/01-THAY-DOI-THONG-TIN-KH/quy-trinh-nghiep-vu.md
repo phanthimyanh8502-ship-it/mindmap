@@ -5,7 +5,11 @@
 Nguồn: URD SR Web thay đổi thông tin Khách hàng v3.0, §C.II.
 
 - Đổi: thông tin chủ hợp đồng, MST, loại hình KH, người đại diện, SĐT, email, địa chỉ (lắp đặt, thanh toán, xuất hóa đơn), PTTT, SĐT dịch vụ, **chuyển chủ sở hữu** (chọn riêng).
-- Điều kiện: hợp đồng chưa chấm dứt, chưa có SR đổi thông tin đang mở. Đổi PTTT: hợp đồng không còn hóa đơn chưa thanh toán.
+- **Điều kiện tạo SR** (URD §Tạo SR):
+  - Hợp đồng khác **Đã chấm dứt hợp đồng**.
+  - Hợp đồng không có SR thay đổi thông tin khách hàng đang ở Chưa phân công / Chưa xử lý / Đang xử lý / Đã xử lý.
+  - Loại thay đổi = Đổi PTTT: hợp đồng không còn hóa đơn chưa thanh toán.
+  - Không thỏa ⇒ hệ thống báo lỗi, không tạo được SR.
 
 | # | Bước | Hệ thống |
 |---|---|---|

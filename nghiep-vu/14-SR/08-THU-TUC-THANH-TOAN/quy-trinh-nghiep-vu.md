@@ -4,7 +4,9 @@
 
 Nguồn: URD SR Thủ tục thanh toán v1.0, §C.I (bảng map loại yêu cầu + 5 lưu đồ dạng hình).
 
-| Loại yêu cầu | Điều kiện hợp đồng | Luồng |
+**Điều kiện tạo SR:** loại yêu cầu chọn được tùy tình trạng hợp đồng (cột Điều kiện tạo SR bên dưới).
+
+| Loại yêu cầu | Điều kiện tạo SR (tình trạng hợp đồng) | Luồng |
 |---|---|---|
 | Thu tiền tại nhà | Khác Đã chấm dứt | Đổi ngày / gia hạn nếu cần → nhân viên thu cước thu tiền |
 | Thay đổi ngày thanh toán (duy trì / chỉ trong tháng T) | Billing, Bình thường | Đổi ngày khóa cước → có tiền phải thu thì thu tiền |

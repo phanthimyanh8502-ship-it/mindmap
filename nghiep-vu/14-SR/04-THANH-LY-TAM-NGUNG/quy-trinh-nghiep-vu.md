@@ -4,7 +4,10 @@
 
 Nguồn: URD SR TL/TN v1.1, §C.II.
 
-- Điều kiện: hợp đồng Bình thường, Ngưng vì lý do thanh toán hoặc Chủ thuê bao đi vắng. Tạm ngưng: 1–6 tháng.
+- **Điều kiện tạo SR:**
+  - Hợp đồng trạng thái **Bình thường**, **Ngưng vì lý do thanh toán** hoặc **Chủ thuê bao đi vắng**.
+  - Chỉ chọn được dịch vụ đang Bình thường. Thanh lý: Internet, F-safe, IP tĩnh, Ultra Fast, FPT Play chọn dịch vụ cha (chọn Internet thì tự chọn IP tĩnh, Ultra Fast, F-safe); Camera combo, FPT Play chọn được từng gói con. Tạm ngưng: Internet chọn dịch vụ cha.
+  - Tạm ngưng: chọn số tháng **1–6**.
 
 | # | Bước | Hệ thống |
 |---|---|---|

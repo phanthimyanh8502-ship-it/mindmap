@@ -4,7 +4,11 @@
 
 Nguồn: URD SR Web Khóa ứng dụng FPT play v1.0, §C.I–C.V.
 
-- Điều kiện: hợp đồng chưa chấm dứt, chưa có SR khóa ứng dụng đang mở, có dịch vụ FPT Play ở trạng thái Bình thường.
+- **Điều kiện tạo SR** (URD §Tạo SR):
+  - Hợp đồng khác **Đã chấm dứt hợp đồng**.
+  - Hợp đồng không có SR khóa ứng dụng FPT Play đang ở Chưa phân công / Chưa xử lý / Đang xử lý / Đã xử lý.
+  - Hợp đồng có dịch vụ **FPT Play** ở trạng thái **Bình thường**.
+  - Không thỏa ⇒ hệ thống báo lỗi, không tạo được SR.
 
 | # | Bước | Hệ thống |
 |---|---|---|

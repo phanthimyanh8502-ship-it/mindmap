@@ -5,6 +5,11 @@
 Nguồn: URD SR TL TSD v1.0 – Đơn hàng chưa thanh toán, §B.II.
 
 - ⚠ **Chỉ áp dụng cho đơn hàng CHƯA THANH TOÁN**, dịch vụ chưa kích hoạt: hủy toàn phần đơn. Tạo trên SR web hoặc tự động từ SPF.
+- **Điều kiện tạo SR** (URD §B.II bước B1):
+  - Tạo theo **mã đơn hàng**; đơn hàng tình trạng **Bình thường**, chưa thanh toán.
+  - Hợp đồng không có SR thanh lý trước sử dụng của đơn hàng đó.
+  - Không đủ điều kiện ⇒ hệ thống báo không đủ điều kiện tạo SR. Đủ ⇒ hiện danh sách sản phẩm, dịch vụ hủy được.
+  - Đơn có ≥ 1 dịch vụ đã active: vẫn tạo được SR, nhưng khi xử lý chỉ ghi nhận và kết thúc (bước 2).
 - Trên mindmap nằm ở **Hủy đơn hàng** (tab SR, cạnh tab Tool Hợp đồng NOT OK V3).
 
 | # | Bước | Hệ thống |

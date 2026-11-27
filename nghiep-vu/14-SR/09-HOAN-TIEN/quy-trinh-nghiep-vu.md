@@ -4,7 +4,11 @@
 
 Nguồn: URD SR Hoàn tiền v1.0, §B.II.
 
-- Tạo từ **SR cha**: thanh lý trước sử dụng, thanh lý sau sử dụng hoặc khiếu nại; SR cha đang Đang xử lý / Đã xử lý / Đã hoàn tất. Tồn cọc phải lớn hơn hoặc bằng tiền cần hoàn.
+- **Điều kiện tạo SR:**
+  - Nhập **mã SR cha** thuộc loại **thanh lý trước sử dụng**, **thanh lý sau sử dụng** hoặc **khiếu nại**; SR cha đang **Đang xử lý / Đã xử lý / Đã hoàn tất**.
+  - Hợp đồng không có SR hoàn tiền khác đang Chưa phân công / Chưa xử lý / Đang xử lý (1 hợp đồng chỉ 1 SR hoàn tiền đang xử lý).
+  - Không thỏa ⇒ báo "Không thể tạo SR…".
+  - Khi tạo giao dịch: tổng tiền cần hoàn khác 0, tồn cọc lớn hơn hoặc bằng tiền cần hoàn.
 
 | # | Bước | Hệ thống |
 |---|---|---|

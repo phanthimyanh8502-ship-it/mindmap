@@ -2,7 +2,13 @@
 
 > Một loại SR của [SR](../quy-trinh-nghiep-vu.md); luồng chung (tạo, phân công, liên hệ, đánh giá) xem ở đó.
 
-Nguồn: URD SR CDD/CDV v1.1, §C.VIII.3.
+Nguồn: URD SR CDD/CDV v1.1, §C.VIII.3; rule chọn hợp đồng ở URD SR TL/TN §Tạo SR.
+
+- **Điều kiện tạo SR:**
+  - Hợp đồng trạng thái **Bình thường**.
+  - Chọn **toàn bộ hợp đồng** (danh sách chỉ hiện gói dịch vụ đang Bình thường).
+  - Địa chỉ mới **cùng tỉnh / thành phố** với hợp đồng hiện tại.
+  - Hợp đồng chuyển chủ sở hữu dưới 6 tháng vẫn tạo được SR, nhưng phải qua ticket duyệt ở bước 2.
 
 | # | Bước | Hệ thống |
 |---|---|---|

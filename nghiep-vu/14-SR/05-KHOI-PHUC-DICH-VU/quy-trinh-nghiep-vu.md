@@ -4,7 +4,10 @@
 
 Nguồn: URD Service Request V1.2 – KPDV, §C.I–C.II; URD Service-Request-Transaction v1.2 (màn xử lý giao dịch).
 
-- Điều kiện: dịch vụ đang Chủ thuê bao đi vắng (CTBĐV) hoặc Đã chấm dứt hợp đồng.
+- **Điều kiện tạo SR:**
+  - Hợp đồng **Bình thường** có dịch vụ đang **Chủ thuê bao đi vắng (CTBĐV)** hoặc **Đã chấm dứt**, hoặc hợp đồng **Đã chấm dứt hợp đồng**.
+  - Chỉ chọn được dịch vụ CTBĐV / Đã chấm dứt (hệ thống tự chọn sẵn, cho bỏ chọn).
+  - Hợp đồng Đã chấm dứt: không chọn được Oncall, Fpro, Fsafe go.
 
 | # | Bước | Hệ thống |
 |---|---|---|

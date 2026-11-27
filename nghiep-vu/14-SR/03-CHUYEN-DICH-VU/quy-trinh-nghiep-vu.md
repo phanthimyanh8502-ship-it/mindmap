@@ -2,7 +2,11 @@
 
 > Một loại SR của [SR](../quy-trinh-nghiep-vu.md); luồng chung (tạo, phân công, liên hệ, đánh giá) xem ở đó.
 
-Nguồn: URD SR CDD/CDV v1.1, §C.VIII.2.
+Nguồn: URD SR CDD/CDV v1.1, §C.VIII.2; rule chọn hợp đồng ở URD SR TL/TN §Tạo SR.
+
+- **Điều kiện tạo SR:**
+  - Hợp đồng trạng thái **Bình thường**.
+  - Chỉ chọn được dịch vụ đang **Bình thường**: Internet, IP tĩnh, FPT Play chọn dịch vụ cha; Camera combo chọn từng thiết bị con.
 
 | # | Bước | Hệ thống |
 |---|---|---|
